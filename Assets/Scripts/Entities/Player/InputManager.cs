@@ -25,10 +25,12 @@ public class InputManager : Singleton<InputManager> {
 
     private void Start() {
         this.playerInput = GetComponent<PlayerInput>();
+
     }
 
     public void Init() {
         //Options to hide the touch input
+        this.playerInput = GetComponent<PlayerInput>();
         bool hideInput = PlayerPrefs.GetInt("UIHideInput", 0) == 1 ? true : false;
         if (this.designerMode || hideInput) {
             this.HideAllControllers();
@@ -71,7 +73,12 @@ public class InputManager : Singleton<InputManager> {
 
     private void EnableInputSystemEvents() {
         //These are the non-touch input events
+        
+        Debug.Log(this.playerInput);
+
         InputActionMap actionMap = this.playerInput.actions.FindActionMap("Player");
+
+        Debug.Log("Carried on");
 
         InputAction move = actionMap.FindAction("Move");
         move.started += OnMove;
