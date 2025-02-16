@@ -84,9 +84,9 @@ public class InputManager : Singleton<InputManager> {
         InputAction attack = actionMap.FindAction("Attack");
         attack.started += OnAttack;
 
-        /*InputAction interact = actionMap.FindAction("Interact");
+        InputAction interact = actionMap.FindAction("Interact");
         interact.started += OnInteract;
-        interact.canceled += OnInteractStop;*/
+        interact.canceled += OnInteractStop;
     }
 
     public void HideAllControllers() {
