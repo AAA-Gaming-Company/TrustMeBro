@@ -699,6 +699,37 @@ MonoBehaviour:
   parallaxPrefab: {fileID: 7236394149848757549, guid: 9194caac7a19f4b6e867ecebb68b9501, type: 3}
   autoScroll: 0
   selectedParallax: {fileID: 11400000, guid: 7f005e7842c7144f694279053c405e9f, type: 2}
+--- !u!1 &1259344021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259344022}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259344022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259344021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.973, y: 0.058, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1310691928}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1310691924
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +744,7 @@ GameObject:
   - component: {fileID: 1310691925}
   - component: {fileID: 1310691929}
   - component: {fileID: 1310691932}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,8 +812,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13401079, y: 0.52980304}
-  m_Size: {x: 1.2680216, y: 2.6187677}
+  m_Offset: {x: 0.045770824, y: 0.007438779}
+  m_Size: {x: 1.3019639, y: 2.2021644}
   m_Direction: 0
 --- !u!212 &1310691927
 SpriteRenderer:
@@ -853,6 +884,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
+  - {fileID: 1259344022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1310691929
@@ -867,6 +899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc96660a418b4e3289a12ce0e351e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
+  firePoint: {fileID: 1259344022}
   playerSpeed: 4
   jumpPower: 18
   preJumpGrace: 0.1

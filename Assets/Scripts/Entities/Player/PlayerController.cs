@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : Shooter {
     private bool flipPlayer = false;
     private float inputX;
     private bool onGround;
@@ -15,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private Collider2D collider2d;
     private Rigidbody2D rb;
+    private Camera cam;
 
     [Header("Controller Config")]
     public float playerSpeed = 4f;
@@ -22,10 +22,13 @@ public class PlayerController : MonoBehaviour {
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
 
-    private void Start() {
+    public new void Start() {
+        base.Start();
+
         this.animator = GetComponent<Animator>();
         this.collider2d = GetComponent<Collider2D>();
         this.rb = GetComponent<Rigidbody2D>();
+        this.cam = Camera.main;
 
         InputManager.Instance.Init();
     }
@@ -75,6 +78,11 @@ public class PlayerController : MonoBehaviour {
             localScale.x *= -1f;
             this.transform.localScale = localScale;
         }
+
+        //Attack
+        if (InputManager.Instance.GetAttackDown(false)) {
+            this.Hit();
+        }
     }
 
     private void FixedUpdate() {
@@ -107,5 +115,19 @@ public class PlayerController : MonoBehaviour {
 
     public Collider2D GetCollider() {
         return this.collider2d;
+    }
+
+    private void Hit() {
+        if (this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition))) {
+            //TODO: Add feedback here
+        }
+    }
+
+    protected override void OnDie() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void OnDamage(int amount) {
+        throw new System.NotImplementedException();
     }
 }

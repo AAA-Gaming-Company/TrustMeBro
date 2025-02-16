@@ -7,13 +7,13 @@ public abstract class Projectile : MonoBehaviour {
     private Vector2 finalPosition;
     private float maxSpeed;
     private int ignoreLayer;
+    private int damageDealt;
 
-    public int damageDealt;
     public ContactFilter2D filter2D;
 
     private static void FindWallLayer() {
         if (Projectile.wallLayer == -1) {
-            Projectile.wallLayer = LayerMask.NameToLayer("Walls");
+            Projectile.wallLayer = LayerMask.NameToLayer("Ground");
             if (Projectile.wallLayer == -1) {
                 throw new UnityException("No layer found for the walls!");
             }
