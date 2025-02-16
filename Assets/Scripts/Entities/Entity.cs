@@ -5,11 +5,11 @@ public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHealth;
 
-    private int health;
+    protected int currentHealth;
     private bool dead = false;
 
     public void Start() {
-        this.health = this.maxHealth;
+        this.currentHealth = this.maxHealth;
     }
 
     protected abstract void OnDie();
@@ -18,8 +18,8 @@ public abstract class Entity : MonoBehaviour {
     public void TakeDamage(int damage) {
         this.OnDamage(damage);
 
-        this.health -= damage;
-        if (this.health <= 0) {
+        this.currentHealth -= damage;
+        if (this.currentHealth <= 0) {
             this.Die();
         }
     }
