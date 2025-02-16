@@ -23,16 +23,16 @@ public class Parallax : MonoBehaviour {
 
     public void Init(ParallaxSO data) {
         //Spawn in the background layers of the parallax
-        this.SpawnParallaxChild(data.foreground, 0f, -1);
+        this.SpawnParallaxChild(data.foreground, 0f, -100);
 
         float step = 1f / (data.intermediate.Length + 1);
         float current = step;
         for (int i = 0; i < data.intermediate.Length; i++) {
-            this.SpawnParallaxChild(data.intermediate[i], current, i + 1);
+            this.SpawnParallaxChild(data.intermediate[i], current, i + 100);
             current += step;
         }
 
-        this.SpawnParallaxChild(data.background, 1f, data.intermediate.Length + 1, true);
+        this.SpawnParallaxChild(data.background, 1f, data.intermediate.Length + 100, true);
     }
 
     private void SpawnParallaxChild(Sprite sprite, float parallaxEffect, int layer, bool background = false) {
