@@ -1,0 +1,111 @@
+using System;
+using UnityEngine;
+
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerController : MonoBehaviour {
+    private bool flipPlayer = false;
+    private float inputX;
+    private bool onGround;
+
+    private float pressJumpTime = 0f;
+    private bool letGoInGrace = false;
+
+    private Animator animator;
+    private Collider2D collider2d;
+    private Rigidbody2D rb;
+
+    [Header("Controller Config")]
+    public float playerSpeed = 4f;
+    public float jumpPower = 18f;
+    public float preJumpGrace = 0.1f;
+    public LayerMask groundLayers;
+
+    private void Start() {
+        this.animator = GetComponent<Animator>();
+        this.collider2d = GetComponent<Collider2D>();
+        this.rb = GetComponent<Rigidbody2D>();
+
+        InputManager.Instance.Init();
+    }
+
+    private void Update() {
+        this.inputX = InputManager.Instance.GetHorizontalInput();
+        this.onGround = this.IsGrounded();
+
+        //Stop jumping animation if the player's velocity is close to 0 and they are on the ground
+        if (this.rb.linearVelocity.y >= -0.5f && this.rb.linearVelocity.y <= 0.5f && this.onGround) {
+            this.animator.SetBool("isJumping", false);
+        }
+
+        //Countdown for grace before touching the platform
+        this.pressJumpTime -= Time.deltaTime;
+        if (this.pressJumpTime < 0) {
+            this.pressJumpTime = 0;
+        }
+        //Set the grace to its maximum
+        if (InputManager.Instance.GetJumpDown()) {
+            this.pressJumpTime = this.preJumpGrace;
+        }
+
+        //If the player has let go of the jump button and they are still in the grace period
+        if (this.pressJumpTime > 0 && InputManager.Instance.GetJumpUp()) {
+            this.letGoInGrace = true;
+        }
+
+        //If the player is in the grace period (this can be even if they just pressed the button in this frame)
+        //and the player touches the ground, jump
+        if (this.pressJumpTime > 0 && this.onGround) {
+            this.animator.SetBool("isJumping", false);
+            this.animator.SetBool("isJumping", true);
+            this.rb.linearVelocity = new Vector2(this.rb.linearVelocity.x, this.jumpPower);
+            this.pressJumpTime = 0f; //Reset the grace period value
+        }
+        //You can jump less high by releasing the jump button
+        if ((InputManager.Instance.GetJumpUp() || this.letGoInGrace) && this.rb.linearVelocity.y > 0f) {
+            this.rb.linearVelocity = new Vector2(this.rb.linearVelocity.x, this.rb.linearVelocity.y * 0.5f);
+            this.letGoInGrace = false;
+        }
+
+        //Flip the player if they are going in a different direction to the old one
+        if (!this.flipPlayer && this.inputX < 0f || this.flipPlayer && this.inputX > 0f) {
+            this.flipPlayer = !this.flipPlayer;
+            Vector3 localScale = base.transform.localScale;
+            localScale.x *= -1f;
+            this.transform.localScale = localScale;
+        }
+    }
+
+    private void FixedUpdate() {
+        if (this.inputX == 0) {
+            animator.SetBool("isWalking", false);
+        } else {
+            if (BetterPhysics2D.Linecast(this, LinecastDirection.FORWARDS, this.groundLayers, 0.2f)) {
+                animator.SetBool("isWalking", false);
+                return;
+            }
+
+            animator.SetBool("isWalking", true);
+        }
+
+        //Add the velocity to the player if the function hasn't returned
+        this.rb.linearVelocity = new Vector2(this.inputX * this.playerSpeed, this.rb.linearVelocity.y);
+    }
+
+    private bool IsGrounded() {
+        return BetterPhysics2D.Linecast(this, LinecastDirection.DOWN, this.groundLayers, 0.2f);
+    }
+
+    public bool IsPlayerFlipped() {
+        if (this.inputX == 0) {
+            return this.flipPlayer;
+        } else {
+            return this.inputX < 0;
+        }
+    }
+
+    public Collider2D GetCollider() {
+        return this.collider2d;
+    }
+}

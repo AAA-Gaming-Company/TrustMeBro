@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f0f9fe99eb9462eba49b96d19170d2, type: 3}
+  m_Name: Cloudy
+  m_EditorClassIdentifier: 
+  foreground: {fileID: 21300000, guid: 770b1129c3ec044cbaae17995f386274, type: 3}
+  intermediate:
+  - {fileID: 21300000, guid: c6b55525fca08455aa6b68d62e47e39c, type: 3}
+  - {fileID: 21300000, guid: de62247d2b84f4abbb15c68c0cd8d25c, type: 3}
+  - {fileID: 21300000, guid: 8dbfa564ce0994a33a29b78dc3c85945, type: 3}
+  - {fileID: 21300000, guid: 3becb4b2cd8234455be5b0e487b886cf, type: 3}
+  - {fileID: 21300000, guid: 6c6ac75a3ae01402eb3d2e078d80a622, type: 3}
+  background: {fileID: 21300000, guid: 827faca3804d848239dee3e44991eb96, type: 3}
