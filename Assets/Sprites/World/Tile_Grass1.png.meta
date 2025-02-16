@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: cd44f98cd40423b4db6a0fb6a64162ab
+guid: f1a902e3c697f4788a036ed4d0589c32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1852636258316256354
-    second: Paralax_City_2_0
-  - first:
-      213: -6443016758724292516
-    second: Paralax_City_2_1
-  - first:
-      213: 8465858392412911052
-    second: Paralax_City_2_2
+      213: -6197284768280575823
+    second: Tile_Grass1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49355873, y: 0.23590973}
-  spritePixelsToUnits: 75
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,19 +123,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -158,67 +139,27 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Paralax_City_2_0
+      name: Tile_Grass1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 39
+        width: 20
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 4}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -10, y: -12}
+        - {x: 10, y: -12}
+        - {x: 10, y: 8}
+        - {x: -10, y: 8}
+      tessellationDetail: 0
       bones: []
-      spriteID: 26403fa7cd2e5b910800000000000000
-      internalID: 1852636258316256354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Paralax_City_2_1
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 0
-        width: 25
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c50995ef46ec596a0800000000000000
-      internalID: -6443016758724292516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Paralax_City_2_2
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 0
-        width: 17
-        height: 61
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc5f7869a55cc7570800000000000000
-      internalID: 8465858392412911052
+      spriteID: 1b082be7652def9a0800000000000000
+      internalID: -6197284768280575823
       vertices: []
       indices: 
       edges: []
@@ -227,8 +168,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: d36ef3ca0017c4a7781413e4b6df215f
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -237,9 +178,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Paralax_City_2_0: 1852636258316256354
-      Paralax_City_2_1: -6443016758724292516
-      Paralax_City_2_2: 8465858392412911052
+      Tile_Grass1_0: -6197284768280575823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
