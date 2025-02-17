@@ -13,11 +13,17 @@ public class ProgressBar : MonoBehaviour {
     }
 
     public void UpdateValue(float value) {
-        float clamped = Mathf.Clamp(value, min, max);
+
+
+        float clamped = Mathf.Clamp(value, this.min, this.max);
         this.current = clamped;
 
         Vector3 scale = this.filler.transform.localScale;
-        scale.x = clamped / this.max;
+        if (this.max == 0) {
+            scale.x = 0;
+        } else {
+            scale.x = clamped / this.max;
+        }
         this.filler.transform.localScale = scale;
     }
 }
