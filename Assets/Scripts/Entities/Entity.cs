@@ -10,7 +10,7 @@ public abstract class Entity : MonoBehaviour {
     public LayerMask coverLayers;
     public float coverRadius = 3f;
 
-    protected bool inCover = false;
+    private CoverEntry currentCoverEntry;
     protected int currentHealth;
 
     public void Start() {
@@ -44,21 +44,29 @@ public abstract class Entity : MonoBehaviour {
     }
 
     public bool IsInCover() {
-        return this.inCover;
+        return this.currentCoverEntry != null;
     }
 
     public void SearchForCover() {
-        Debug.Log("Searching for cover" + this.coverLayers.value);
+        // If the entity is already in cover, don't search for another one
+        if (this.IsInCover()) {
+            return;
+        }
 
         Collider2D coverHit = Physics2D.OverlapCircle(this.transform.position, coverRadius, this.coverLayers.value);
         if (coverHit == null) {
-            Debug.Log("No cover found");
             return;
         }
 
         Cover cover = coverHit.gameObject.GetComponent<Cover>();
-        Debug.Log(cover.name);
-        cover.EnterNearestCoverPoint(this.gameObject);
+        this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
+    }
+
+    public void ExitCover() {
+        if (this.IsInCover()) {
+            this.currentCoverEntry.ExitCover();
+            this.currentCoverEntry = null;
+        }
     }
 
     public void OnDrawGizmos() {

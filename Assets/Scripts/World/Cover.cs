@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Cover : MonoBehaviour {
     public Transform[] coverPoints;
+
     private bool[] coverPointsOccupied;
 
     private void Start() {
@@ -12,7 +13,7 @@ public class Cover : MonoBehaviour {
         }
     }
 
-    public void EnterNearestCoverPoint(GameObject entity) {
+    public CoverEntry EnterNearestCoverPoint(GameObject entity) {
         Vector2 position = entity.transform.position;
 
         float distance = float.PositiveInfinity;
@@ -28,14 +29,34 @@ public class Cover : MonoBehaviour {
 
         // No cover points found
         if (index == -1) {
-            return;
+            return null;
         }
         // Cover point is already occupied
         if (coverPointsOccupied[index]) {
-            return;
+            return null;
         }
 
         coverPointsOccupied[index] = true;
         entity.transform.position = coverPoints[index].position;
+
+        return new CoverEntry(this, index);
+    }
+
+    public void ExitCover(int index) {
+        coverPointsOccupied[index] = false;
+    }
+}
+
+public class CoverEntry {
+    public Cover cover;
+    public int index;
+
+    public CoverEntry(Cover cover, int index) {
+        this.cover = cover;
+        this.index = index;
+    }
+
+    public void ExitCover() {
+        cover.ExitCover(index);
     }
 }

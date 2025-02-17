@@ -52,17 +52,22 @@ public abstract class Projectile : MonoBehaviour {
 
         foreach (Collider2D c in hit) {
             if (c != null) {
-                if (c.gameObject.layer != this.ignoreLayer) {
+                if (c.gameObject.layer == Projectile.wallLayer) {
+                    this.HitFunction(null);
+                    Destroy(base.gameObject);
+                } else if (c.gameObject.layer != this.ignoreLayer) {
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
+                        // Ignore the entity if it is covered
+                        if (entity.IsInCover()) {
+                            continue;
+                        }
+
                         this.HitFunction(c.gameObject);
                         entity.TakeDamage(this.damageDealt);
                         Destroy(base.gameObject);
                         return;
                     }
-                } else if (c.gameObject.layer == Projectile.wallLayer) {
-                    this.HitFunction(null);
-                    Destroy(base.gameObject);
                 }
             }
         }

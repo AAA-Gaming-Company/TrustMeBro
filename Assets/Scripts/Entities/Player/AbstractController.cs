@@ -9,8 +9,6 @@ public abstract class AbstractController : MonoBehaviour {
 
     protected abstract void EnableController();
 
-    public abstract void SuperPlayer(bool enable);
-
     public abstract bool IsAttackButton(GameObject gameObject);
 
     protected void OnMoveH(float input) {
