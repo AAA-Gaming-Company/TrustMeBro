@@ -20,6 +20,7 @@ public class NotificationBubble : MonoBehaviour {
         this.speakerName.text = speakerName;
         this.speakerImage.sprite = speakerImage;
 
+        Time.timeScale = 0f;
         this.NextMessage();
     }
 
@@ -28,6 +29,7 @@ public class NotificationBubble : MonoBehaviour {
         if (this.currentMessageIndex < this.messages.Length) {
             this.text.text = this.messages[this.currentMessageIndex];
         } else {
+            Time.timeScale = 1f;
             Destroy(this.gameObject);
         }
 

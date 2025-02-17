@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1531068473}
   notificationPrefab: {fileID: 8159800601513457926, guid: 1efe82c33409e43a69dc1a06b0949eaa, type: 3}
+  dialoguePrefab: {fileID: 7162943053851010199, guid: ef5d053e798374e16bd676cdb328c6b8, type: 3}
 --- !u!1001 &156038453
 PrefabInstance:
   m_ObjectHideFlags: 0
