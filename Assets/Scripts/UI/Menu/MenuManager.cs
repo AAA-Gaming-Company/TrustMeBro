@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour {
+public class MenuManager : Singleton<MenuManager> {
     [Header("UI Elements")]
     public Button playButton;
     public Button settingsButton;
@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour {
     public MenuPanel settingsPanel;
     public MenuPanel creditsPanel;
     public LoadingPanel loadingPanel;
+    public DifficultyPanel difficultyPanel;
 
     private void Awake() {
         Time.timeScale = 1f;
@@ -24,14 +25,13 @@ public class MenuManager : MonoBehaviour {
         this.settingsPanel.gameObject.SetActive(false);
         this.creditsPanel.gameObject.SetActive(false);
         this.loadingPanel.gameObject.SetActive(false);
+        this.difficultyPanel.gameObject.SetActive(false);
 
         Debug.Log("TODO: ADD MUSIC");
-        Debug.Log("TODO: ADD DIFFICULTY SETTINGS");
     }
 
     public void PlayButton() {
-        this.loadingPanel.gameObject.SetActive(true);
-        this.loadingPanel.LoadGameScene();
+        this.difficultyPanel.gameObject.SetActive(true);
     }
 
     public void SettingsButton() {
@@ -44,5 +44,11 @@ public class MenuManager : MonoBehaviour {
 
     public void CreditsButton() {
         this.creditsPanel.gameObject.SetActive(true);
+    }
+
+    public void LaunchGame(DifficultyLevel level) {
+        GameManager.difficultyLevel = level;
+        this.loadingPanel.gameObject.SetActive(true);
+        this.loadingPanel.LoadGameScene();
     }
 }

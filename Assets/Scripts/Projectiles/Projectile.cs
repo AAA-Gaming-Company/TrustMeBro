@@ -63,8 +63,6 @@ public abstract class Projectile : MonoBehaviour {
                     this.HitFunction(null);
                     Destroy(base.gameObject);
                 } else if (c.gameObject.layer == Projectile.coverLayer) {
-                    Debug.Log("Hit cover " + c.gameObject.name);
-
                     Cover cover = c.gameObject.GetComponent<Cover>();
                     if (cover != null && cover.IsCovering()) {
                         this.HitFunction(null);
