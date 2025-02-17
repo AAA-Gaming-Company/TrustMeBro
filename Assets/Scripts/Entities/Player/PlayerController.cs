@@ -97,7 +97,12 @@ public class PlayerController : Shooter {
             if (this.IsInCover()) {
                 this.ExitCover();
             } else {
-                this.EnterCover(this.NearestCover());
+                Cover potentialCover = this.NearestCover();
+                if (potentialCover != null) {
+                    this.EnterCover(potentialCover);
+                    InputManager.Instance.MoveH(0f);
+                    InputManager.Instance.MoveV(0f);
+                }
             }
         }
         if (InputManager.Instance.GetHorizontalInput() != 0 || InputManager.Instance.GetVerticalInput() != 0 || InputManager.Instance.GetJumpDown() || InputManager.Instance.GetInteractDown() || InputManager.Instance.GetAttackDown(false)) {

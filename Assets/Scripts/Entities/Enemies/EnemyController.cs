@@ -62,7 +62,9 @@ public class EnemyController : Shooter {
                 if (potentialCover == null) {
                     this.aiPath.canMove = true;
                 } else {
-                    if (Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
+                    Vector3 coverPoint = potentialCover.NearestCoverPointPos(base.transform.position, destinationSetter.target.gameObject);
+
+                    if (Vector2.Distance(coverPoint, this.destinationSetter.target.position) < this.weapon.useRange) {
                         this.EnterCover(potentialCover);
                     }
                 }

@@ -35,6 +35,7 @@ public abstract class Entity : MonoBehaviour {
 
     public void Die() {
         this.OnDie();
+        this.ExitCover();
         Destroy(this.gameObject);
     }
 
@@ -66,19 +67,20 @@ public abstract class Entity : MonoBehaviour {
             Debug.LogError("Entity is already in cover! This shouldn't happen :(");
             return; 
         }
-        if (cover != null) {
-            if (this.coverIndicator != null) {
-                coverIndicator.SetActive(true);
-            }
-            this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
-        }
 
+        this.currentCoverEntry = cover.EnterCover(this.gameObject, cover.NearestCoverPointPos(this.transform.position));
+
+        // If the cover indicator is set, activate it (as long as we got into cover)
+        if (this.coverIndicator != null && this.currentCoverEntry != null) {
+            coverIndicator.SetActive(true);
+        }
     }
 
     public void ExitCover() {
         if (this.IsInCover()) {
             this.currentCoverEntry.ExitCover();
             this.currentCoverEntry = null;
+
             if (this.coverIndicator != null) {
                 coverIndicator.SetActive(false);
             }

@@ -13,27 +13,7 @@ public class Cover : MonoBehaviour {
         }
     }
 
-    public CoverEntry EnterNearestCoverPoint(GameObject entity) {
-        Vector2 position = entity.transform.position;
-
-        float distance = float.PositiveInfinity;
-        int index = -1;
-
-            for (int i = 0; i < coverPoints.Length; i++) {
-                float currentDistance = Vector2.Distance(position, coverPoints[i].position);
-                if (currentDistance < distance) {
-                    distance = currentDistance;
-                    index = i;
-                }
-            }
-        
-
-
-        // No cover points found
-        if (index == -1) {
-            return null;
-        }
-        // Cover point is already occupied
+    public CoverEntry EnterCover(GameObject entity, int index) {
         if (coverPointsOccupied[index]) {
             return null;
         }
@@ -42,6 +22,23 @@ public class Cover : MonoBehaviour {
         entity.transform.position = coverPoints[index].position;
 
         return new CoverEntry(this, index);
+    }
+
+    public CoverEntry EnterCover(GameObject entity, Vector3 position) {
+        int index = -1;
+        for (int i = 0; i < coverPoints.Length; i++) {
+            if (coverPoints[i].position == position) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1) {
+            Debug.LogError("Cover point not found!");
+            return null;
+        }
+
+        return this.EnterCover(entity, index);
     }
 
     public void ExitCover(int index) {
@@ -58,7 +55,7 @@ public class Cover : MonoBehaviour {
         return false;
     }
 
-    public Vector2 NearestCoverPointPos(Vector2 position, GameObject other = null) {
+    public Vector3 NearestCoverPointPos(Vector3 position, GameObject other = null) {
         float distance = float.PositiveInfinity;
         int index = -1;
 
@@ -72,7 +69,7 @@ public class Cover : MonoBehaviour {
             }
         } else {
             float closestDistanceToPlayer = float.PositiveInfinity;
-            Vector2 otherPosition = other.transform.position;
+            Vector3 otherPosition = other.transform.position;
 
             for (int i = 0; i < coverPoints.Length; i++) {
                 float currentDistance = Vector2.Distance(position, coverPoints[i].position);
@@ -88,17 +85,23 @@ public class Cover : MonoBehaviour {
             }
 
             if (Vector2.Distance(coverPoints[index].position, otherPosition) == closestDistanceToPlayer) {
-                Debug.Log("Cover is the nearest to the player");
-                return Vector2.positiveInfinity;
+                return Vector3.positiveInfinity;
             }
         }
 
         // No cover points found
         if (index == -1) {
-            return Vector2.positiveInfinity;
+            return Vector3.positiveInfinity;
         }
 
         return coverPoints[index].position;
+    }
+
+    public void OnDrawGizmos() {
+        Gizmos.color = Color.green;
+        foreach (Transform coverPoint in coverPoints) {
+            Gizmos.DrawCube(coverPoint.position, new Vector3(0.1f, 0.1f, 0.1f));
+        }
     }
 }
 
