@@ -7,6 +7,7 @@ public abstract class Entity : MonoBehaviour {
     public ProgressBar healthBar;
 
     [Header("Cover System")]
+    public GameObject coverIndicator;
     public LayerMask coverLayers;
     public float coverRadius = 3f;
 
@@ -62,10 +63,12 @@ public abstract class Entity : MonoBehaviour {
 
     public void EnterCover(Cover cover) {
         if (this.IsInCover()) {
-            Debug.LogError("Entity is already in cover! This shouldn't happen.");
+            Debug.LogError("Entity is already in cover! This shouldn't happen :(");
             return;
         }
-
+        if (this.coverIndicator != null) {
+            coverIndicator.SetActive(true);
+        }
         this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
     }
 
@@ -73,6 +76,9 @@ public abstract class Entity : MonoBehaviour {
         if (this.IsInCover()) {
             this.currentCoverEntry.ExitCover();
             this.currentCoverEntry = null;
+            if (this.coverIndicator != null) {
+                coverIndicator.SetActive(false);
+            }
         }
     }
 
