@@ -37,6 +37,24 @@ public class EnemyController : Shooter {
         } else {
             this.aiPath.canMove = true;
         }
+
+        if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
+            Cover potentialCover = this.NearestCover();
+
+            if (potentialCover != null) {
+                if (potentialCover.NearestCoverPointPos(base.transform.position, destinationSetter.target.gameObject).x != Mathf.Infinity && Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position), this.destinationSetter.target.position) < this.weapon.useRange) {
+                    SearchForCover();
+                }
+            }
+        }
+
+        if (this.IsInCover() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
+            this.aiPath.canMove = false;
+        }else if (this.IsInCover()) {
+            this.ExitCover();
+            this.aiPath.canMove = true;
+        }
+
     }
 
     //TODO: Maybe decrease the amount of times this is actually called, it's expensive.
@@ -56,7 +74,11 @@ public class EnemyController : Shooter {
     private new void OnDrawGizmos() {
         base.OnDrawGizmos();
 
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(base.transform.position, this.moveRange);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(base.transform.position, this.weapon.useRange);
 
         //Remove this code when fixed
         if (this.destinationSetter != null) {

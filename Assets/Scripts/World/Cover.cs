@@ -19,13 +19,15 @@ public class Cover : MonoBehaviour {
         float distance = float.PositiveInfinity;
         int index = -1;
 
-        for (int i = 0; i < coverPoints.Length; i++) {
-            float currentDistance = Vector2.Distance(position, coverPoints[i].position);
-            if (currentDistance < distance) {
-                distance = currentDistance;
-                index = i;
+            for (int i = 0; i < coverPoints.Length; i++) {
+                float currentDistance = Vector2.Distance(position, coverPoints[i].position);
+                if (currentDistance < distance) {
+                    distance = currentDistance;
+                    index = i;
+                }
             }
-        }
+        
+
 
         // No cover points found
         if (index == -1) {
@@ -54,6 +56,50 @@ public class Cover : MonoBehaviour {
         }
 
         return false;
+    }
+
+    public Vector2 NearestCoverPointPos(Vector2 position, GameObject other = null) {
+        float distance = float.PositiveInfinity;
+        int index = -1;
+            if (other == null) {
+                        for (int i = 0; i < coverPoints.Length; i++) {
+                float currentDistance = Vector2.Distance(position, coverPoints[i].position);
+                if (currentDistance < distance) {
+                    distance = currentDistance;
+                    index = i;
+                }
+            }
+        } else {
+            float closestDistanceToPlayer = Mathf.Infinity;
+            Vector2 otherPosition = other.transform.position; 
+
+            for (int i = 0; i < coverPoints.Length; i++) {
+                float currentDistance = Vector2.Distance(position, coverPoints[i].position);
+                float distanceToOther = Vector2.Distance(otherPosition, coverPoints[i].position);
+
+                if (currentDistance < distance) {
+                    distance = currentDistance;
+                    index = i;
+                }
+                if (distanceToOther < closestDistanceToPlayer) {
+                    closestDistanceToPlayer = distanceToOther;
+                }
+                
+            }
+            Debug.Log(closestDistanceToPlayer);
+            Debug.Log(Vector2.Distance(coverPoints[index].position, otherPosition));
+            if (Vector2.Distance(coverPoints[index].position, otherPosition) == closestDistanceToPlayer) {
+                Debug.Log("Cover is the nearest to the player");
+                return Vector2.positiveInfinity;
+            }
+            
+        }
+        // No cover points found
+        if (index == -1) {
+            return Vector2.positiveInfinity;
+        }
+
+        return coverPoints[index].position;
     }
 }
 

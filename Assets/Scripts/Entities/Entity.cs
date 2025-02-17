@@ -62,6 +62,21 @@ public abstract class Entity : MonoBehaviour {
         this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
     }
 
+    public Cover NearestCover() {
+        if (this.IsInCover()) {
+            return null;
+        }
+
+        Collider2D coverHit = Physics2D.OverlapCircle(this.transform.position, coverRadius, this.coverLayers.value);
+        if (coverHit == null) {
+            return null;
+        }
+
+        Cover cover = coverHit.gameObject.GetComponent<Cover>();
+        
+        return cover;
+    }
+
     public void ExitCover() {
         if (this.IsInCover()) {
             this.currentCoverEntry.ExitCover();
