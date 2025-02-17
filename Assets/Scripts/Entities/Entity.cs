@@ -64,12 +64,15 @@ public abstract class Entity : MonoBehaviour {
     public void EnterCover(Cover cover) {
         if (this.IsInCover()) {
             Debug.LogError("Entity is already in cover! This shouldn't happen :(");
-            return;
+            return; 
         }
-        if (this.coverIndicator != null) {
-            coverIndicator.SetActive(true);
+        if (cover != null) {
+            if (this.coverIndicator != null) {
+                coverIndicator.SetActive(true);
+            }
+            this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
         }
-        this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
+
     }
 
     public void ExitCover() {

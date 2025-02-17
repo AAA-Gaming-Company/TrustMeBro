@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: PolicemanWeapon
   m_EditorClassIdentifier: 
   useDelay:
-  - 2
-  - 2
-  - 2
+  - 0.4
+  - 0.4
+  - 0.4
   useRange: 10
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
   amount: 01000000
   isProjectile: 1
-  projectileSpeed: 0.5
+  projectileSpeed: 0.8
   damage: 0a0000000a0000000a000000
   ready: 0
