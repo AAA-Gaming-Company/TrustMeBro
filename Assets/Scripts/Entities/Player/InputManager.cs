@@ -21,7 +21,6 @@ public class InputManager : Singleton<InputManager> {
     private bool interactUp = false;
 
     private bool crouchDown = false;
-    private bool crouchUp = false;
 
 
     private bool attackWasButton = false;
@@ -70,7 +69,6 @@ public class InputManager : Singleton<InputManager> {
         this.interactDown = false;
         this.interactUp = false;
         this.crouchDown = false;
-        this.crouchUp = false;
     }
 
     private void EnableInputSystemEvents() {
@@ -87,6 +85,9 @@ public class InputManager : Singleton<InputManager> {
 
         InputAction attack = actionMap.FindAction("Attack");
         attack.started += OnAttack;
+
+        InputAction crouch = actionMap.FindAction("Crouch");
+        crouch.started += OnCrouch;
 
         InputAction interact = actionMap.FindAction("Interact");
         interact.started += OnInteract;
@@ -168,20 +169,9 @@ public class InputManager : Singleton<InputManager> {
     }
 
     private void OnCrouch(InputAction.CallbackContext context) {
-        this.Crouch(true);
+        this.crouchDown = true; 
     }
 
-    private void OnCrouchStop(InputAction.CallbackContext context) {
-        this.Crouch(false);
-    }
-
-    public void Crouch(bool down) {
-        if (down) {
-            this.crouchDown = true;
-        } else {
-            this.crouchUp = true;
-        }
-    }
     public float GetHorizontalInput() {
         return this.horizontalInput;
     }
@@ -219,9 +209,5 @@ public class InputManager : Singleton<InputManager> {
 
     public bool GetCrouchDown() {
         return this.crouchDown;
-    }
-
-    public bool GetCrouchUp() {
-        return this.crouchUp;
     }
 }

@@ -8,6 +8,8 @@ public class PlayerController : Shooter {
     private float inputX;
     private bool onGround;
 
+
+
     private float pressJumpTime = 0f;
     private bool letGoInGrace = false;
 
@@ -21,7 +23,6 @@ public class PlayerController : Shooter {
     public float jumpPower = 18f;
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
-
     public new void Start() {
         base.Start();
 
@@ -85,8 +86,7 @@ public class PlayerController : Shooter {
         }
 
         //Cover
-        if (InputManager.Instance.GetCrouchDown()) 
-        {
+        if (InputManager.Instance.GetCrouchDown()) {
             this.SearchForCover();
         }
     }
@@ -129,10 +129,7 @@ public class PlayerController : Shooter {
         }
     }
 
-    private void SearchForCover() 
-    {
-        
-    }
+ 
 
     public void Heal(int amount) {
         this.currentHealth = Mathf.Clamp(this.currentHealth + amount, 0, this.maxHealth);

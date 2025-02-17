@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class Cover : MonoBehaviour
 {
-    private Transform coverPoint;
+    public Transform[] coverPoints;
 
-    void Start() 
+    public Vector2 GetNearestCoverPosition(Vector2 position) 
     {
-        coverPoint = transform.Find("Cover Point").transform;
-    }
+        float distance = Mathf.Infinity;
+        Vector2 coverPoint = Vector2.zero;
 
-    public Vector2 GetCoverPosition() 
-    {
-        return coverPoint.position;
+        foreach (Transform point in coverPoints) {
+            float tempDistance = Vector2.Distance(position, point.position);
+            if (tempDistance < distance) {
+                distance = tempDistance;
+                coverPoint = point.position;
+            }
+        }
+        return coverPoint;
     }
 }
