@@ -11,11 +11,18 @@ public class EnemyController : Shooter {
     public LayerMask playerLayer;
     public MMF_Player shoot;
     public int healthBoostOnDeath;
-    public float outOfCoverTime; //Time spent out of cover after shooting at the player
-    public int shotNum; //Number of attacks per attack cycle
-    public float recoverTime; //The time between each enemy attack cycle
-    public float behaviorRandomFactor; //A value which determines how variable the enemy's attack timings will be
-    public int maxShotsOutOfCover; //How many shots the enemy can fire before needing to find cover and reload
+
+    [Header("Attack Behavior")]
+    [Tooltip("Time spent out of cover after shooting at the player")]
+    public float outOfCoverTime;
+    [Tooltip("Number of attacks per attack cycle")]
+    public int shotNum;
+    [Tooltip("Time between each enemy attack cycle")]
+    public float recoverTime;
+    [Tooltip("A value which determines how variable the enemy's attack timings will be")]
+    public float behaviorRandomFactor;
+    [Tooltip("The maximum number of shots the enemy can fire before needing to find cover and reload")]
+    public int maxShotsOutOfCover;
 
     private int shotsFiredOutOfCover;
     private bool attackBehaviorRunning = false;
@@ -36,17 +43,17 @@ public class EnemyController : Shooter {
     }
 
     private void Update() {
-        if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && attackBehaviorRunning == false && shotsFiredOutOfCover < maxShotsOutOfCover) {
+        if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
             this.Shoot(this.destinationSetter.target.position);
             this.shoot.PlayFeedbacks();
-            shotsFiredOutOfCover++;
-        }else if (shotsFiredOutOfCover == maxShotsOutOfCover && reloadingOutOfCover == false) {
+            this.shotsFiredOutOfCover++;
+        } else if (this.shotsFiredOutOfCover == this.maxShotsOutOfCover && this.reloadingOutOfCover == false) {
             StartCoroutine(ReloadOutOfCover());
         }
 
         if (this.IsInCover() == true) {
-            shotsFiredOutOfCover = 0;
-            if (attackBehaviorRunning == false) {
+            this.shotsFiredOutOfCover = 0;
+            if (this.attackBehaviorRunning == false) {
                 StartCoroutine(AttackBehavior());
             }
         }
@@ -56,7 +63,7 @@ public class EnemyController : Shooter {
         } else if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
             if (this.IsInCover()) {
                 this.aiPath.canMove = false;
-            } else if (attackBehaviorRunning == false) {
+            } else if (this.attackBehaviorRunning == false) {
                 Cover potentialCover = this.NearestCover();
 
                 if (potentialCover == null) {
@@ -71,7 +78,7 @@ public class EnemyController : Shooter {
             }
         } else {
             StopCoroutine(AttackBehavior());
-            attackBehaviorRunning = false;
+            this.attackBehaviorRunning = false;
             this.ExitCover();
             this.aiPath.canMove = true;
         }
@@ -92,41 +99,42 @@ public class EnemyController : Shooter {
     }
 
     private IEnumerator AttackBehavior() {
-        attackBehaviorRunning = true;
-        float minRandom = 1-behaviorRandomFactor;
-        float maxRandom = 1+behaviorRandomFactor;
+        this.attackBehaviorRunning = true;
+        float minRandom = 1 - this.behaviorRandomFactor;
+        float maxRandom = 1 + this.behaviorRandomFactor;
         
-        this.ExitCover();
         //Exiting cover to begin attacking
+        this.ExitCover();
         this.aiPath.canMove = false;
-        for (int i = 0; i < shotNum; i++) {
+
+        for (int i = 0; i < this.shotNum; i++) {
             if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false) {
-            this.Shoot(this.destinationSetter.target.position);
-            this.shoot.PlayFeedbacks();
-            yield return new WaitForSeconds((this.weapon.useDelay[GameManager.GetDifficultyLevelInt()] + 0.05f)*Random.Range(minRandom, maxRandom));
-            //Fires the shot; then reloads
+                //Fires the shot; then reloads
+                this.Shoot(this.destinationSetter.target.position);
+                this.shoot.PlayFeedbacks();
+                yield return new WaitForSeconds((this.weapon.useDelay[GameManager.GetDifficultyLevelInt()] + 0.05f) * Random.Range(minRandom, maxRandom));
             }
         }
 
         //Sits outside of cover for the player to shoot them
-        yield return new WaitForSeconds(outOfCoverTime*Random.Range(minRandom, maxRandom));
+        yield return new WaitForSeconds(this.outOfCoverTime*Random.Range(minRandom, maxRandom));
 
         Cover potentialCover = this.NearestCover();
-
         if (Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, this.destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
-            this.EnterCover(potentialCover);
             //Get back into cover
+            this.EnterCover(potentialCover);
         }
-        yield return new WaitForSeconds(recoverTime*Random.Range(minRandom, maxRandom));
+
         //Recover and then we can start over :)
-        attackBehaviorRunning = false;
+        yield return new WaitForSeconds(this.recoverTime*Random.Range(minRandom, maxRandom));
+        this.attackBehaviorRunning = false;
     }
 
     private IEnumerator ReloadOutOfCover() {
-        reloadingOutOfCover = true;
-        yield return new WaitForSeconds(recoverTime * 1.5f);
-        shotsFiredOutOfCover = 0;
-        reloadingOutOfCover = false;
+        this.reloadingOutOfCover = true;
+        yield return new WaitForSeconds(this.recoverTime * 1.5f);
+        this.shotsFiredOutOfCover = 0;
+        this.reloadingOutOfCover = false;
     }
 
     private new void OnDrawGizmos() {
@@ -139,7 +147,7 @@ public class EnemyController : Shooter {
         Gizmos.DrawWireSphere(base.transform.position, this.weapon.useRange);
 
         Gizmos.color = Color.grey;
-        //Remove this code when fixed
+        //TODO: Remove this code when fixed
         if (this.destinationSetter != null) {
             Vector3 direction = this.destinationSetter.target.position - base.transform.position;
             Gizmos.DrawRay(base.transform.position, direction);

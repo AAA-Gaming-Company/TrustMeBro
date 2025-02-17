@@ -34,8 +34,9 @@ public abstract class Entity : MonoBehaviour {
     }
 
     public void Die() {
-        this.OnDie();
         this.ExitCover();
+
+        this.OnDie();
         Destroy(this.gameObject);
     }
 
