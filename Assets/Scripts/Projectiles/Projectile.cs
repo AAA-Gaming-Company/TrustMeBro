@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour {
     private bool ready = false;
     private static int wallLayer = -1;
+    private static int coverLayer = -1;
 
     private Vector2 finalPosition;
     private float maxSpeed;
@@ -11,11 +12,17 @@ public abstract class Projectile : MonoBehaviour {
 
     public ContactFilter2D filter2D;
 
-    private static void FindWallLayer() {
+    private static void FindLayers() {
         if (Projectile.wallLayer == -1) {
             Projectile.wallLayer = LayerMask.NameToLayer("Ground");
             if (Projectile.wallLayer == -1) {
                 throw new UnityException("No layer found for the walls!");
+            }
+        }
+        if (Projectile.coverLayer == -1) {
+            Projectile.coverLayer = LayerMask.NameToLayer("Cover");
+            if (Projectile.coverLayer == -1) {
+                throw new UnityException("No layer found for the cover!");
             }
         }
     }
@@ -37,7 +44,7 @@ public abstract class Projectile : MonoBehaviour {
 
         //Call last
         this.ready = true;
-        Projectile.FindWallLayer();
+        Projectile.FindLayers();
     }
 
     private void FixedUpdate() {
@@ -55,14 +62,17 @@ public abstract class Projectile : MonoBehaviour {
                 if (c.gameObject.layer == Projectile.wallLayer) {
                     this.HitFunction(null);
                     Destroy(base.gameObject);
+                } else if (c.gameObject.layer == Projectile.coverLayer) {
+                    Debug.Log("Hit cover " + c.gameObject.name);
+
+                    Cover cover = c.gameObject.GetComponent<Cover>();
+                    if (cover != null && cover.IsCovering()) {
+                        this.HitFunction(null);
+                        Destroy(base.gameObject);
+                    }
                 } else if (c.gameObject.layer != this.ignoreLayer) {
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
-                        // Ignore the entity if it is covered
-                        if (entity.IsInCover()) {
-                            continue;
-                        }
-
                         this.HitFunction(c.gameObject);
                         entity.TakeDamage(this.damageDealt);
                         Destroy(base.gameObject);

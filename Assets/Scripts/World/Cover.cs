@@ -45,6 +45,16 @@ public class Cover : MonoBehaviour {
     public void ExitCover(int index) {
         coverPointsOccupied[index] = false;
     }
+
+    public bool IsCovering() {
+        for (int i = 0; i < coverPoints.Length; i++) {
+            if (coverPointsOccupied[i]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
 
 public class CoverEntry {
