@@ -5,11 +5,12 @@ public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHealth;
     public ProgressBar healthBar;
-    
+
+    [Header("Cover System")]
     public LayerMask coverLayers;
     public float coverRadius = 3f;
 
-    private bool inCover = false;
+    protected bool inCover = false;
     protected int currentHealth;
 
     public void Start() {
@@ -47,17 +48,20 @@ public abstract class Entity : MonoBehaviour {
     }
 
     public void SearchForCover() {
-        Debug.Log("Searching for cover");
-        RaycastHit2D coverHit = Physics2D.CircleCast(this.transform.position, coverRadius, Vector2.zero, 0, coverLayers);
-        if (coverHit.collider == null) {
-            Debug.Log("No cover found :()");
+        Debug.Log("Searching for cover" + this.coverLayers.value);
+
+        Collider2D coverHit = Physics2D.OverlapCircle(this.transform.position, coverRadius, this.coverLayers.value);
+        if (coverHit == null) {
+            Debug.Log("No cover found");
             return;
         }
 
-        Cover cover = coverHit.collider.gameObject.GetComponent<Cover>();
+        Cover cover = coverHit.gameObject.GetComponent<Cover>();
         Debug.Log(cover.name);
+        cover.EnterNearestCoverPoint(this.gameObject);
+    }
 
-        transform.position = cover.GetNearestCoverPosition(transform.position);
-        
+    public void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(base.transform.position, this.coverRadius);
     }
 }

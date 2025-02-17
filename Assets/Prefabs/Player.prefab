@@ -169,8 +169,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc96660a418b4e3289a12ce0e351e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   healthBar: {fileID: 9221075724248260955}
+  coverLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  coverRadius: 3
   weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   firePoint: {fileID: 967558948872664417}
   playerSpeed: 4
@@ -291,8 +295,8 @@ Transform:
   m_GameObject: {fileID: 6678231207195631432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.22, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.16, z: -0.5}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6669228236844525580}

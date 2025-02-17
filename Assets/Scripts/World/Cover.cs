@@ -1,21 +1,41 @@
 using UnityEngine;
 
-public class Cover : MonoBehaviour
-{
+public class Cover : MonoBehaviour {
     public Transform[] coverPoints;
+    private bool[] coverPointsOccupied;
 
-    public Vector2 GetNearestCoverPosition(Vector2 position) 
-    {
-        float distance = Mathf.Infinity;
-        Vector2 coverPoint = Vector2.zero;
+    private void Start() {
+        // Initialize the cover points as unoccupied
+        coverPointsOccupied = new bool[coverPoints.Length];
+        for (int i = 0; i < coverPoints.Length; i++) {
+            coverPointsOccupied[i] = false;
+        }
+    }
 
-        foreach (Transform point in coverPoints) {
-            float tempDistance = Vector2.Distance(position, point.position);
-            if (tempDistance < distance) {
-                distance = tempDistance;
-                coverPoint = point.position;
+    public void EnterNearestCoverPoint(GameObject entity) {
+        Vector2 position = entity.transform.position;
+
+        float distance = float.PositiveInfinity;
+        int index = -1;
+
+        for (int i = 0; i < coverPoints.Length; i++) {
+            float currentDistance = Vector2.Distance(position, coverPoints[i].position);
+            if (currentDistance < distance) {
+                distance = currentDistance;
+                index = i;
             }
         }
-        return coverPoint;
+
+        // No cover points found
+        if (index == -1) {
+            return;
+        }
+        // Cover point is already occupied
+        if (coverPointsOccupied[index]) {
+            return;
+        }
+
+        coverPointsOccupied[index] = true;
+        entity.transform.position = coverPoints[index].position;
     }
 }

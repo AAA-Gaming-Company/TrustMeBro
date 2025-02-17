@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BrackeysGameJam-2025.1.sln"
+    "dotnet.defaultSolution": "BrackeysGameJam-2025.sln"
 }

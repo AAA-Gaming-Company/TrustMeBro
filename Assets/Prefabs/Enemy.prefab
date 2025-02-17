@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 6339043713125780836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.321, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0.5}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,6 +511,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 466939689402346315}
+  coverLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  coverRadius: 3
   weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   firePoint: {fileID: 1601989955904818123}
   moveRange: 5

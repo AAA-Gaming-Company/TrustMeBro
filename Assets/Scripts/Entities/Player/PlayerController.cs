@@ -8,8 +8,6 @@ public class PlayerController : Shooter {
     private float inputX;
     private bool onGround;
 
-
-
     private float pressJumpTime = 0f;
     private bool letGoInGrace = false;
 
@@ -23,6 +21,7 @@ public class PlayerController : Shooter {
     public float jumpPower = 18f;
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
+
     public new void Start() {
         base.Start();
 
@@ -75,9 +74,16 @@ public class PlayerController : Shooter {
         //Flip the player if they are going in a different direction to the old one
         if (!this.flipPlayer && this.inputX < 0f || this.flipPlayer && this.inputX > 0f) {
             this.flipPlayer = !this.flipPlayer;
+
+            //Flip the player
             Vector3 localScale = base.transform.localScale;
             localScale.x *= -1f;
             this.transform.localScale = localScale;
+
+            //Flip the health bar since it's a child of the player
+            Vector3 healthBarLocalScale = this.healthBar.transform.localScale;
+            healthBarLocalScale.x *= -1f;
+            this.healthBar.transform.localScale = healthBarLocalScale;
         }
 
         //Attack
@@ -128,8 +134,6 @@ public class PlayerController : Shooter {
             //TODO: Add feedback here
         }
     }
-
- 
 
     public void Heal(int amount) {
         this.currentHealth = Mathf.Clamp(this.currentHealth + amount, 0, this.maxHealth);

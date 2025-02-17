@@ -42,11 +42,20 @@ public class EnemyController : Shooter {
     //TODO: Maybe decrease the amount of times this is actually called, it's expensive.
     private bool CanHitPlayer() {
         Vector3 direction = this.destinationSetter.target.position - base.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(base.transform.position, direction, Vector2.Distance(base.transform.position, this.destinationSetter.target.position));
-        return hit.collider.gameObject.CompareTag("Player");
+        RaycastHit2D[] hits = Physics2D.RaycastAll(base.transform.position, direction, Vector2.Distance(base.transform.position, this.destinationSetter.target.position));
+
+        foreach (RaycastHit2D hit in hits) {
+            if (hit.collider.gameObject.CompareTag("Player")) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    private void OnDrawGizmos() {
+    private new void OnDrawGizmos() {
+        base.OnDrawGizmos();
+
         Gizmos.DrawWireSphere(base.transform.position, this.moveRange);
 
         //Remove this code when fixed
