@@ -27,6 +27,7 @@ public class EnemyController : Shooter {
     }
 
     private void Update() {
+        Debug.Log("is ready to shoot" + this.CanHitPlayer());
         if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
             this.Shoot(this.destinationSetter.target.position);
             this.shoot.PlayFeedbacks();
@@ -43,6 +44,7 @@ public class EnemyController : Shooter {
     private bool CanHitPlayer() {
         Vector3 direction = this.destinationSetter.target.position - base.transform.position;
         RaycastHit2D hit = Physics2D.Raycast(base.transform.position, direction, Vector2.Distance(base.transform.position, this.destinationSetter.target.position));
+        Debug.Log("hit" + hit.collider.gameObject.tag);
         return hit.collider.gameObject.CompareTag("Player");
     }
 

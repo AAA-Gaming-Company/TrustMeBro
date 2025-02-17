@@ -83,6 +83,12 @@ public class PlayerController : Shooter {
         if (InputManager.Instance.GetAttackDown(false)) {
             this.Hit();
         }
+
+        //Cover
+        if (InputManager.Instance.GetCrouchDown()) 
+        {
+            this.SearchForCover();
+        }
     }
 
     private void FixedUpdate() {
@@ -121,6 +127,11 @@ public class PlayerController : Shooter {
         if (this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition))) {
             //TODO: Add feedback here
         }
+    }
+
+    private void SearchForCover() 
+    {
+        
     }
 
     public void Heal(int amount) {
