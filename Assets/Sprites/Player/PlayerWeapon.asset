@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerWeapon
   m_EditorClassIdentifier: 
   useDelay:
-  - 1
-  - 1
-  - 1
+  - 2
+  - 2
+  - 2
   useRange: 15
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
