@@ -47,21 +47,6 @@ public abstract class Entity : MonoBehaviour {
         return this.currentCoverEntry != null;
     }
 
-    public void SearchForCover() {
-        // If the entity is already in cover, don't search for another one
-        if (this.IsInCover()) {
-            return;
-        }
-
-        Collider2D coverHit = Physics2D.OverlapCircle(this.transform.position, coverRadius, this.coverLayers.value);
-        if (coverHit == null) {
-            return;
-        }
-
-        Cover cover = coverHit.gameObject.GetComponent<Cover>();
-        this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
-    }
-
     public Cover NearestCover() {
         if (this.IsInCover()) {
             return null;
@@ -72,9 +57,16 @@ public abstract class Entity : MonoBehaviour {
             return null;
         }
 
-        Cover cover = coverHit.gameObject.GetComponent<Cover>();
-        
-        return cover;
+        return coverHit.gameObject.GetComponent<Cover>();;
+    }
+
+    public void EnterCover(Cover cover) {
+        if (this.IsInCover()) {
+            Debug.LogError("Entity is already in cover! This shouldn't happen.");
+            return;
+        }
+
+        this.currentCoverEntry = cover.EnterNearestCoverPoint(this.gameObject);
     }
 
     public void ExitCover() {

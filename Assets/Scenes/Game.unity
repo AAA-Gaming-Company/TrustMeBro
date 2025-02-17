@@ -295,10 +295,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 300552153}
-  - {fileID: 1217115837}
   - {fileID: 583193356}
   - {fileID: 657442264}
+  - {fileID: 300552153}
+  - {fileID: 1217115837}
   m_Father: {fileID: 26475352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &165608289
@@ -1958,7 +1958,7 @@ GameObject:
   - component: {fileID: 583193358}
   - component: {fileID: 583193357}
   m_Layer: 0
-  m_Name: BackDecorations
+  m_Name: BackDecorationsFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2877,7 +2877,7 @@ GameObject:
   - component: {fileID: 657442266}
   - component: {fileID: 657442265}
   m_Layer: 0
-  m_Name: BackDecorationsFar
+  m_Name: BackDecorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -34,27 +34,24 @@ public class EnemyController : Shooter {
 
         if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
             this.aiPath.canMove = false;
-        } else {
-            this.aiPath.canMove = true;
-        }
+        } else if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
+            if (this.IsInCover()) {
+                this.aiPath.canMove = false;
+            } else {
+                Cover potentialCover = this.NearestCover();
 
-        if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
-            Cover potentialCover = this.NearestCover();
-
-            if (potentialCover != null) {
-                if (potentialCover.NearestCoverPointPos(base.transform.position, destinationSetter.target.gameObject).x != Mathf.Infinity && Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position), this.destinationSetter.target.position) < this.weapon.useRange) {
-                    SearchForCover();
+                if (potentialCover == null) {
+                    this.aiPath.canMove = true;
+                } else {
+                    if (Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
+                        this.EnterCover(potentialCover);
+                    }
                 }
             }
-        }
-
-        if (this.IsInCover() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
-            this.aiPath.canMove = false;
-        }else if (this.IsInCover()) {
+        } else {
             this.ExitCover();
             this.aiPath.canMove = true;
         }
-
     }
 
     //TODO: Maybe decrease the amount of times this is actually called, it's expensive.
