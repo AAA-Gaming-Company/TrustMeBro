@@ -4,12 +4,13 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHealth;
+    public ProgressBar healthBar;
 
     protected int currentHealth;
-    private bool dead = false;
 
     public void Start() {
         this.currentHealth = this.maxHealth;
+        this.UpdateHealthBar();
     }
 
     protected abstract void OnDie();
@@ -22,12 +23,18 @@ public abstract class Entity : MonoBehaviour {
         if (this.currentHealth <= 0) {
             this.Die();
         }
+
+        this.UpdateHealthBar();
     }
 
     public void Die() {
         this.OnDie();
-
-        this.dead = true;
         Destroy(this.gameObject);
+    }
+
+    public void UpdateHealthBar() {
+        this.healthBar.min = 0;
+        this.healthBar.max = this.maxHealth;
+        this.healthBar.UpdateValue(this.currentHealth);
     }
 }

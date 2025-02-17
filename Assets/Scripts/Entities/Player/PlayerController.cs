@@ -125,13 +125,12 @@ public class PlayerController : Shooter {
 
     public void Heal(int amount) {
         this.currentHealth = Mathf.Clamp(this.currentHealth + amount, 0, this.maxHealth);
+        this.UpdateHealthBar();
     }
 
     protected override void OnDie() {
-        throw new System.NotImplementedException();
     }
 
     protected override void OnDamage(int amount) {
-        throw new System.NotImplementedException();
     }
 }
