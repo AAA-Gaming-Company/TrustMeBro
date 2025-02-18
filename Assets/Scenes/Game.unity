@@ -8541,6 +8541,10 @@ PrefabInstance:
       value: 0.42352942
       objectReference: {fileID: 0}
     - target: {fileID: 3013172132536418890, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: f24e345ae520641bdb998f819b5b5060, type: 2}
+    - target: {fileID: 3013172132536418890, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
       propertyPath: coverRadius
       value: 1
       objectReference: {fileID: 0}
@@ -9185,6 +9189,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5199016153953587294, guid: 2e45a0fc1bea112468ad8fc0881ed953, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
     - target: {fileID: 5199016153953587294, guid: 2e45a0fc1bea112468ad8fc0881ed953, type: 3}
       propertyPath: damageFeedback
       value: 

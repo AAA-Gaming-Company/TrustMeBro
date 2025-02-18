@@ -17,8 +17,8 @@ MonoBehaviour:
   useRange: 10
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: aac8d88b47a4e4944b94dad3933a4a3c, type: 3}
-  amount: 03000000
+  amount: 0a000000
   isProjectile: 1
   projectileSpeed: 0.8
-  damage: 0a000000
-  ready: 0
+  damage: 02000000
+  ready: 1
