@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 336742023587635440}
   - component: {fileID: 758104482715847105}
   m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Name: ShotgunProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.998, y: 0.402, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1273490786442666928}
@@ -258,14 +258,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filter2D:
     useTriggers: 1
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 960
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

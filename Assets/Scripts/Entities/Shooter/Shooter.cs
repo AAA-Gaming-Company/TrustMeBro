@@ -31,12 +31,20 @@ public abstract class Shooter : Entity {
                 }
             }
 
+            float deviation = 0.3f * Mathf.Log(amount);
+
             for (int i = 0; i < amount; i++) {
+                Vector2 computedTargetPosition = targetPos;
+                // Add a very slight deviation to the bullet's trajectory
+                if (i != 0) {
+                    computedTargetPosition = new Vector2(targetPos.x + Random.Range(-deviation, deviation), targetPos.y + Random.Range(-deviation, deviation));
+                }
+
                 GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
 
                 if (this.weapon.isProjectile) {
                     Projectile projectile = newObject.GetComponent<Projectile>();
-                    projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, damage);
+                    projectile.Init(this.gameObject.layer, computedTargetPosition, this.weapon.useRange, this.weapon.projectileSpeed, damage);
                 }
             }
         }
