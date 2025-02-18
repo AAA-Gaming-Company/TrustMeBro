@@ -6,6 +6,8 @@ public class VoiceLine : ScriptableObject {
     public AudioClip clip;
 
     [Header("Text")]
+    [Multiline]
     public string transcription;
+    [Min(0)]
     public float displayTime;
 }

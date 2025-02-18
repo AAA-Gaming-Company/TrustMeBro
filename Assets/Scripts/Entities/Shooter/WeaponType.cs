@@ -15,6 +15,6 @@ public class WeaponType : ScriptableObject {
     public float projectileSpeed = 0.5f;
     public int[] damage = { 10 };
 
-    [Header("Internal")]
+    [HideInInspector]
     public bool ready;
 }

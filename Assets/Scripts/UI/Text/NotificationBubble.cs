@@ -5,7 +5,7 @@ using TMPro;
 /// <summary>
 /// This class is attached to a single Unity prefab that will display a notification bubble.
 /// None of the text needs to be set up, as it will be written by this script, only the
-// layout of the bubble needs to be set up.
+/// layout of the bubble needs to be set up.
 /// To create the notification bubble, see the NotificationBuilder class.
 /// </summary>
 public class NotificationBubble : MonoBehaviour {

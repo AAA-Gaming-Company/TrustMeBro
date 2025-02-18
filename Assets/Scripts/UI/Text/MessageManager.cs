@@ -71,7 +71,12 @@ public class DialogueBuilder {
 
         this.entries.Add(entry);
         return this;
-    } 
+    }
+
+    public DialogueBuilder AddEntry(params DialogueEntry[] entries) {
+        this.entries.AddRange(entries);
+        return this;
+    }
 
     public void BuildAndDisplay() {
         if (this.entries.Count == 0) {
@@ -90,6 +95,7 @@ public class DialogueBuilder {
 /// <summary>
 /// Internal class to store data required to display a dialogue window.
 /// </summary>
+[System.Serializable]
 public class DialogueEntry {
     public string[] messages;
     public string speakerName;

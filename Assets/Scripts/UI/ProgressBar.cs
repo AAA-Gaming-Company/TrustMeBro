@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class ProgressBar : MonoBehaviour {
+    [Min(0)]
     public float min;
+    [Min(0)]
     public float max;
     public Transform filler;
 
