@@ -42,6 +42,11 @@ public abstract class Projectile : MonoBehaviour {
         this.maxSpeed = speed;
         this.damageDealt = damage;
 
+        //Compute a rotation for the projectile based on the direction.
+        //The sprite is drawn horizontally, so we rotate from that.
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        base.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
         //Call last
         this.ready = true;
         Projectile.FindLayers();
