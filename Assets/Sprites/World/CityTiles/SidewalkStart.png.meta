@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1a902e3c697f4788a036ed4d0589c32
+guid: 840d6bfad5cf64f46acd718a1c6bba33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6197284768280575823
-    second: Tile_Grass1_0
+      213: -1594464394175535192
+    second: SidewalkStart_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,37 +139,37 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_Grass1_0
+      name: SidewalkStart_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 20
-        height: 24
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 4}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape:
-      - - {x: -10, y: -12}
-        - {x: 10, y: -12}
-        - {x: 10, y: 8}
-        - {x: -10, y: 8}
-      tessellationDetail: 0
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: 1b082be7652def9a0800000000000000
-      internalID: -6197284768280575823
+      spriteID: 8a7a822d4135fd9e0800000000000000
+      internalID: -1594464394175535192
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 10, y: 6.5}
+      - {x: -10, y: 6.5}
+      - {x: -10, y: -12.5}
+      - {x: 10, y: -12.5}
     bones: []
-    spriteID: d36ef3ca0017c4a7781413e4b6df215f
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -178,7 +178,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tile_Grass1_0: -6197284768280575823
+      SidewalkStart_0: -1594464394175535192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

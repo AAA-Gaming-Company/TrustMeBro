@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fe9dc0559c2e95642bff3def44e0a0f2
+guid: 27fa8ed85375a4588bfa7dfaa93c06e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3756372238541431646
-    second: LampPost_0
+      213: -2468098460396217595
+    second: Tile_Bench_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,6 +123,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,23 +152,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LampPost_0
+      name: Tile_Bench_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 14
-        height: 60
+        width: 23
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ac5995e95faedbc0800000000000000
-      internalID: -3756372238541431646
+      spriteID: 50b156dd68d8fbdd0800000000000000
+      internalID: -2468098460396217595
       vertices: []
       indices: 
       edges: []
@@ -164,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 817591f1d60f84a6da9bc3025b0eeab8
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LampPost_0: -3756372238541431646
+      Tile_Bench_0: -2468098460396217595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,19 +16,12 @@ public abstract class Shooter : Entity {
 
     public void Shoot(Vector2 targetPos) {
         if (this.weapon.isSpawner) {
-            int amount = this.weapon.amount[0];
-            if (weapon.amount.Length > 1) {
-                amount = this.weapon.amount[GameManager.GetDifficultyLevelInt()];
-            }
+            int amount = this.weapon.GetAmount(GameManager.difficultyLevel);
 
 
             int damage = 0;
             if (this.weapon.isProjectile) {
-                if (this.weapon.damage.Length > 1) {
-                    damage = this.weapon.damage[GameManager.GetDifficultyLevelInt()];
-                } else {
-                    damage = this.weapon.damage[0];
-                }
+                damage = this.weapon.GetDamage(GameManager.difficultyLevel);
             }
 
             float deviation = 0.3f * Mathf.Log(amount);
@@ -62,13 +55,7 @@ public abstract class Shooter : Entity {
 
     private IEnumerator Reload(WeaponType weapon) {
         weapon.ready = false;
-
-        float delay = weapon.useDelay[0];
-        if (weapon.useDelay.Length > 1) {
-            delay = weapon.useDelay[GameManager.GetDifficultyLevelInt()];
-        }
-
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(weapon.GetUseDelay(GameManager.difficultyLevel));
         weapon.ready = true;
     }
 }

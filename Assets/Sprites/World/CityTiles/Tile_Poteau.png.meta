@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 27fa8ed85375a4588bfa7dfaa93c06e6
+guid: cc119965ac97ab5438a7296327d97a3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2468098460396217595
-    second: Tile_Bench_0
+      213: 7470189962025025901
+    second: Tile_Poteau_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,23 +139,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_Bench_0
+      name: Tile_Poteau_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 23
-        height: 15
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50b156dd68d8fbdd0800000000000000
-      internalID: -2468098460396217595
+      spriteID: d61c03311327ba760800000000000000
+      internalID: 7470189962025025901
       vertices: []
       indices: 
       edges: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 817591f1d60f84a6da9bc3025b0eeab8
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tile_Bench_0: -2468098460396217595
+      Tile_Poteau_0: 7470189962025025901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
