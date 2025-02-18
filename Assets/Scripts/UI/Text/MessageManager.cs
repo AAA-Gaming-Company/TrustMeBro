@@ -6,6 +6,7 @@ using UnityEngine;
 /// prefabs and the canvas to display the messages. It is a singleton, so it can be accessed
 /// from anywhere in the code without a variable reference.
 /// </summary>
+[DisallowMultipleComponent]
 public class MessageManager : Singleton<MessageManager> {
     [Header("UI Elements")]
     public Canvas canvas;

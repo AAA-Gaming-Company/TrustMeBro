@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -5,6 +6,7 @@ public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHealth;
     public ProgressBar healthBar;
+    public GameObject noFlip;
 
     [Header("Cover System")]
     public GameObject coverIndicator;
@@ -85,6 +87,18 @@ public abstract class Entity : MonoBehaviour {
             if (this.coverIndicator != null) {
                 coverIndicator.SetActive(false);
             }
+        }
+    }
+
+    public void FlipEntity(bool flipped) {
+        Vector3 entityLocalScale = this.transform.localScale;
+        entityLocalScale.x = Mathf.Abs(entityLocalScale.x) * (flipped ? -1 : 1);
+        this.transform.localScale = entityLocalScale;
+
+        if (this.noFlip != null) {
+            Vector3 noFlipLocalScale = this.noFlip.transform.localScale;
+            noFlipLocalScale.x = Mathf.Abs(noFlipLocalScale.x) * (flipped ? -1 : 1);
+            this.noFlip.transform.localScale = noFlipLocalScale;
         }
     }
 

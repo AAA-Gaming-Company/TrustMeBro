@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[DisallowMultipleComponent]
 public class MenuManager : Singleton<MenuManager> {
     [Header("UI Elements")]
     public Button playButton;

@@ -5,6 +5,7 @@ using System.Collections;
 
 [RequireComponent(typeof(AIDestinationSetter))]
 [RequireComponent(typeof(AIPath))]
+[RequireComponent(typeof(Animator))]
 public class EnemyController : Shooter {
     [Header("Enemy")]
     public float moveRange;
@@ -46,7 +47,6 @@ public class EnemyController : Shooter {
     }
 
     private void Update() {
-
         if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
             playerInMoveRange = true;
             this.animator.SetBool("isWalking", false);
@@ -96,9 +96,11 @@ public class EnemyController : Shooter {
 
         if (this.aiPath.canMove) {
             this.animator.SetBool("isWalking", true);
-        }else {
+        } else {
             this.animator.SetBool("isWalking", false);
         }
+
+        base.FlipEntity(this.destinationSetter.target.position.x > base.transform.position.x);
     }
 
     //TODO: Maybe decrease the amount of times this is actually called, it's expensive.
@@ -125,7 +127,7 @@ public class EnemyController : Shooter {
         this.aiPath.canMove = false;
 
         for (int i = 0; i < this.shotNum; i++) {
-            if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false) {
+            if (this.isReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
                 //Fires the shot; then reloads
                 this.Shoot(this.destinationSetter.target.position);
                 this.shoot.PlayFeedbacks();
@@ -134,7 +136,7 @@ public class EnemyController : Shooter {
         }
 
         //Sits outside of cover for the player to shoot them
-        yield return new WaitForSeconds(this.outOfCoverTime*Random.Range(minRandom, maxRandom));
+        yield return new WaitForSeconds(this.outOfCoverTime * Random.Range(minRandom, maxRandom));
 
         Cover potentialCover = this.NearestCover();
         if (Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, this.destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
@@ -143,7 +145,7 @@ public class EnemyController : Shooter {
         }
 
         //Recover and then we can start over :)
-        yield return new WaitForSeconds(this.recoverTime*Random.Range(minRandom, maxRandom));
+        yield return new WaitForSeconds(this.recoverTime * Random.Range(minRandom, maxRandom));
         this.attackBehaviorRunning = false;
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 /// This class will keep track of the player's stats, such as enemies killed, shots fired.
 /// There is no need to attach this script to any GameObject, it will set itself up.
 /// </summary>
+[DisallowMultipleComponent]
 public class StatsManager : Singleton<StatsManager> {
     private int enemiesKilled = 0;
     private int shotsFired = 0;

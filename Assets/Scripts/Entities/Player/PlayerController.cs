@@ -21,7 +21,6 @@ public class PlayerController : Shooter {
     public float jumpPower = 18f;
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
-    public GameObject noFlip;
 
     public new void Start() {
         base.Start();
@@ -75,16 +74,7 @@ public class PlayerController : Shooter {
         //Flip the player if they are going in a different direction to the old one
         if (!this.flipPlayer && this.inputX < 0f || this.flipPlayer && this.inputX > 0f) {
             this.flipPlayer = !this.flipPlayer;
-
-            //Flip the player
-            Vector3 localScale = base.transform.localScale;
-            localScale.x *= -1f;
-            this.transform.localScale = localScale;
-
-            //Flip the noflip since it's a child of the player
-            Vector3 noFlipLocalScale = this.noFlip.transform.localScale;
-            noFlipLocalScale.x *= -1f;
-            this.noFlip.transform.localScale = noFlipLocalScale;
+            base.FlipEntity(this.flipPlayer);
         }
 
         //Attack

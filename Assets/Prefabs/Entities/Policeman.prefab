@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4130333191303264805}
+  m_Father: {fileID: 5838333744563270803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7144364043001528330
 SpriteRenderer:
@@ -113,13 +113,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853316569300867331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.383, z: -5}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5568078561848213932}
-  m_Father: {fileID: 4130333191303264805}
+  m_Father: {fileID: 5838333744563270803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6491035994742740632
 SpriteRenderer:
@@ -576,6 +576,39 @@ Transform:
   - {fileID: 2101020722246783519}
   m_Father: {fileID: 8671045011305782307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5815723303335917114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5838333744563270803}
+  m_Layer: 8
+  m_Name: NoFlip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5838333744563270803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815723303335917114}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2615662226656922038}
+  - {fileID: 8671045011305782307}
+  m_Father: {fileID: 4130333191303264805}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6909209121948485701
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,10 +646,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2615662226656922038}
   - {fileID: 2619571317537893610}
-  - {fileID: 8671045011305782307}
   - {fileID: 2197079758110427545}
+  - {fileID: 5838333744563270803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2523234117418500810
@@ -836,6 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 25
   healthBar: {fileID: 8575339673510072312}
+  noFlip: {fileID: 5815723303335917114}
   coverIndicator: {fileID: 1559616760560129252}
   coverLayers:
     serializedVersion: 2

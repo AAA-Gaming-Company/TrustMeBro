@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : Singleton<InputManager> {
     public bool designerMode;
