@@ -30,6 +30,8 @@ public class EnemyController : Shooter {
     private AIPath aiPath;
     private PlayerController player;
     private bool reloadingOutOfCover = false;
+    private bool playerInMoveRange = false;
+    private Animator animator;
 
     public new void Start() {
         base.Start();
@@ -40,9 +42,18 @@ public class EnemyController : Shooter {
         if (this.player == null) {
             throw new UnityException("PlayerController not found in target!");
         }
+        this.animator = GetComponent<Animator>();
     }
 
     private void Update() {
+
+        if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
+            playerInMoveRange = true;
+            this.animator.SetBool("isWalking", false);
+        }else {
+            playerInMoveRange = false;
+        }
+
         if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
             this.Shoot(this.destinationSetter.target.position);
             this.shoot.PlayFeedbacks();
@@ -58,7 +69,7 @@ public class EnemyController : Shooter {
             }
         }
 
-        if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
+        if (playerInMoveRange == true) {
             this.aiPath.canMove = false;
         } else if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
             if (this.IsInCover()) {
@@ -81,6 +92,12 @@ public class EnemyController : Shooter {
             this.attackBehaviorRunning = false;
             this.ExitCover();
             this.aiPath.canMove = true;
+        }
+
+        if (this.aiPath.canMove) {
+            this.animator.SetBool("isWalking", true);
+        }else {
+            this.animator.SetBool("isWalking", false);
         }
     }
 
