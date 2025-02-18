@@ -86,17 +86,20 @@ public class PlayerController : Shooter {
         if (InputManager.Instance.GetCrouchDown()) {
             if (this.IsInCover()) {
                 this.ExitCover();
+                this.animator.SetBool("isCrouching", false);
             } else {
                 Cover potentialCover = this.NearestCover();
                 if (potentialCover != null) {
                     this.EnterCover(potentialCover);
                     InputManager.Instance.MoveH(0f);
                     InputManager.Instance.MoveV(0f);
+                    this.animator.SetBool("isCrouching", true);
                 }
             }
         }
         if (InputManager.Instance.GetHorizontalInput() != 0 || InputManager.Instance.GetVerticalInput() != 0 || InputManager.Instance.GetJumpDown() || InputManager.Instance.GetInteractDown() || InputManager.Instance.GetAttackDown(false)) {
             this.ExitCover();
+            this.animator.SetBool("isCrouching", false);
         }
     }
 
