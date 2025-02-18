@@ -15,8 +15,6 @@ public class ProgressBar : MonoBehaviour {
     }
 
     public void UpdateValue(float value) {
-
-
         float clamped = Mathf.Clamp(value, this.min, this.max);
         this.current = clamped;
 

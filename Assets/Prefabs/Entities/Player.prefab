@@ -258,11 +258,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 9221075724248260955}
+  noFlip: {fileID: 3482452020653231916}
+  damageFeedback: {fileID: 0}
   coverIndicator: {fileID: 365117718753107648}
   coverLayers:
     serializedVersion: 2
     m_Bits: 512
-  coverRadius: 0.7
+  coverRadius: 1
   weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   firePoint: {fileID: 967558948872664417}
   playerSpeed: 4
@@ -271,7 +273,6 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
-  noFlip: {fileID: 3482452020653231916}
 --- !u!95 &137382388366205401
 Animator:
   serializedVersion: 7
@@ -282,7 +283,7 @@ Animator:
   m_GameObject: {fileID: 479712764521860489}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba484fece2bbef84cad14c37d96a4c96, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

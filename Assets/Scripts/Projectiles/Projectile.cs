@@ -19,6 +19,7 @@ public abstract class Projectile : MonoBehaviour {
                 throw new UnityException("No layer found for the walls!");
             }
         }
+
         if (Projectile.coverLayer == -1) {
             Projectile.coverLayer = LayerMask.NameToLayer("Cover");
             if (Projectile.coverLayer == -1) {
@@ -59,27 +60,31 @@ public abstract class Projectile : MonoBehaviour {
 
         //Move the projectile
         base.transform.position = Vector3.MoveTowards(base.transform.position, this.finalPosition, this.maxSpeed);
+
+        //Check for collisions
         Collider2D[] hit = new Collider2D[3];
         base.gameObject.GetComponent<BoxCollider2D>().Overlap(this.filter2D, hit);
 
         foreach (Collider2D c in hit) {
             if (c != null) {
                 if (c.gameObject.layer == Projectile.wallLayer) {
+                    //If we hit a wall, then destroy the projectile
                     this.HitFunction(null);
                     Destroy(base.gameObject);
                 } else if (c.gameObject.layer == Projectile.coverLayer) {
+                    //If we hit a cover that is in use, then destroy the projectile
                     Cover cover = c.gameObject.GetComponent<Cover>();
                     if (cover != null && cover.IsCovering()) {
                         this.HitFunction(null);
                         Destroy(base.gameObject);
                     }
                 } else if (c.gameObject.layer != this.ignoreLayer) {
+                    //If we hit an entity, then deal damage and destroy the projectile
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
                         this.HitFunction(c.gameObject);
                         entity.TakeDamage(this.damageDealt);
                         Destroy(base.gameObject);
-                        return;
                     }
                 }
             }

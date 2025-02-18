@@ -6,15 +6,17 @@ public abstract class Shooter : Entity {
     public WeaponType weapon;
     public Transform firePoint;
 
-    public new void Start() {
-        base.Start();
-
+    public void Awake() {
         WeaponType genericInstance = this.weapon;
         this.weapon = Instantiate(genericInstance);
         this.weapon.ready = true;
     }
 
     public void Shoot(Vector2 targetPos) {
+        if (!this.IsReadyToShoot()) {
+            return;
+        }
+
         // Make sure that the target position is at the limit of the weapon's range
         Vector2 direction = targetPos - (Vector2)this.firePoint.position;
         direction.Normalize();
@@ -49,7 +51,7 @@ public abstract class Shooter : Entity {
         StartCoroutine(this.Reload(this.weapon));
     }
 
-    public bool isReadyToShoot() {
+    public bool IsReadyToShoot() {
         return this.weapon.ready;
     }
 

@@ -34,27 +34,32 @@ public class EnemyController : Shooter {
     private bool playerInMoveRange = false;
     private Animator animator;
 
-    public new void Start() {
-        base.Start();
+    public new void Awake() {
+        base.Awake();
 
         this.destinationSetter = GetComponent<AIDestinationSetter>();
         this.aiPath = GetComponent<AIPath>();
+        this.animator = GetComponent<Animator>();
+    }
+
+    public new void Start() {
+        base.Start();
+
         this.player = destinationSetter.target.GetComponent<PlayerController>();
         if (this.player == null) {
             throw new UnityException("PlayerController not found in target!");
         }
-        this.animator = GetComponent<Animator>();
     }
 
     private void Update() {
         if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
-            playerInMoveRange = true;
+            this.playerInMoveRange = true;
             this.animator.SetBool("isWalking", false);
-        }else {
-            playerInMoveRange = false;
+        } else {
+            this.playerInMoveRange = false;
         }
 
-        if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
+        if (this.IsReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
             this.Shoot(this.destinationSetter.target.position);
             this.shoot.PlayFeedbacks();
             this.shotsFiredOutOfCover++;
@@ -69,7 +74,7 @@ public class EnemyController : Shooter {
             }
         }
 
-        if (playerInMoveRange == true) {
+        if (this.playerInMoveRange == true) {
             this.aiPath.canMove = false;
         } else if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.weapon.useRange) {
             if (this.IsInCover()) {
@@ -127,7 +132,7 @@ public class EnemyController : Shooter {
         this.aiPath.canMove = false;
 
         for (int i = 0; i < this.shotNum; i++) {
-            if (this.isReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
+            if (this.IsReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
                 //Fires the shot; then reloads
                 this.Shoot(this.destinationSetter.target.position);
                 this.shoot.PlayFeedbacks();

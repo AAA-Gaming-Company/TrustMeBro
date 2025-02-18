@@ -22,8 +22,8 @@ public class PlayerController : Shooter {
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
 
-    public new void Start() {
-        base.Start();
+    public new void Awake() {
+        base.Awake();
 
         this.animator = GetComponent<Animator>();
         this.collider2d = GetComponent<Collider2D>();

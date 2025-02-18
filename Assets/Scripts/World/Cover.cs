@@ -19,7 +19,10 @@ public class Cover : MonoBehaviour {
         }
 
         coverPointsOccupied[index] = true;
-        entity.transform.position = coverPoints[index].position;
+
+        Vector3 coverPosition = coverPoints[index].position;
+        coverPosition.z = entity.transform.position.z; // Make sure that the entity never changes its Z position
+        entity.transform.position = coverPosition;
 
         return new CoverEntry(this, index);
     }
