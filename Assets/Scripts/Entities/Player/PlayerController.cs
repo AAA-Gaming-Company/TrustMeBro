@@ -22,6 +22,8 @@ public class PlayerController : Shooter {
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
 
+    public VoiceCommand demo;
+
     public new void Start() {
         base.Start();
 
@@ -97,6 +99,10 @@ public class PlayerController : Shooter {
         }
         if (InputManager.Instance.GetHorizontalInput() != 0 || InputManager.Instance.GetVerticalInput() != 0 || InputManager.Instance.GetJumpDown() || InputManager.Instance.GetInteractDown() || InputManager.Instance.GetAttackDown(false)) {
             this.ExitCover();
+        }
+
+        if (InputManager.Instance.GetInteractDown()) {
+            VoiceManager.Instance.SendCommand(this.demo);
         }
     }
 

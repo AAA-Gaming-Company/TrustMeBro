@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5709d4147f964337a96dd7d60f2dc06, type: 3}
+  m_Name: AlexAmazing
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: da4ec2b1665014921b1f514f1d564f2f, type: 2}
+  - {fileID: 11400000, guid: 166aad0dee498496d884613ebd9482ee, type: 2}
+  - {fileID: 11400000, guid: bcc64bf8c656a40739c55e7d1119f4e9, type: 2}
