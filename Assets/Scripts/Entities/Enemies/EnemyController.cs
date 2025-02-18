@@ -131,7 +131,7 @@ public class EnemyController : Shooter {
                 //Fires the shot; then reloads
                 this.Shoot(this.destinationSetter.target.position);
                 this.shoot.PlayFeedbacks();
-                yield return new WaitForSeconds((this.weapon.useDelay[GameManager.GetDifficultyLevelInt()] + 0.05f) * Random.Range(minRandom, maxRandom));
+                yield return new WaitForSeconds((this.weapon.GetUseDelay() + 0.05f) * Random.Range(minRandom, maxRandom));
             }
         }
 

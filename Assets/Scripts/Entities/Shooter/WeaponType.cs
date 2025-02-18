@@ -21,24 +21,24 @@ public class WeaponType : ScriptableObject {
     [HideInInspector]
     public bool ready;
 
-    public float GetUseDelay(DifficultyLevel difficulty) {
+    public float GetUseDelay() {
         if (this.useDelay.Length == 1) {
             return this.useDelay[0];
         }
-        return this.useDelay[(int) difficulty];
+        return this.useDelay[(int) GameManager.difficultyLevel];
     }
 
-    public int GetAmount(DifficultyLevel difficulty) {
+    public int GetAmount() {
         if (this.amount.Length == 1) {
             return this.amount[0];
         }
-        return this.amount[(int) difficulty];
+        return this.amount[(int) GameManager.difficultyLevel];
     }
 
-    public int GetDamage(DifficultyLevel difficulty) {
+    public int GetDamage() {
         if (this.damage.Length == 1) {
             return this.damage[0];
         }
-        return this.damage[(int) difficulty];
+        return this.damage[(int) GameManager.difficultyLevel];
     }
 }

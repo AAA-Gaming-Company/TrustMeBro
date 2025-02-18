@@ -1,10 +1,6 @@
 
 public class GameManager {
     public static DifficultyLevel difficultyLevel = DifficultyLevel.AVERAGE_SITUATIONSHIP_ENJOYER;
-
-    public static int GetDifficultyLevelInt() {
-        return (int) difficultyLevel;
-    }
 }
 
 public enum DifficultyLevel {

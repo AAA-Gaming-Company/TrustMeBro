@@ -15,16 +15,20 @@ public abstract class Shooter : Entity {
     }
 
     public void Shoot(Vector2 targetPos) {
-        if (this.weapon.isSpawner) {
-            int amount = this.weapon.GetAmount(GameManager.difficultyLevel);
+        // Make sure that the target position is at the limit of the weapon's range
+        Vector2 direction = targetPos - (Vector2)this.firePoint.position;
+        direction.Normalize();
+        targetPos = (Vector2) this.firePoint.position + (direction * this.weapon.useRange);
 
+        if (this.weapon.isSpawner) {
+            int amount = this.weapon.GetAmount();
 
             int damage = 0;
             if (this.weapon.isProjectile) {
-                damage = this.weapon.GetDamage(GameManager.difficultyLevel);
+                damage = this.weapon.GetDamage();
             }
 
-            float deviation = 0.3f * Mathf.Log(amount);
+            float deviation = 0.5f * Mathf.Log(amount);
 
             for (int i = 0; i < amount; i++) {
                 Vector2 computedTargetPosition = targetPos;
@@ -55,7 +59,7 @@ public abstract class Shooter : Entity {
 
     private IEnumerator Reload(WeaponType weapon) {
         weapon.ready = false;
-        yield return new WaitForSeconds(weapon.GetUseDelay(GameManager.difficultyLevel));
+        yield return new WaitForSeconds(weapon.GetUseDelay());
         weapon.ready = true;
     }
 }
