@@ -155,6 +155,7 @@ public class EnemyController : Shooter {
     }
 
     protected override void OnDie() {
+        StatsManager.Instance.AddEnemyKilled();
         this.player.Heal(this.healthBoostOnDeath);
     }
 

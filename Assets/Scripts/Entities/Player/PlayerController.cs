@@ -143,9 +143,9 @@ public class PlayerController : Shooter {
     }
 
     private void Hit() {
-        if (this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition))) {
-            //TODO: Add feedback here
-        }
+        this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
+        //TODO: Add feedback here
+        StatsManager.Instance.AddShotFired();
     }
 
     public void Heal(int amount) {

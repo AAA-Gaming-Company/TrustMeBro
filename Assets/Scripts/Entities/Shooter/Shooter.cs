@@ -14,7 +14,7 @@ public abstract class Shooter : Entity {
         this.weapon.ready = true;
     }
 
-    public bool Shoot(Vector2 targetPos) {
+    public void Shoot(Vector2 targetPos) {
         if (this.weapon.isSpawner) {
             int amount = this.weapon.amount[0];
             if (weapon.amount.Length > 1) {
@@ -42,7 +42,6 @@ public abstract class Shooter : Entity {
         }
 
         StartCoroutine(this.Reload(this.weapon));
-        return true;
     }
 
     public bool isReadyToShoot() {
