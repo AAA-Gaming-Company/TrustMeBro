@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Entity : MonoBehaviour {
@@ -7,6 +8,7 @@ public abstract class Entity : MonoBehaviour {
     public int maxHealth;
     public ProgressBar healthBar;
     public GameObject noFlip;
+    public MMF_Player damageFeedback;
 
     [Header("Cover System")]
     public GameObject coverIndicator;
@@ -31,7 +33,9 @@ public abstract class Entity : MonoBehaviour {
         if (this.currentHealth <= 0) {
             this.Die();
         }
-
+        if (damageFeedback != null) {
+            damageFeedback.PlayFeedbacks();
+        }
         this.UpdateHealthBar();
     }
 
