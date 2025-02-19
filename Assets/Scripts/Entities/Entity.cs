@@ -8,6 +8,7 @@ public abstract class Entity : MonoBehaviour {
     public ProgressBar healthBar;
     public GameObject noFlip;
     public MMF_Player damageFeedback;
+    public MMF_Player enterCoverFeedback;
 
     [Header("Cover System")]
     public GameObject coverIndicator;
@@ -91,6 +92,9 @@ public abstract class Entity : MonoBehaviour {
         }
         if (this.anim != null) {
             this.anim.SetBool("isCrouching", true);
+        }
+        if (this.enterCoverFeedback != null) {
+            enterCoverFeedback.PlayFeedbacks();
         }
         this.currentCoverEntry = cover.EnterCover(this.gameObject, cover.NearestCoverPointPos(this.transform.position));
 
