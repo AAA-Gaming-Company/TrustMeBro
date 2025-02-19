@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 /// <summary>
 /// This class is attached to a single Unity prefab that will display a notification bubble.
@@ -21,12 +22,20 @@ public class NotificationBubble : MonoBehaviour {
         this.nextButton.onClick.AddListener(this.NextMessage);
     }
 
-    public void Init(string[] messages, string speakerName, Sprite speakerImage) {
+    public void Init(string[] messages, string speakerName, Sprite speakerImage, float timeToDisplay = 0f) {
         this.messages = messages;
         this.speakerName.text = speakerName;
         this.speakerImage.sprite = speakerImage;
 
-        Time.timeScale = 0f;
+        if (timeToDisplay != 0) {
+            if (messages.Length > 1) {
+                throw new System.Exception("NotificationBubble: Cannot display multiple messages with a time to display.");
+            }
+
+            this.nextButton.gameObject.SetActive(false);
+            StartCoroutine(this.AutoClose(timeToDisplay));
+        }
+
         this.NextMessage();
     }
 
@@ -35,7 +44,6 @@ public class NotificationBubble : MonoBehaviour {
         if (this.currentMessageIndex < this.messages.Length) {
             this.text.text = this.messages[this.currentMessageIndex];
         } else {
-            Time.timeScale = 1f;
             Destroy(this.gameObject);
         }
 
@@ -45,5 +53,10 @@ public class NotificationBubble : MonoBehaviour {
         } else {
             this.nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next";
         }
+    }
+
+    private IEnumerator AutoClose(float timeToDisplay) {
+        yield return new WaitForSeconds(timeToDisplay);
+        Destroy(this.gameObject);
     }
 }

@@ -8820,7 +8820,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -10187,7 +10187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1531068473}
-  notificationPrefab: {fileID: 8159800601513457926, guid: 1efe82c33409e43a69dc1a06b0949eaa, type: 3}
+  notificationPrefab: {fileID: 7182467592640763806, guid: 1efe82c33409e43a69dc1a06b0949eaa, type: 3}
   dialoguePrefab: {fileID: 7162943053851010199, guid: ef5d053e798374e16bd676cdb328c6b8, type: 3}
 --- !u!1 &1980859266
 GameObject:
@@ -10432,15 +10432,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2110842827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844ed6142a1f0465d89230484b2d3636, type: 3}
+  m_Script: {fileID: 11500000, guid: 32216cc3f2b634c38a96bfd42fac21d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnTrigger: 1
-  entries:
-  - messages:
-    - Beware the crazy cow!!!!
-    speakerName: Cherki
-    speakerImage: {fileID: 21300000, guid: 6fd0b649401ca5b419a5ebf5df170c0f, type: 3}
+  messages:
+  - Line 1
+  speakerName: SPEAKER
+  speakerImage: {fileID: 21300000, guid: 6fd0b649401ca5b419a5ebf5df170c0f, type: 3}
+  timeToDisplay: 5
 --- !u!1001 &4538855558021438631
 PrefabInstance:
   m_ObjectHideFlags: 0

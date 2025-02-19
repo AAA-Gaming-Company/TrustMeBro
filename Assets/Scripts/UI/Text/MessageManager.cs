@@ -20,11 +20,13 @@ public class NotificationBuilder {
     private string[] messages;
     private string speakernName;
     private Sprite speakerImage;
+    private float timeToDisplay;
 
     private NotificationBuilder() {
         this.messages = null;
         this.speakernName = null;
         this.speakerImage = null;
+        this.timeToDisplay = 0;
     }
 
     public NotificationBuilder WithMessages(params string[] messages) {
@@ -42,13 +44,18 @@ public class NotificationBuilder {
         return this;
     }
 
+    public NotificationBuilder WithTimeToDisplay(float timeToDisplay) {
+        this.timeToDisplay = timeToDisplay;
+        return this;
+    }
+
     public void BuildAndDisplay() {
         if (this.messages == null || this.speakernName == null || this.speakerImage == null) {
             throw new System.Exception("NotificationBuilder: Missing required fields.");
         }
 
         NotificationBubble bubble = Object.Instantiate(MessageManager.Instance.notificationPrefab, MessageManager.Instance.canvas.transform);
-        bubble.Init(this.messages, this.speakernName, this.speakerImage);
+        bubble.Init(this.messages, this.speakernName, this.speakerImage, this.timeToDisplay);
     }
 
     public static NotificationBuilder Builder() {
