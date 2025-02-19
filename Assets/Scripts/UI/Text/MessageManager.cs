@@ -14,6 +14,31 @@ public class MessageManager : Singleton<MessageManager> {
     [Header("Prefabs")]
     public NotificationBubble notificationPrefab;
     public DialogueWindow dialoguePrefab;
+
+    private List<IMessageElement> openElements = new List<IMessageElement>();
+
+    public void RegisterElement(IMessageElement element) {
+        this.openElements.Add(element);
+    }
+
+    public void UnregisterElement(IMessageElement element) {
+        this.openElements.Remove(element);
+    }
+
+    public void DestroyAllMessages() {
+        IMessageElement[] elements = this.openElements.ToArray();
+        foreach (IMessageElement element in elements) {
+            element.Close();
+        }
+
+        if (this.openElements.Count > 0) {
+            throw new System.Exception("MessageManager: Not all messages were destroyed.");
+        }
+    }
+
+    public int GetOpenElementsCount() {
+        return this.openElements.Count;
+    }
 }
 
 public class NotificationBuilder {

@@ -8,7 +8,7 @@ using TMPro;
 /// the window needs to be set up.
 /// To create the dialogue window, see the DialogueBuilder class.
 /// </summary>
-public class DialogueWindow : MonoBehaviour {
+public class DialogueWindow : MonoBehaviour, IMessageElement {
     public TextMeshProUGUI text;
     public TextMeshProUGUI speakerName;
     public Image speakerImage;
@@ -26,6 +26,8 @@ public class DialogueWindow : MonoBehaviour {
     public void Init(DialogueEntry[] entries) {
         this.entries = entries;
 
+        MessageManager.Instance.RegisterElement(this);
+
         Time.timeScale = 0f;
         this.NextMessage();
     }
@@ -42,8 +44,7 @@ public class DialogueWindow : MonoBehaviour {
             this.speakerImage.sprite = this.entries[this.currentEntryIndex].speakerImage;
             this.text.text = this.entries[this.currentEntryIndex].messages[this.currentMessageIndex];
         } else {
-            Time.timeScale = 1f;
-            Destroy(this.gameObject);
+            this.Close();
         }
 
         // Choose if the button should say next or close
@@ -52,5 +53,11 @@ public class DialogueWindow : MonoBehaviour {
         } else {
             this.nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next";
         }
+    }
+
+    public void Close() {
+        Time.timeScale = 1f;
+        MessageManager.Instance.UnregisterElement(this);
+        Destroy(this.gameObject);
     }
 }

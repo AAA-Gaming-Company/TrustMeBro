@@ -17,7 +17,7 @@ public class StateManager : Singleton<StateManager> {
     }
 
     private void Update() {
-        if (InputManager.Instance.GetPauseDown()) {
+        if (InputManager.Instance.GetPauseDown() && MessageManager.Instance.GetOpenElementsCount() == 0) {
             this.TogglePause();
         }
     }
@@ -38,6 +38,7 @@ public class StateManager : Singleton<StateManager> {
     }
 
     public void TriggerDeathMenu() {
+        MessageManager.Instance.DestroyAllMessages();
         Time.timeScale = 0f;
         this.deathMenu.gameObject.SetActive(true);
         this.StartStopGame(true);

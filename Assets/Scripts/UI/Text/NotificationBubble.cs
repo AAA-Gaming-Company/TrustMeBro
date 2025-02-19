@@ -9,7 +9,7 @@ using System.Collections;
 /// layout of the bubble needs to be set up.
 /// To create the notification bubble, see the NotificationBuilder class.
 /// </summary>
-public class NotificationBubble : MonoBehaviour {
+public class NotificationBubble : MonoBehaviour, IMessageElement {
     public TextMeshProUGUI text;
     public TextMeshProUGUI speakerName;
     public Image speakerImage;
@@ -36,6 +36,8 @@ public class NotificationBubble : MonoBehaviour {
             StartCoroutine(this.AutoClose(timeToDisplay));
         }
 
+        MessageManager.Instance.RegisterElement(this);
+
         this.NextMessage();
     }
 
@@ -44,7 +46,7 @@ public class NotificationBubble : MonoBehaviour {
         if (this.currentMessageIndex < this.messages.Length) {
             this.text.text = this.messages[this.currentMessageIndex];
         } else {
-            Destroy(this.gameObject);
+            this.Close();
         }
 
         // Choose if the button should say next or close
@@ -57,6 +59,11 @@ public class NotificationBubble : MonoBehaviour {
 
     private IEnumerator AutoClose(float timeToDisplay) {
         yield return new WaitForSeconds(timeToDisplay);
+        this.Close();
+    }
+
+    public void Close() {
+        MessageManager.Instance.UnregisterElement(this);
         Destroy(this.gameObject);
     }
 }
