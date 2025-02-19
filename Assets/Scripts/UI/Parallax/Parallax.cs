@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour {
     [Header("Normal")]
-    public Camera mainCamera;
+    public Transform parallaxOrigin;
     public GameObject parallaxPrefab;
 
     [Header("Auto scroll")]
@@ -15,9 +15,9 @@ public class Parallax : MonoBehaviour {
 
     private void Update() {
         if (this.autoScroll) {
-            Vector3 pos = this.mainCamera.transform.position;
+            Vector3 pos = this.parallaxOrigin.position;
             pos.x += Time.deltaTime;
-            this.mainCamera.transform.position = pos;
+            this.parallaxOrigin.position = pos;
         }
     }
 
@@ -48,7 +48,7 @@ public class Parallax : MonoBehaviour {
         ParallaxChild parallax = child.GetComponent<ParallaxChild>();
         parallax.spriteRenderer.sprite = sprite;
         parallax.parallaxEffect = parallaxEffect;
-        parallax.mainCamera = this.mainCamera;
+        parallax.parallaxOrigin = this.parallaxOrigin;
         parallax.isBackground = background;
         parallax.Init();
     }
