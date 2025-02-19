@@ -1112,11 +1112,12 @@ MonoBehaviour:
   coverRadius: 0.67
   weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   firePoint: {fileID: 2619571317537893610}
+  shootFeedback: {fileID: 3714266050873528596}
+  reloadFeedback: {fileID: 0}
   moveRange: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  shoot: {fileID: 3714266050873528596}
   healthBoostOnDeath: 0
   outOfCoverTime: 1
   shotNum: 5

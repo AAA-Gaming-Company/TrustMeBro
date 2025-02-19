@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
-  m_Name: PolicemanWeapon
+  m_Name: PlayerPistol
   m_EditorClassIdentifier: 
   useDelay:
-  - 0.4
+  - 0.2
   useRange: 7.6
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}

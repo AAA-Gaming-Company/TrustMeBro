@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShotgunWeapon
   m_EditorClassIdentifier: 
   useDelay:
-  - 0.4
-  useRange: 10
+  - 1
+  useRange: 8
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: aac8d88b47a4e4944b94dad3933a4a3c, type: 3}
   amount: 0a000000
