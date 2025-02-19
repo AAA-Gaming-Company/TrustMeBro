@@ -10,7 +10,6 @@ public class EnemyController : Shooter {
     [Header("Enemy")]
     public float moveRange;
     public LayerMask playerLayer;
-    public MMF_Player shoot;
     public int healthBoostOnDeath;
 
     [Header("Attack Behavior")]
@@ -61,7 +60,6 @@ public class EnemyController : Shooter {
 
         if (this.IsReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
             this.Shoot(this.destinationSetter.target.position);
-            this.shoot.PlayFeedbacks();
             this.shotsFiredOutOfCover++;
         } else if (this.shotsFiredOutOfCover == this.maxShotsOutOfCover && this.reloadingOutOfCover == false) {
             StartCoroutine(ReloadOutOfCover());
@@ -135,7 +133,6 @@ public class EnemyController : Shooter {
             if (this.IsReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
                 //Fires the shot; then reloads
                 this.Shoot(this.destinationSetter.target.position);
-                this.shoot.PlayFeedbacks();
                 yield return new WaitForSeconds((this.weapon.GetUseDelay() + 0.05f) * Random.Range(minRandom, maxRandom));
             }
         }

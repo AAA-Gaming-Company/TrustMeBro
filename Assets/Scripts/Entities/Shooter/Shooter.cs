@@ -1,10 +1,13 @@
 using System.Collections;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public abstract class Shooter : Entity {
     [Header("Shooter")]
     public WeaponType weapon;
     public Transform firePoint;
+    public MMF_Player shootFeedback;
+    public MMF_Player reloadFeedback;
 
     public void Awake() {
         WeaponType genericInstance = this.weapon;
@@ -48,6 +51,10 @@ public abstract class Shooter : Entity {
             }
         }
 
+        if (this.shootFeedback != null) {
+            this.shootFeedback.PlayFeedbacks();
+        }
+
         StartCoroutine(this.Reload(this.weapon));
     }
 
@@ -63,5 +70,9 @@ public abstract class Shooter : Entity {
         weapon.ready = false;
         yield return new WaitForSeconds(weapon.GetUseDelay());
         weapon.ready = true;
+
+        if (this.reloadFeedback != null) {
+            this.reloadFeedback.PlayFeedbacks();
+        }
     }
 }
