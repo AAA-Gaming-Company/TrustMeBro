@@ -49,6 +49,12 @@ public class PlayerController : Shooter {
         this.currentStamina = this.maxStamina;
         this.staminaBar.gameObject.SetActive(false);
 
+        this.dieType = EntityDieType.NOTHING;
+
+        if (GameManager.hasCheckpoint) {
+            this.transform.position = GameManager.lastCheckpoint;
+        }
+
         InputManager.Instance.Init();
     }
 
@@ -217,6 +223,8 @@ public class PlayerController : Shooter {
     }
 
     protected override void OnDie() {
+        StateManager.Instance.TriggerDeathMenu();
+        this.UpdateHealthBar();
     }
 
     protected override void OnDamage(int amount) {

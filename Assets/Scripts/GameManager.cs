@@ -1,6 +1,10 @@
+using UnityEngine;
 
 public class GameManager {
     public static DifficultyLevel difficultyLevel = DifficultyLevel.AVERAGE_SITUATIONSHIP_ENJOYER;
+
+    public static bool hasCheckpoint = false;
+    public static Vector2 lastCheckpoint = Vector2.zero;
 }
 
 public enum DifficultyLevel {

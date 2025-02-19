@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using MoreMountains.Feedbacks;
 
@@ -17,6 +16,7 @@ public abstract class Entity : MonoBehaviour {
 
     private CoverEntry currentCoverEntry;
     protected int currentHealth;
+    protected EntityDieType dieType = EntityDieType.DESTROY;
 
     public void Start() {
         this.currentHealth = this.maxHealth;
@@ -43,7 +43,9 @@ public abstract class Entity : MonoBehaviour {
         this.ExitCover();
 
         this.OnDie();
-        Destroy(this.gameObject);
+        if (this.dieType == EntityDieType.DESTROY) { 
+            Destroy(this.gameObject);
+        }
     }
 
     public void UpdateHealthBar() {
@@ -118,4 +120,9 @@ public abstract class Entity : MonoBehaviour {
     public void OnDrawGizmos() {
         Gizmos.DrawWireSphere(base.transform.position, this.coverRadius);
     }
+}
+
+public enum EntityDieType {
+    DESTROY,
+    NOTHING
 }

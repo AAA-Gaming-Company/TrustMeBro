@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 public class LoadingPanel : MonoBehaviour {
     public ProgressBar loadingBar;
 
+    private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void LoadGameScene() {
         StartCoroutine(this.LoadGameSceneInt());
     }
