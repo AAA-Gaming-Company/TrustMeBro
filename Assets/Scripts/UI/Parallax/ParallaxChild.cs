@@ -1,14 +1,14 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class ParallaxChild : MonoBehaviour {
     [Header("Information")]
-    public CinemachineCamera parallaxedCamera;
+    public Camera parallaxedCamera;
     public SpriteRenderer spriteRenderer;
     public SpriteRenderer[] children;
 
     [Header("Properties")]
+    public float verticalOffset;
     public float parallaxEffect;
     public bool isBackground;
 
@@ -36,8 +36,8 @@ public class ParallaxChild : MonoBehaviour {
 
     private void Update() {
         if (this.isBackground) { //The background just follows the camera
-            float cameraHeight = this.parallaxedCamera.Lens.OrthographicSize * 2f;
-            float cameraWidth = cameraHeight * this.parallaxedCamera.Lens.Aspect;
+            float cameraHeight = this.parallaxedCamera.orthographicSize * 2f;
+            float cameraWidth = cameraHeight * this.parallaxedCamera.aspect;
             this.transform.localScale = new Vector3((cameraWidth / this.initialWidth) + 0.2f, this.initialHeight + 0.2f, this.transform.localScale.z);
             return;
         }
@@ -46,7 +46,7 @@ public class ParallaxChild : MonoBehaviour {
         float distance = this.parallaxedCamera.transform.position.x * this.parallaxEffect;
         float temp = this.parallaxedCamera.transform.position.x * (1 - this.parallaxEffect);
 
-        this.transform.position = new Vector3(this.startPos + distance, this.parallaxedCamera.transform.position.y * (this.parallaxEffect * 0.75f), this.transform.position.z);
+        this.transform.position = new Vector3(this.startPos + distance, (this.parallaxedCamera.transform.position.y * (this.parallaxEffect * 0.75f)) + this.verticalOffset, this.transform.position.z);
 
         float length = this.spriteRenderer.bounds.size.x;
 

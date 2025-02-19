@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5907d7b0e154b64294b86680920010f, type: 2}
-  m_sharedMaterial: {fileID: 6275527592156226768, guid: b5907d7b0e154b64294b86680920010f, type: 2}
+  m_sharedMaterial: {fileID: -3300209375457610410, guid: b5907d7b0e154b64294b86680920010f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5907d7b0e154b64294b86680920010f, type: 2}
-  m_sharedMaterial: {fileID: 6275527592156226768, guid: b5907d7b0e154b64294b86680920010f, type: 2}
+  m_sharedMaterial: {fileID: -3300209375457610410, guid: b5907d7b0e154b64294b86680920010f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -796,11 +796,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Never gonna give you up, never gonna let you down, never gonna run around
-    and desert you. '
+  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5907d7b0e154b64294b86680920010f, type: 2}
-  m_sharedMaterial: {fileID: 6275527592156226768, guid: b5907d7b0e154b64294b86680920010f, type: 2}
+  m_sharedMaterial: {fileID: -3300209375457610410, guid: b5907d7b0e154b64294b86680920010f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

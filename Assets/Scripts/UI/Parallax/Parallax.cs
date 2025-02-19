@@ -1,11 +1,11 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
-[RequireComponent(typeof(CinemachineCamera))]
+[RequireComponent(typeof(Camera))]
 public class Parallax : MonoBehaviour {
     [Header("Normal")]
     public GameObject parallaxPrefab;
     public ParallaxSO selectedParallax;
+    public float verticalOffset;
 
     [Header("Auto scroll")]
     public bool autoScroll;
@@ -48,8 +48,9 @@ public class Parallax : MonoBehaviour {
 
         ParallaxChild parallax = child.GetComponent<ParallaxChild>();
         parallax.spriteRenderer.sprite = sprite;
+        parallax.verticalOffset = this.verticalOffset;
         parallax.parallaxEffect = parallaxEffect;
-        parallax.parallaxedCamera = this.GetComponent<CinemachineCamera>();
+        parallax.parallaxedCamera = this.GetComponent<Camera>();
         parallax.isBackground = background;
         parallax.Init();
     }
