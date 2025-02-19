@@ -10,6 +10,7 @@ public class InputManager : Singleton<InputManager> {
 
     private AbstractController activeController = null;
     private PlayerInput playerInput;
+    private InputActionMap moveActionMap;
 
     private float horizontalInput = 0;
     private float verticalInput = 0;
@@ -27,6 +28,8 @@ public class InputManager : Singleton<InputManager> {
 
     private bool attackWasButton = false;
     private bool attackDown = false;
+
+    private bool pauseDown = false;
 
     public void Init() {
         this.playerInput = GetComponent<PlayerInput>();
@@ -65,39 +68,45 @@ public class InputManager : Singleton<InputManager> {
         //We only want to set these values during their frame
         this.jumpDown = false;
         this.jumpUp = false;
-        this.interactDown = false;
-        this.interactUp = false;
+        this.attackDown = false;
         this.crouchDown = false;
         this.sprintDown = false;
         this.sprintUp = false;
-        this.attackDown = false;
+        this.interactDown = false;
+        this.interactUp = false;
+        this.pauseDown = false;
     }
 
     private void EnableInputSystemEvents() {
         //These are the non-touch input events
-        InputActionMap actionMap = this.playerInput.actions.FindActionMap("Player");
+        this.moveActionMap = this.playerInput.actions.FindActionMap("Player");
 
-        InputAction move = actionMap.FindAction("Move");
+        InputAction move = this.moveActionMap.FindAction("Move");
         move.started += OnMove;
         move.canceled += OnMoveStop;
 
-        InputAction jump = actionMap.FindAction("Jump");
+        InputAction jump = this.moveActionMap.FindAction("Jump");
         jump.started += OnJump;
         jump.canceled += OnJumpStop;
 
-        InputAction attack = actionMap.FindAction("Attack");
+        InputAction attack = this.moveActionMap.FindAction("Attack");
         attack.started += OnAttack;
 
-        InputAction crouch = actionMap.FindAction("Crouch");
+        InputAction crouch = this.moveActionMap.FindAction("Crouch");
         crouch.started += OnCrouch;
 
-        InputAction sprint = actionMap.FindAction("Sprint");
+        InputAction sprint = this.moveActionMap.FindAction("Sprint");
         sprint.started += OnSprint;
         sprint.canceled += OnSprintStop;
 
-        InputAction interact = actionMap.FindAction("Interact");
+        InputAction interact = this.moveActionMap.FindAction("Interact");
         interact.started += OnInteract;
         interact.canceled += OnInteractStop;
+
+        InputActionMap pauseActionMap = this.playerInput.actions.FindActionMap("Pause");
+
+        InputAction pause = pauseActionMap.FindAction("Pause");
+        pause.started += OnPause;
     }
 
     public void HideAllControllers() {
@@ -190,6 +199,14 @@ public class InputManager : Singleton<InputManager> {
         }
     }
 
+    public static void OnPause(InputAction.CallbackContext context) {
+        InputManager.Instance.Pause();
+    }
+
+    public void Pause() {
+        this.pauseDown = true;
+    }
+
     public float GetHorizontalInput() {
         return this.horizontalInput;
     }
@@ -235,5 +252,17 @@ public class InputManager : Singleton<InputManager> {
 
     public bool GetInteractUp() {
         return this.interactUp;
+    }
+
+    public bool GetPauseDown() {
+        return this.pauseDown;
+    }
+
+    public void DisableMoveActions(bool disable) {
+        if (disable) {
+            this.moveActionMap.Disable();
+        } else {
+            this.moveActionMap.Enable();
+        }
     }
 }
