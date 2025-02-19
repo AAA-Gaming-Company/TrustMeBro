@@ -9,7 +9,7 @@ public class ProgressBar : MonoBehaviour {
 
     private float current;
 
-    private void Start() {
+    private void Awake() {
         this.current = this.min;
         this.UpdateValue(this.current);
     }

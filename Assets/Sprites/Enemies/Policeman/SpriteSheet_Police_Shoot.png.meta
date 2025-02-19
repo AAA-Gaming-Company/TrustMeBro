@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -174,11 +174,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 12
-        y: 212
-        width: 37
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 213
+        width: 39
+        height: 34
+      alignment: 9
+      pivot: {x: 0.70364285, y: 0.37917686}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -196,11 +196,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 63
-        y: 212
+        y: 213
         width: 39
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7387535, y: 0.40736884}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: SpriteSheet_Police_Shoot_2
       rect:
         serializedVersion: 2
-        x: 119
-        y: 212
-        width: 18
+        x: 140
+        y: 213
+        width: 39
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6584148, y: 0.39845544}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: SpriteSheet_Police_Shoot_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 213
-        width: 17
+        x: 196
+        y: 214
+        width: 39
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,12 +261,12 @@ TextureImporter:
       name: SpriteSheet_Police_Shoot_4
       rect:
         serializedVersion: 2
-        x: 184
-        y: 212
-        width: 18
+        x: 14
+        y: 173
+        width: 39
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6247928, y: 0.38938904}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: SpriteSheet_Police_Shoot_5
       rect:
         serializedVersion: 2
-        x: 213
-        y: 212
-        width: 21
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 53
+        y: 176
+        width: 39
+        height: 34
+      alignment: 9
+      pivot: {x: 0.7040358, y: 0.3297882}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,12 +305,12 @@ TextureImporter:
       name: SpriteSheet_Police_Shoot_6
       rect:
         serializedVersion: 2
-        x: 26
-        y: 176
-        width: 21
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 97
+        y: 175
+        width: 39
+        height: 34
+      alignment: 9
+      pivot: {x: 0.6945627, y: 0.34730217}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,7 +327,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6b83825694493e7409a3cfbcfefa745d
     internalID: 0
     vertices: []
     indices: 

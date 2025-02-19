@@ -42,4 +42,8 @@ public class SpawnTriggerArea : TriggerArea {
             }
         }
     }
+        public void OnDrawGizmosSelected() {
+        Gizmos.color = Color.black;
+        Gizmos.DrawCube(this.spawnLocation.position, new Vector3(1, 1, 1));
+    }
 }

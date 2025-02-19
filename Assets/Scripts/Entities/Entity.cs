@@ -14,12 +14,16 @@ public abstract class Entity : MonoBehaviour {
     public LayerMask coverLayers;
     public float coverRadius = 3f;
 
+    private Animator anim;
     private CoverEntry currentCoverEntry;
     protected int currentHealth;
     protected EntityDieType dieType = EntityDieType.DESTROY;
 
+        
+
     public void Start() {
         this.currentHealth = this.maxHealth;
+        this.anim = GetComponent<Animator>();
         this.UpdateHealthBar();
     }
 
@@ -85,7 +89,9 @@ public abstract class Entity : MonoBehaviour {
             Debug.LogError("Entity is already in cover! This shouldn't happen :(");
             return; 
         }
-
+        if (this.anim != null) {
+            this.anim.SetBool("isCrouching", true);
+        }
         this.currentCoverEntry = cover.EnterCover(this.gameObject, cover.NearestCoverPointPos(this.transform.position));
 
         // If the cover indicator is set, activate it (as long as we got into cover)
@@ -101,6 +107,9 @@ public abstract class Entity : MonoBehaviour {
 
             if (this.coverIndicator != null) {
                 coverIndicator.SetActive(false);
+            }
+            if (this.anim != null) {
+                this.anim.SetBool("isCrouching", false);
             }
         }
     }

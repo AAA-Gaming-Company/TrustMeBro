@@ -118,7 +118,7 @@ public class Cover : MonoBehaviour {
     }
 
     public void OnDrawGizmos() {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         foreach (Transform coverPoint in coverPoints) {
             Gizmos.DrawCube(coverPoint.position, new Vector3(0.1f, 0.1f, 0.1f));
         }
