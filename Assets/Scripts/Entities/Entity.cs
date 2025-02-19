@@ -106,14 +106,14 @@ public abstract class Entity : MonoBehaviour {
     }
 
     public void FlipEntity(bool flipped) {
-        Vector3 entityLocalScale = this.transform.localScale;
-        entityLocalScale.x = Mathf.Abs(entityLocalScale.x) * (flipped ? -1 : 1);
-        this.transform.localScale = entityLocalScale;
+        Vector3 entityRotaion = this.transform.localEulerAngles;
+        entityRotaion.y = flipped ? 180 : 0;
+        this.transform.localEulerAngles = entityRotaion;
 
         if (this.noFlip != null) {
-            Vector3 noFlipLocalScale = this.noFlip.transform.localScale;
-            noFlipLocalScale.x = Mathf.Abs(noFlipLocalScale.x) * (flipped ? -1 : 1);
-            this.noFlip.transform.localScale = noFlipLocalScale;
+            Vector3 noFlipRotation = this.noFlip.transform.localEulerAngles;
+            noFlipRotation.y = flipped ? 180 : 0;
+            this.noFlip.transform.localEulerAngles = noFlipRotation;
         }
     }
 
