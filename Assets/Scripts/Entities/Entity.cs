@@ -50,6 +50,7 @@ public abstract class Entity : MonoBehaviour {
         this.healthBar.min = 0;
         this.healthBar.max = this.maxHealth;
         this.healthBar.UpdateValue(this.currentHealth);
+        Debug.Log("Ran UpdateHealthBar");
     }
 
     public bool IsInCover() {

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c7695807cea709419c6cde709571a8a
+guid: 345637f38f3f77141841dc67b151d05b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7011661911796687584
-    second: Road_0
+      213: -5317400886827926006
+    second: Tile_RestaurantFloor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,30 +135,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road_0
+      name: Tile_RestaurantFloor_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 19
         y: 0
-        width: 20
-        height: 20
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02dd83ef3a291be90800000000000000
-      internalID: -7011661911796687584
+      spriteID: a0e3644f01cc436b0800000000000000
+      internalID: -5317400886827926006
       vertices: []
       indices: 
       edges: []
@@ -176,11 +163,10 @@ TextureImporter:
     outline: []
     customData: 
     physicsShape:
-    - - {x: 10, y: 7.5}
-      - {x: 5, y: 7.5}
-      - {x: -10, y: 7.5}
-      - {x: -10, y: -12.5}
-      - {x: 10, y: -12.5}
+    - - {x: 10, y: 9.5}
+      - {x: -10, y: 9.5}
+      - {x: -10, y: -10.5}
+      - {x: 10, y: -10.5}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665
@@ -192,7 +178,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Road_0: -7011661911796687584
+      Tile_RestaurantFloor_0: -5317400886827926006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
