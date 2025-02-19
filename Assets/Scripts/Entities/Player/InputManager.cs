@@ -22,6 +22,9 @@ public class InputManager : Singleton<InputManager> {
 
     private bool crouchDown = false;
 
+    private bool sprintDown = false;
+    private bool sprintUp = false;
+
     private bool attackWasButton = false;
     private bool attackDown = false;
 
@@ -62,10 +65,12 @@ public class InputManager : Singleton<InputManager> {
         //We only want to set these values during their frame
         this.jumpDown = false;
         this.jumpUp = false;
-        this.attackDown = false;
         this.interactDown = false;
         this.interactUp = false;
         this.crouchDown = false;
+        this.sprintDown = false;
+        this.sprintUp = false;
+        this.attackDown = false;
     }
 
     private void EnableInputSystemEvents() {
@@ -85,6 +90,10 @@ public class InputManager : Singleton<InputManager> {
 
         InputAction crouch = actionMap.FindAction("Crouch");
         crouch.started += OnCrouch;
+
+        InputAction sprint = actionMap.FindAction("Sprint");
+        sprint.started += OnSprint;
+        sprint.canceled += OnSprintStop;
 
         InputAction interact = actionMap.FindAction("Interact");
         interact.started += OnInteract;
@@ -141,6 +150,30 @@ public class InputManager : Singleton<InputManager> {
         this.attackDown = true;
     }
 
+    public static void OnCrouch(InputAction.CallbackContext context) {
+        InputManager.Instance.Crouch();
+    }
+
+    public void Crouch() {
+        this.crouchDown = true;
+    }
+
+    public static void OnSprint(InputAction.CallbackContext context) {
+        InputManager.Instance.Sprint(true);
+    }
+
+    public static void OnSprintStop(InputAction.CallbackContext context) {
+        InputManager.Instance.Sprint(false);
+    }
+
+    public void Sprint(bool down) {
+        if (down) {
+            this.sprintDown = true;
+        } else {
+            this.sprintUp = true;
+        }
+    }
+
     public static void OnInteract(InputAction.CallbackContext context) {
         InputManager.Instance.Interact(true);
     }
@@ -155,10 +188,6 @@ public class InputManager : Singleton<InputManager> {
         } else {
             this.interactUp = true;
         }
-    }
-
-    public static void OnCrouch(InputAction.CallbackContext context) {
-        InputManager.Instance.crouchDown = true; 
     }
 
     public float GetHorizontalInput() {
@@ -188,15 +217,23 @@ public class InputManager : Singleton<InputManager> {
         return this.attackDown;
     }
 
+    public bool GetCrouchDown() {
+        return this.crouchDown;
+    }
+
+    public bool GetSprintDown() {
+        return this.sprintDown;
+    }
+
+    public bool GetSprintUp() {
+        return this.sprintUp;
+    }
+
     public bool GetInteractDown() {
         return this.interactDown;
     }
 
     public bool GetInteractUp() {
         return this.interactUp;
-    }
-
-    public bool GetCrouchDown() {
-        return this.crouchDown;
     }
 }

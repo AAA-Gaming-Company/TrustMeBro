@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -11,6 +13,10 @@ public class PlayerController : Shooter {
     private float pressJumpTime = 0f;
     private bool letGoInGrace = false;
 
+    private bool isSprinting = false;
+    private float currentStamina;
+    private Coroutine staminaHideCoroutine;
+
     private Animator animator;
     private Collider2D collider2d;
     private Rigidbody2D rb;
@@ -18,9 +24,19 @@ public class PlayerController : Shooter {
 
     [Header("Controller Config")]
     public float playerSpeed = 4f;
+    public float playerSprintSpeed = 6f;
     public float jumpPower = 18f;
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
+
+    [Header("Stamina Config")]
+    public ProgressBar staminaBar;
+    [Min(0)]
+    public float maxStamina = 100f;
+    [Min(0)]
+    public float staminaRegen = 10f;
+    [Min(0)]
+    public float sprintStaminaCost = 10f;
 
     public new void Awake() {
         base.Awake();
@@ -29,6 +45,9 @@ public class PlayerController : Shooter {
         this.collider2d = GetComponent<Collider2D>();
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
+
+        this.currentStamina = this.maxStamina;
+        this.staminaBar.gameObject.SetActive(false);
 
         InputManager.Instance.Init();
     }
@@ -82,6 +101,26 @@ public class PlayerController : Shooter {
             this.Hit();
         }
 
+        //Sprint
+        if (InputManager.Instance.GetSprintDown()) {
+            this.isSprinting = true;
+            //TODO: Add animation here
+
+            if (this.staminaHideCoroutine != null) {
+                StopCoroutine(this.staminaHideCoroutine);
+            }
+            this.staminaBar.gameObject.SetActive(true);
+        }
+        if (InputManager.Instance.GetSprintUp()) {
+            this.isSprinting = false;
+            //TODO: Add animation here
+
+            this.staminaHideCoroutine = StartCoroutine(this.HideStaminaBar());
+        }
+        if (this.currentStamina <= 0) {
+            this.isSprinting = false;
+        }
+
         //Cover
         if (InputManager.Instance.GetCrouchDown()) {
             if (this.IsInCover()) {
@@ -116,7 +155,22 @@ public class PlayerController : Shooter {
         }
 
         //Add the velocity to the player if the function hasn't returned
-        this.rb.linearVelocity = new Vector2(this.inputX * this.playerSpeed, this.rb.linearVelocity.y);
+        if (this.isSprinting) {
+            this.rb.linearVelocity = new Vector2(this.inputX * this.playerSprintSpeed, this.rb.linearVelocity.y);
+
+            this.currentStamina -= this.sprintStaminaCost * Mathf.Abs(this.inputX) * Time.fixedDeltaTime;
+            this.UpdateStaminaBar();
+        } else {
+            this.rb.linearVelocity = new Vector2(this.inputX * this.playerSpeed, this.rb.linearVelocity.y);
+
+            if (this.currentStamina < this.maxStamina) {
+                this.currentStamina += this.staminaRegen * Time.fixedDeltaTime;
+                if (this.currentStamina > this.maxStamina) {
+                    this.currentStamina = this.maxStamina;
+                }
+                this.UpdateStaminaBar();
+            }
+        }
     }
 
     private bool IsGrounded() {
@@ -144,6 +198,22 @@ public class PlayerController : Shooter {
     public void Heal(int amount) {
         this.currentHealth = Mathf.Clamp(this.currentHealth + amount, 0, this.maxHealth);
         this.UpdateHealthBar();
+    }
+
+    public void UpdateStaminaBar() {
+        this.staminaBar.min = 0;
+        this.staminaBar.max = this.maxStamina;
+        this.staminaBar.UpdateValue(this.currentStamina);
+    }
+
+    private IEnumerator HideStaminaBar() {
+        yield return new WaitForSeconds(1.5f);
+
+        if (this.currentStamina < this.maxStamina) {
+            this.staminaHideCoroutine = StartCoroutine(this.HideStaminaBar());
+        } else {
+            this.staminaBar.gameObject.SetActive(false);
+        }
     }
 
     protected override void OnDie() {
