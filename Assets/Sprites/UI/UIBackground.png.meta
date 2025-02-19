@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b1c6e792d0350bb4a86656d5ce847902
+guid: 2f983f574dfec694fa8982b1e2f76b59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8149817239022723639
-    second: Police_UI_0
+      213: -6037497265438797557
+    second: UIBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,22 +37,22 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 4, y: 4, z: 4, w: 4}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,40 +135,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Police_UI_0
+      name: UIBackground_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 17
-        width: 170
-        height: 211
+        x: 19
+        y: 107
+        width: 209
+        height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 732ed4c6997f91170800000000000000
-      internalID: 8149817239022723639
+      spriteID: b01d021a930863ca0800000000000000
+      internalID: -6037497265438797557
       vertices: []
       indices: 
       edges: []
@@ -177,8 +164,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 3bec4ef2da14f894abf2b3e1ce9d299e
+    internalID: -687060412
     vertices: []
     indices: 
     edges: []
@@ -187,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Police_UI_0: 8149817239022723639
+      UIBackground_0: -6037497265438797557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
