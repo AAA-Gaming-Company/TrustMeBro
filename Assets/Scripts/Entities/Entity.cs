@@ -86,7 +86,7 @@ public abstract class Entity : MonoBehaviour {
 
     public void ExitCover() {
         if (this.IsInCover()) {
-            this.currentCoverEntry.ExitCover();
+            this.currentCoverEntry.ExitCover(this.gameObject);
             this.currentCoverEntry = null;
 
             if (this.coverIndicator != null) {

@@ -20,11 +20,21 @@ public class Cover : MonoBehaviour {
 
         coverPointsOccupied[index] = true;
 
+        float gravityScale = 0f;
+        Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            gravityScale = rb.gravityScale;
+            rb.gravityScale = 0f;
+        }
+
         Vector3 coverPosition = coverPoints[index].position;
-        coverPosition.z = entity.transform.position.z; // Make sure that the entity never changes its Z position
+        // Make sure that the entity is at the correct height, its feet should be at the cover point's height
+        coverPosition.y = coverPosition.y + entity.GetComponent<Collider2D>().bounds.extents.y;
+        // Make sure that the entity is at the correct Z position
+        coverPosition.z = entity.transform.position.z;
         entity.transform.position = coverPosition;
 
-        return new CoverEntry(this, index);
+        return new CoverEntry(this, index, gravityScale);
     }
 
     public CoverEntry EnterCover(GameObject entity, Vector3 position) {
@@ -44,8 +54,16 @@ public class Cover : MonoBehaviour {
         return this.EnterCover(entity, index);
     }
 
-    public void ExitCover(int index) {
-        coverPointsOccupied[index] = false;
+    public void ExitCover(GameObject entity, CoverEntry entry) {
+        coverPointsOccupied[entry.index] = false;
+
+        Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            rb.gravityScale = entry.gravityScale;
+        }
+        if (entry.gravityScale != 0 && rb == null) {
+            throw new System.Exception("Rigidbody2D is null when a gravity scale was set!");
+        }
     }
 
     public bool IsCovering() {
@@ -111,13 +129,15 @@ public class Cover : MonoBehaviour {
 public class CoverEntry {
     public Cover cover;
     public int index;
+    public float gravityScale;
 
-    public CoverEntry(Cover cover, int index) {
+    public CoverEntry(Cover cover, int index, float gravityScale = 0) {
         this.cover = cover;
         this.index = index;
+        this.gravityScale = gravityScale;
     }
 
-    public void ExitCover() {
-        cover.ExitCover(index);
+    public void ExitCover(GameObject entity) {
+        cover.ExitCover(entity, this);
     }
 }
