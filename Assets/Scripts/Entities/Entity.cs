@@ -57,6 +57,14 @@ public abstract class Entity : MonoBehaviour {
         return this.currentCoverEntry != null;
     }
 
+    public Vector2 GetCoverDirection() {
+        Vector2 direction = this.currentCoverEntry.coverPoint - this.currentCoverEntry.cover.gameObject.transform.position;
+        direction.y = 0;
+        direction.Normalize();
+
+        return direction;
+    }
+
     public Cover NearestCover() {
         if (this.IsInCover()) {
             return null;

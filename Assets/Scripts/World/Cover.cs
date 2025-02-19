@@ -20,11 +20,9 @@ public class Cover : MonoBehaviour {
 
         coverPointsOccupied[index] = true;
 
-        float gravityScale = 0f;
         Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
         if (rb != null) {
-            gravityScale = rb.gravityScale;
-            rb.gravityScale = 0f;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         Vector3 coverPosition = coverPoints[index].position;
@@ -34,7 +32,7 @@ public class Cover : MonoBehaviour {
         coverPosition.z = entity.transform.position.z;
         entity.transform.position = coverPosition;
 
-        return new CoverEntry(this, index, gravityScale);
+        return new CoverEntry(this, coverPoints[index].position, index, rb != null);
     }
 
     public CoverEntry EnterCover(GameObject entity, Vector3 position) {
@@ -59,9 +57,10 @@ public class Cover : MonoBehaviour {
 
         Rigidbody2D rb = entity.GetComponent<Rigidbody2D>();
         if (rb != null) {
-            rb.gravityScale = entry.gravityScale;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.AddForce(new Vector2(0f, 0.01f), ForceMode2D.Impulse);
         }
-        if (entry.gravityScale != 0 && rb == null) {
+        if (entry.rigidbody && rb == null) {
             throw new System.Exception("Rigidbody2D is null when a gravity scale was set!");
         }
     }
@@ -128,13 +127,15 @@ public class Cover : MonoBehaviour {
 
 public class CoverEntry {
     public Cover cover;
+    public Vector3 coverPoint;
     public int index;
-    public float gravityScale;
+    public bool rigidbody;
 
-    public CoverEntry(Cover cover, int index, float gravityScale = 0) {
+    public CoverEntry(Cover cover, Vector3 coverPoint, int index, bool rigidbody) {
         this.cover = cover;
+        this.coverPoint = coverPoint;
         this.index = index;
-        this.gravityScale = gravityScale;
+        this.rigidbody = rigidbody;
     }
 
     public void ExitCover(GameObject entity) {

@@ -3,8 +3,8 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour {
     private bool ready = false;
     private static int wallLayer = -1;
-    private static int coverLayer = -1;
 
+    private Vector2 direction;
     private Vector2 finalPosition;
     private float maxSpeed;
     private int ignoreLayer;
@@ -19,13 +19,6 @@ public abstract class Projectile : MonoBehaviour {
                 throw new UnityException("No layer found for the walls!");
             }
         }
-
-        if (Projectile.coverLayer == -1) {
-            Projectile.coverLayer = LayerMask.NameToLayer("Cover");
-            if (Projectile.coverLayer == -1) {
-                throw new UnityException("No layer found for the cover!");
-            }
-        }
     }
 
     public void Init(int ignoreLayer, Vector2 targetPos, float range, float speed, int damage) {
@@ -37,7 +30,7 @@ public abstract class Projectile : MonoBehaviour {
         // final position around (0, 0). This direction can be adapted to work
         // for us by adding the start position.
         Vector2 startPos = new Vector2(base.transform.position.x, base.transform.position.y);
-        Vector2 direction = targetPos - startPos;
+        this.direction = targetPos - startPos;
         this.finalPosition = (direction.normalized * range) + startPos;
 
         this.maxSpeed = speed;
@@ -45,8 +38,10 @@ public abstract class Projectile : MonoBehaviour {
 
         //Compute a rotation for the projectile based on the direction.
         //The sprite is drawn horizontally, so we rotate from that.
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(this.direction.y, this.direction.x) * Mathf.Rad2Deg;
         base.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        this.direction.Normalize();
 
         //Call last
         this.ready = true;
@@ -71,20 +66,22 @@ public abstract class Projectile : MonoBehaviour {
                     //If we hit a wall, then destroy the projectile
                     this.HitFunction(null);
                     Destroy(base.gameObject);
-                } else if (c.gameObject.layer == Projectile.coverLayer) {
-                    //If we hit a cover that is in use, then destroy the projectile
-                    Cover cover = c.gameObject.GetComponent<Cover>();
-                    if (cover != null && cover.IsCovering()) {
-                        this.HitFunction(null);
-                        Destroy(base.gameObject);
-                    }
                 } else if (c.gameObject.layer != this.ignoreLayer) {
                     //If we hit an entity, then deal damage and destroy the projectile
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
-                        this.HitFunction(c.gameObject);
-                        entity.TakeDamage(this.damageDealt);
-                        Destroy(base.gameObject);
+                        //Check if the entity is in cover and protected by it
+                        bool isProtected = false;
+                        if (entity.IsInCover()) {
+                            Vector2 coverDirection = entity.GetCoverDirection();
+                            isProtected = Vector2.Angle(coverDirection, this.direction) < 90;
+                        }
+
+                        if (!isProtected) {
+                            this.HitFunction(c.gameObject);
+                            entity.TakeDamage(this.damageDealt);
+                            Destroy(base.gameObject);
+                        }
                     }
                 }
             }

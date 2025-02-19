@@ -144,7 +144,7 @@ public class EnemyController : Shooter {
         yield return new WaitForSeconds(this.outOfCoverTime * Random.Range(minRandom, maxRandom));
 
         Cover potentialCover = this.NearestCover();
-        if (Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, this.destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
+        if (potentialCover != null && Vector2.Distance(potentialCover.NearestCoverPointPos(base.transform.position, this.destinationSetter.target.gameObject), this.destinationSetter.target.position) < this.weapon.useRange) {
             //Get back into cover
             this.EnterCover(potentialCover);
         }
