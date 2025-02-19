@@ -13,6 +13,8 @@ public abstract class Shooter : Entity {
         WeaponType genericInstance = this.weapon;
         this.weapon = Instantiate(genericInstance);
         this.weapon.ready = true;
+
+        this.shootFeedback.Events.OnComplete.AddListener(this.ShootFinished);
     }
 
     public void Shoot(Vector2 targetPos) {
@@ -24,6 +26,13 @@ public abstract class Shooter : Entity {
         Vector2 direction = targetPos - (Vector2)this.firePoint.position;
         direction.Normalize();
         targetPos = (Vector2) this.firePoint.position + (direction * this.weapon.useRange);
+
+        //Flip the player to the required direction
+        if (targetPos.x < this.transform.position.x) {
+            base.FlipEntity(true);
+        } else {
+            base.FlipEntity(false);
+        }
 
         if (this.weapon.isSpawner) {
             int amount = this.weapon.GetAmount();
@@ -56,6 +65,21 @@ public abstract class Shooter : Entity {
         }
 
         StartCoroutine(this.Reload(this.weapon));
+    }
+
+    public void ShootFinished() {
+        //Flip the shooter back to the original direction
+
+        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+        if (rb == null) {
+            return;
+        }
+
+        if (rb.linearVelocity.x < 0) {
+            base.FlipEntity(true);
+        } else {
+            base.FlipEntity(false);
+        }
     }
 
     public bool IsReadyToShoot() {
