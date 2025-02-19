@@ -1,6 +1,7 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(CinemachineCamera))]
 public class Parallax : MonoBehaviour {
     [Header("Normal")]
     public GameObject parallaxPrefab;
@@ -48,7 +49,7 @@ public class Parallax : MonoBehaviour {
         ParallaxChild parallax = child.GetComponent<ParallaxChild>();
         parallax.spriteRenderer.sprite = sprite;
         parallax.parallaxEffect = parallaxEffect;
-        parallax.parallaxedCamera = this.GetComponent<Camera>();
+        parallax.parallaxedCamera = this.GetComponent<CinemachineCamera>();
         parallax.isBackground = background;
         parallax.Init();
     }
