@@ -335,7 +335,7 @@ MonoBehaviour:
   firePoint: {fileID: 435722333876567016}
   shootFeedback: {fileID: 4127678519011404904}
   reloadFeedback: {fileID: 0}
-  deviationValue: 0.2
+  deviationValue: 0.4
   weapon: {fileID: 11400000, guid: c12dd6cb930a4e243a2894cc5fd57863, type: 2}
   moveRange: 2
   playerLayer:
