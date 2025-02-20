@@ -10,7 +10,6 @@ public class MenuManager : Singleton<MenuManager> {
     public Button creditsButton;
 
     [Header("UI Panels")]
-    public MenuPanel settingsPanel;
     public MenuPanel creditsPanel;
     public LoadingPanel loadingPanel;
     public DifficultyPanel difficultyPanel;
@@ -19,11 +18,9 @@ public class MenuManager : Singleton<MenuManager> {
         Time.timeScale = 1f;
 
         this.playButton.onClick.AddListener(PlayButton);
-        this.settingsButton.onClick.AddListener(SettingsButton);
         this.quitButton.onClick.AddListener(QuitButton);
         this.creditsButton.onClick.AddListener(CreditsButton);
 
-        this.settingsPanel.gameObject.SetActive(false);
         this.creditsPanel.gameObject.SetActive(false);
         this.loadingPanel.gameObject.SetActive(false);
         this.difficultyPanel.gameObject.SetActive(false);
@@ -31,10 +28,6 @@ public class MenuManager : Singleton<MenuManager> {
 
     public void PlayButton() {
         this.difficultyPanel.gameObject.SetActive(true);
-    }
-
-    public void SettingsButton() {
-        this.settingsPanel.gameObject.SetActive(true);
     }
 
     public void QuitButton() {
