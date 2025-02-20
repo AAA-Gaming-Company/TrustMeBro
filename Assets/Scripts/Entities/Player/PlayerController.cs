@@ -1,4 +1,5 @@
 using System.Collections;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -37,8 +38,10 @@ public class PlayerController : Shooter {
     [Min(0)]
     public float sprintStaminaCost = 10f;
 
-    [Header("Player General Config")]
+    [Header("Player Inventory Config")]
     public PlayerInventory inventory;
+    public MMF_Player weaponPickupFeedback;
+    public MMF_Player weaponSwitchFeedback;
 
     public new void Awake() {
         base.Awake();
@@ -126,8 +129,12 @@ public class PlayerController : Shooter {
 
         //Cycle weapons
         if (InputManager.Instance.GetCycleItem() != 0) {
-            this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0);
-            this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+            if (this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0)) {
+                this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+                if (this.weaponSwitchFeedback != null) {
+                    this.weaponSwitchFeedback.PlayFeedbacks();
+                }
+            }
         }
 
         //Sprint
@@ -236,6 +243,13 @@ public class PlayerController : Shooter {
             this.staminaHideCoroutine = StartCoroutine(this.HideStaminaBar());
         } else {
             this.staminaBar.gameObject.SetActive(false);
+        }
+    }
+
+    public void PickupItem(WeaponType weapon) {
+        this.inventory.AddItem(weapon);
+        if (this.weaponPickupFeedback != null) {
+            this.weaponPickupFeedback.PlayFeedbacks();
         }
     }
 

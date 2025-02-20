@@ -69,10 +69,10 @@ public class PlayerInventory {
         return this.items[this.currentSelectedWeapon].weaponType;
     }
 
-    public void CycleSelectedWeapon(bool forward) {
+    public bool CycleSelectedWeapon(bool forward) {
         if (this.items.Count == 0) {
             this.currentSelectedWeapon = -1;
-            return;
+            return false;
         }
 
         if (forward) {
@@ -86,6 +86,8 @@ public class PlayerInventory {
                 this.currentSelectedWeapon = this.items.Count - 1;
             }
         }
+
+        return true;
     }
 }
 

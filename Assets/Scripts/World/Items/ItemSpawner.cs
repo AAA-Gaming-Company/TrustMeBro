@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour {
     public WeaponType itemToSpawn;
-    public MMF_Player pickupFeedback;
 
     private void Start() {
         // Create an empty game object to hold the item
@@ -12,7 +11,7 @@ public class ItemSpawner : MonoBehaviour {
         item.name = this.itemToSpawn.displayName + " World Item";
 
         ItemOnGround itemOnGround = item.AddComponent<ItemOnGround>();
-        itemOnGround.Setup(this.itemToSpawn, this.pickupFeedback);
+        itemOnGround.Setup(this.itemToSpawn);
 
         Destroy(this.gameObject);
     }
