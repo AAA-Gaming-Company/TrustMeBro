@@ -35,12 +35,11 @@ public abstract class Shooter : Entity {
         direction = new Vector2(direction.x + Random.Range(-deviationValue, deviationValue), direction.y + Random.Range(-deviationValue, deviationValue));
         targetPos = (Vector2) this.firePoint.position + (direction * this.currentWeapon.useRange);
 
-
         if (this.currentWeapon.isSpawner) {
             int amount = this.currentWeapon.GetAmount();
 
             int damage = 0;
-            if (this.currentWeapon.isProjectile) {
+            if (this.currentWeapon.isProjectile || this.currentWeapon.isGrenade) {
                 damage = this.currentWeapon.GetDamage();
             }
 
@@ -58,6 +57,9 @@ public abstract class Shooter : Entity {
                 if (this.currentWeapon.isProjectile) {
                     Projectile projectile = newObject.GetComponent<Projectile>();
                     projectile.Init(this.gameObject.layer, computedTargetPosition, this.currentWeapon.useRange, this.currentWeapon.projectileSpeed, damage);
+                } else if (this.currentWeapon.isGrenade) {
+                    Grenade grenade = newObject.GetComponent<Grenade>();
+                    grenade.Init(computedTargetPosition, this.currentWeapon.grenadeExplosionRadius, this.currentWeapon.useRange, damage);
                 }
             }
         }

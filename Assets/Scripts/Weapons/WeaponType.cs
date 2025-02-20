@@ -21,6 +21,12 @@ public class WeaponType : ScriptableObject {
     [Header("Projectile")]
     public bool isProjectile = false;
     public float projectileSpeed = 0.5f;
+
+    [Header("Grenade")]
+    public bool isGrenade = false;
+    public float grenadeExplosionRadius = 1;
+
+    [Header("Damage")]
     [SerializeField]
     private int[] damage = { 10 };
 

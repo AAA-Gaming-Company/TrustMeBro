@@ -44,8 +44,8 @@ public abstract class Projectile : MonoBehaviour {
         this.direction.Normalize();
 
         //Call last
-        this.ready = true;
         Projectile.FindLayers();
+        this.ready = true;
     }
 
     private void FixedUpdate() {

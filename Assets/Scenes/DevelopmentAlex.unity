@@ -2772,7 +2772,9 @@ MonoBehaviour:
   staminaRegen: 10
   sprintStaminaCost: 10
   inventory:
-    items: []
+    items:
+    - weaponType: {fileID: 11400000, guid: 4ff7fec74f64143758db0659c1cd48a1, type: 2}
+      amount: 10
   weaponPickupFeedback: {fileID: 0}
   weaponSwitchFeedback: {fileID: 0}
 --- !u!212 &3291937972572076912
@@ -3392,7 +3394,7 @@ Transform:
   m_GameObject: {fileID: 7283935611630258471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.63, y: 0.28999996, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
