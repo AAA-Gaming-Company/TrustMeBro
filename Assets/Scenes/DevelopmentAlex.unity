@@ -4503,6 +4503,7 @@ MonoBehaviour:
   - {fileID: 1572663346852657328}
   - {fileID: 2737518109912039228}
   triggerOnce: 1
+  forceOnlyPlayerTrigger: 1
   messages:
   - dergsyrjtythtgtgtg
   speakerName: deirgiue

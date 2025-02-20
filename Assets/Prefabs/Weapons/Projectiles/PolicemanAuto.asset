@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDelay:
   - 0.05
-  useRange: 6
+  useRange: 9
   isSingleUse: 0
   isAutomatic: 0
   displayName: Untitled Weapon
@@ -24,5 +24,7 @@ MonoBehaviour:
   amount: 01000000
   isProjectile: 1
   projectileSpeed: 0.8
+  isGrenade: 0
+  grenadeExplosionRadius: 1
   damage: 020000000600000009000000
   ready: 0

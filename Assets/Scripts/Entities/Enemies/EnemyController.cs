@@ -127,6 +127,7 @@ public class EnemyController : Shooter {
     }
 
     private IEnumerator AttackBehavior() {
+        Debug.Log("Attack behavior running");
         this.attackBehaviorRunning = true;
         float minRandom = 1 - this.behaviorRandomFactor;
         float maxRandom = 1 + this.behaviorRandomFactor;
@@ -139,7 +140,7 @@ public class EnemyController : Shooter {
             if (this.IsReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
                 //Fires the shot; then reloads
                 this.Shoot(this.destinationSetter.target.position);
-                yield return new WaitForSeconds((this.weapon.GetUseDelay() + 0.05f) * Random.Range(minRandom, maxRandom));
+                yield return new WaitForSeconds(this.weapon.GetUseDelay());
             }
         }
 
