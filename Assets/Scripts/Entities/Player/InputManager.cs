@@ -170,7 +170,11 @@ public class InputManager : Singleton<InputManager> {
 
     public void Attack(bool down, bool wasButton) {
         this.attackWasButton = wasButton;
-        this.attackDown = down;
+        if (down) {
+            this.attackDown = true;
+        } else {
+            this.attackUp = true;
+        }
     }
 
     public static void OnCrouch(InputAction.CallbackContext context) {

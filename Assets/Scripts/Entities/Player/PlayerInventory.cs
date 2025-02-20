@@ -94,7 +94,7 @@ public class PlayerInventory {
 
 [System.Serializable]
 public class ItemStack {
-    public WeaponType weaponType;
+    public WeaponType weaponType = null;
     [Min(1)]
-    public int amount;
+    public int amount = 1;
 }
