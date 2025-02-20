@@ -5,7 +5,8 @@ public class WeaponType : ScriptableObject {
     [SerializeField]
     private float[] useDelay = { 1 };
     public float useRange = 15;
-    public bool isAuto = false;
+    public bool isAutomatic = false;
+
     [Header("Spawner")]
     public bool isSpawner = false;
     public GameObject prefab;

@@ -20,8 +20,6 @@ public abstract class Entity : MonoBehaviour {
     protected int currentHealth;
     protected EntityDieType dieType = EntityDieType.DESTROY;
 
-        
-
     public void Start() {
         this.currentHealth = this.maxHealth;
         this.anim = GetComponent<Animator>();
@@ -57,7 +55,6 @@ public abstract class Entity : MonoBehaviour {
         this.healthBar.min = 0;
         this.healthBar.max = this.maxHealth;
         this.healthBar.UpdateValue(this.currentHealth);
-        Debug.Log("Ran UpdateHealthBar");
     }
 
     public bool IsInCover() {
