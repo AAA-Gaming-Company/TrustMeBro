@@ -1,5 +1,6 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
+using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
