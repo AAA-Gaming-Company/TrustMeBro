@@ -17,12 +17,15 @@ public class SpawnTriggerArea : TriggerArea {
     }
 
     private void Awake() {
+        if (this.spawnLocation == null) {
+            Debug.LogError("Spawn Location is not set!");
+        }
         if (this.aiDestination == null && this.hasAiDestination) {
             Debug.LogError("AI Destination is not set");
         }
     }
 
-    protected override void TriggerAction() {
+    protected override void TriggerAction(PlayerController player) {
         for (int i = 0; i < this.spawns.Length; i++) {
             Spawn spawn = this.spawns[i];
 
@@ -42,8 +45,11 @@ public class SpawnTriggerArea : TriggerArea {
             }
         }
     }
-        public void OnDrawGizmos() {
-        Gizmos.color = Color.black;
-        Gizmos.DrawCube(this.spawnLocation.position, new Vector3(.5f, .5f, .5f));
+
+    public void OnDrawGizmos() {
+        if (this.spawnLocation != null) {
+            Gizmos.color = Color.black;
+            Gizmos.DrawCube(this.spawnLocation.position, new Vector3(.5f, .5f, .5f));
+        }
     }
 }

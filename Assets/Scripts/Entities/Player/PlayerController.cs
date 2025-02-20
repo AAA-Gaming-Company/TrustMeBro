@@ -58,8 +58,9 @@ public class PlayerController : Shooter {
 
         this.dieType = EntityDieType.NOTHING;
 
-        if (GameManager.hasCheckpoint) {
-            this.transform.position = GameManager.lastCheckpoint;
+        if (GameManager.lastCheckpoint != null) {
+            this.transform.position = GameManager.lastCheckpoint.position;
+            this.inventory = GameManager.lastCheckpoint.inventory;
         }
 
         InputManager.Instance.Init();

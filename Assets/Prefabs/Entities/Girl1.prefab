@@ -1028,7 +1028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7469310299273895595
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ Transform:
   m_GameObject: {fileID: 6036366747376350108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.383, z: -5}
+  m_LocalPosition: {x: 0, y: 500, z: -5}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1128,6 +1128,7 @@ GameObject:
   - component: {fileID: 4634426153093289559}
   - component: {fileID: 6676034677767943535}
   - component: {fileID: 5965788998232280092}
+  - component: {fileID: 6849611057460551515}
   m_Layer: 8
   m_Name: Girl1
   m_TagString: Untagged
@@ -1295,6 +1296,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6849611057460551515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238464599916908404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfef0a3b06facca4ead19a886694fc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  healthBar: {fileID: 2594767373113074496}
+  noFlip: {fileID: 779943326927113207}
+  damageFeedback: {fileID: 8118356069676370900}
+  enterCoverFeedback: {fileID: 0}
+  enableMaterialInstancing: 1
+  coverIndicator: {fileID: 28590941114679879}
+  coverLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  coverRadius: 0
+  entries:
+  - messages:
+    - Unfortunately, Buff McManlyface was not particularly dextrous and had grabbed
+      his gun instead of his camera.
+    - Don't ask, I don't know either.
+    speakerName: Omniscient Narrator
+    speakerImage: {fileID: 21300034, guid: 9bd9265533309304db171aa9f916554a, type: 3}
+  - messages:
+    - Oops.
+    speakerName: Buff McManlyface
+    speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+  - messages:
+    - OH MY GOD OH MY GOD OKAY
+    - 'New plan: workout routine! Run from the cops!'
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  - messages:
+    - Hey! What are you doing?!
+    - You've been a naughty boy! >:(
+    speakerName: Officer Stefan Jawline
+    speakerImage: {fileID: 8149817239022723639, guid: b1c6e792d0350bb4a86656d5ce847902, type: 3}
 --- !u!1 &8332708553773741193
 GameObject:
   m_ObjectHideFlags: 0

@@ -1142,6 +1142,7 @@ MonoBehaviour:
   firePoint: {fileID: 967558948872664417}
   shootFeedback: {fileID: 8017847337032654379}
   reloadFeedback: {fileID: 0}
+  deviationValue: 0
   playerSpeed: 4
   playerSprintSpeed: 6
   jumpPower: 18
@@ -1154,10 +1155,7 @@ MonoBehaviour:
   staminaRegen: 10
   sprintStaminaCost: 10
   inventory:
-    items:
-    - weaponType: {fileID: 11400000, guid: 99b6effb44eb1d74e932851fb7652776, type: 2}
-      amount: 1
-    currentSelectedWeapon: -1
+    items: []
   weaponPickupFeedback: {fileID: 0}
   weaponSwitchFeedback: {fileID: 0}
 --- !u!95 &137382388366205401

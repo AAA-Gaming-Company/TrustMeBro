@@ -8,7 +8,7 @@ public class CameraTriggerArea : TriggerArea {
     public float targetOffsetY = 0f;
     public float orthographicSize = 0f;
 
-    protected override void TriggerAction() {
+    protected override void TriggerAction(PlayerController player) {
         CinemachinePositionComposer positionComposer = cinemachineCamera.GetComponent<CinemachinePositionComposer>();
         if (positionComposer == null) {
             throw new System.Exception("CinemachinePositionComposer is null!");

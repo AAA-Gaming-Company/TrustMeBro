@@ -90,6 +90,18 @@ public class PlayerInventory {
 
         return true;
     }
+
+    public PlayerInventory Copy() {
+        PlayerInventory copy = new PlayerInventory();
+        foreach (ItemStack item in this.items) {
+            copy.items.Add(new ItemStack { weaponType = item.weaponType, amount = item.amount });
+        }
+
+        copy.currentSelectedWeapon = this.currentSelectedWeapon;
+        copy.inventoryChangedEvent = this.inventoryChangedEvent;
+
+        return copy;
+    }
 }
 
 [System.Serializable]
