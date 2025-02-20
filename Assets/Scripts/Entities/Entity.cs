@@ -9,6 +9,8 @@ public abstract class Entity : MonoBehaviour {
     public GameObject noFlip;
     public MMF_Player damageFeedback;
     public MMF_Player enterCoverFeedback;
+    [Tooltip("If true, the entity will use material instancing for its sprite renderer. Used for damage flashes.")]
+    public bool enableMaterialInstancing = true;
 
     [Header("Cover System")]
     public GameObject coverIndicator;
@@ -17,13 +19,19 @@ public abstract class Entity : MonoBehaviour {
 
     private Animator anim;
     private CoverEntry currentCoverEntry;
+    private SpriteRenderer spriteRenderer;
     protected int currentHealth;
     protected EntityDieType dieType = EntityDieType.DESTROY;
 
     public void Start() {
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.currentHealth = this.maxHealth;
         this.anim = GetComponent<Animator>();
         this.UpdateHealthBar();
+        if (this.enableMaterialInstancing) {
+            this.spriteRenderer.material = new Material(this.spriteRenderer.material);
+            //This shouldn't have a performance cost, URP batches all materials with the same shader
+        }
     }
 
     protected abstract void OnDie();
