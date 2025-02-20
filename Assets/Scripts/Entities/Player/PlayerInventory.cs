@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
 public class PlayerInventory {
     public List<ItemStack> items = new List<ItemStack>();
-    public int currentSelectedWeapon = -1;
 
+    private int currentSelectedWeapon = -1;
     private UnityEvent inventoryChangedEvent = new UnityEvent();
 
     public void RegisterInventoryChangedEvent(UnityAction action) {
@@ -94,5 +95,6 @@ public class PlayerInventory {
 [System.Serializable]
 public class ItemStack {
     public WeaponType weaponType;
+    [Min(1)]
     public int amount;
 }

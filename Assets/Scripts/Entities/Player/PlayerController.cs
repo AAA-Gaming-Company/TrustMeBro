@@ -17,6 +17,8 @@ public class PlayerController : Shooter {
     private float currentStamina;
     private Coroutine staminaHideCoroutine;
 
+    private bool isUsingAutomaticWeapon = false;
+
     private Animator animator;
     private Collider2D collider2d;
     private Rigidbody2D rb;
@@ -120,13 +122,18 @@ public class PlayerController : Shooter {
 
         //Attack
         WeaponType selectedWeapon = this.inventory.GetSelectedWeapon();
-        if (InputManager.Instance.GetAttackDown(false) && selectedWeapon != null) {
+        if ((InputManager.Instance.GetAttackDown(false) && selectedWeapon != null) || this.isUsingAutomaticWeapon) {
+            this.isUsingAutomaticWeapon = selectedWeapon.isAutomatic;
+
             this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
             StatsManager.Instance.AddShotFired();
 
             if (selectedWeapon.isSingleUse) {
                 this.inventory.RemoveItem(selectedWeapon, 1);
             }
+        }
+        if (InputManager.Instance.GetAttackUp()) {
+            this.isUsingAutomaticWeapon = false;
         }
 
         //Cycle weapons
@@ -136,6 +143,7 @@ public class PlayerController : Shooter {
                 if (this.weaponSwitchFeedback != null) {
                     this.weaponSwitchFeedback.PlayFeedbacks();
                 }
+                this.isUsingAutomaticWeapon = false;
             }
         }
 
