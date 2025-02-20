@@ -7,6 +7,7 @@ public abstract class Shooter : Entity {
     public Transform firePoint;
     public MMF_Player shootFeedback;
     public MMF_Player reloadFeedback;
+    public float deviationValue = 0;
 
     private WeaponType currentWeapon = null;
 
@@ -31,14 +32,9 @@ public abstract class Shooter : Entity {
         // Make sure that the target position is at the limit of the weapon's range
         Vector2 direction = targetPos - (Vector2)this.firePoint.position;
         direction.Normalize();
+        direction = new Vector2(direction.x + Random.Range(-deviationValue, deviationValue), direction.y + Random.Range(-deviationValue, deviationValue));
         targetPos = (Vector2) this.firePoint.position + (direction * this.currentWeapon.useRange);
 
-        //Flip the player to the required direction
-        if (targetPos.x < this.transform.position.x) {
-            base.FlipEntity(true);
-        } else {
-            base.FlipEntity(false);
-        }
 
         if (this.currentWeapon.isSpawner) {
             int amount = this.currentWeapon.GetAmount();

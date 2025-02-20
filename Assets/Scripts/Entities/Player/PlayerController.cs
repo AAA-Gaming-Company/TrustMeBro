@@ -124,8 +124,15 @@ public class PlayerController : Shooter {
         WeaponType selectedWeapon = this.inventory.GetSelectedWeapon();
         if ((InputManager.Instance.GetAttackDown(false) && selectedWeapon != null) || this.isUsingAutomaticWeapon) {
             this.isUsingAutomaticWeapon = selectedWeapon.isAutomatic;
-
-            this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
+            
+            //Flip the player to the required direction when shooting
+            Vector3 targetPos = this.cam.ScreenToWorldPoint(Input.mousePosition);
+            if (targetPos.x < this.transform.position.x) {
+                base.FlipEntity(true);
+            } else {
+                base.FlipEntity(false);
+            }
+            this.Shoot(targetPos);
             StatsManager.Instance.AddShotFired();
 
             if (selectedWeapon.isSingleUse) {
@@ -269,5 +276,13 @@ public class PlayerController : Shooter {
     }
 
     protected override void OnDamage(int amount) {
+    }
+    public void SlowTime(float timeSpeed, float timeSlowDuration) {
+        StartCoroutine(this.TimeSlower(timeSpeed, timeSlowDuration));
+    }
+    private IEnumerator TimeSlower(float timeSpeed, float timeSlowDuration) {
+        Time.timeScale = timeSpeed;
+        yield return new WaitForSecondsRealtime(timeSlowDuration);
+        Time.timeScale = 1;
     }
 }

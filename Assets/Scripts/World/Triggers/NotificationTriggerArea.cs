@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class NotificationTriggerArea : TriggerArea {
@@ -9,6 +10,7 @@ public class NotificationTriggerArea : TriggerArea {
     [Min(0)]
     public float timeToDisplay;
 
+
     protected override void TriggerAction() {
         NotificationBuilder.Builder()
             .WithMessages(this.messages)
@@ -17,4 +19,6 @@ public class NotificationTriggerArea : TriggerArea {
             .WithTimeToDisplay(this.timeToDisplay)
             .BuildAndDisplay();
     }
+
+
 }

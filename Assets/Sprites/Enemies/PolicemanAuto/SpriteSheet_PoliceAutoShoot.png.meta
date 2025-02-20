@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: 71eaacd8125a74b438b615288778cb11
+guid: 31012c422c27d654e8146e93064f6fbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5189330088450849476
-    second: SpriteSheet_Police_Shoot_0
+      213: -1503038455111943356
+    second: SpriteSheet_PoliceAutoShoot_0
   - first:
-      213: 1953980981451715435
-    second: SpriteSheet_Police_Shoot_1
+      213: 2251575577434412887
+    second: SpriteSheet_PoliceAutoShoot_1
   - first:
-      213: -7023181499855033944
-    second: SpriteSheet_Police_Shoot_2
-  - first:
-      213: -1904564547994644661
-    second: SpriteSheet_Police_Shoot_3
-  - first:
-      213: 7590251077637273605
-    second: SpriteSheet_Police_Shoot_4
-  - first:
-      213: -7755930322177943587
-    second: SpriteSheet_Police_Shoot_5
-  - first:
-      213: 8681017725232074412
-    second: SpriteSheet_Police_Shoot_6
+      213: 4459429817871146134
+    second: SpriteSheet_PoliceAutoShoot_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,172 +141,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_0
+      name: SpriteSheet_PoliceAutoShoot_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 8
         y: 213
-        width: 39
-        height: 34
+        width: 40
+        height: 24
       alignment: 9
-      pivot: {x: 0.72923493, y: 0.24447048}
+      pivot: {x: 0.8149284, y: 0.3648707}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3504af57cbcbf7b0800000000000000
-      internalID: -5189330088450849476
+      spriteID: 44bfc4f0d72242be0800000000000000
+      internalID: -1503038455111943356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_1
+      name: SpriteSheet_PoliceAutoShoot_1
       rect:
         serializedVersion: 2
-        x: 63
+        x: 60
         y: 213
-        width: 39
-        height: 34
+        width: 40
+        height: 24
       alignment: 9
-      pivot: {x: 0.77927107, y: 0.27160287}
+      pivot: {x: 0.82344913, y: 0.40678087}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b637c49995fed1b10800000000000000
-      internalID: 1953980981451715435
+      spriteID: 7575cedee043f3f10800000000000000
+      internalID: 2251575577434412887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_2
+      name: SpriteSheet_PoliceAutoShoot_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 213
-        width: 39
-        height: 34
-      alignment: 9
-      pivot: {x: 0.80437917, y: 0.26911476}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a9ab04e2a5a88e90800000000000000
-      internalID: -7023181499855033944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_3
-      rect:
-        serializedVersion: 2
-        x: 192
+        x: 133
         y: 214
-        width: 39
-        height: 34
+        width: 40
+        height: 24
       alignment: 9
-      pivot: {x: 0.82917315, y: 0.27751654}
+      pivot: {x: 0.84768105, y: 0.38990974}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4f0af862a0a195e0800000000000000
-      internalID: -1904564547994644661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 173
-        width: 39
-        height: 34
-      alignment: 9
-      pivot: {x: 0.7423841, y: 0.31949928}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5087896e32df55960800000000000000
-      internalID: 7590251077637273605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_5
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 176
-        width: 39
-        height: 34
-      alignment: 9
-      pivot: {x: 0.76011366, y: 0.26200417}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd717e3f6766d5490800000000000000
-      internalID: -7755930322177943587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Shoot_6
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 175
-        width: 39
-        height: 34
-      alignment: 9
-      pivot: {x: 0.78996396, y: 0.2754678}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: caec35980ab297870800000000000000
-      internalID: 8681017725232074412
+      spriteID: 69c9ef2dac313ed30800000000000000
+      internalID: 4459429817871146134
       vertices: []
       indices: 
       edges: []
@@ -327,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b83825694493e7409a3cfbcfefa745d
+    spriteID: 8d7892fb0f7d18549bf478127f72e3e0
     internalID: 0
     vertices: []
     indices: 
@@ -337,13 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SpriteSheet_Police_Shoot_0: -5189330088450849476
-      SpriteSheet_Police_Shoot_1: 1953980981451715435
-      SpriteSheet_Police_Shoot_2: -7023181499855033944
-      SpriteSheet_Police_Shoot_3: -1904564547994644661
-      SpriteSheet_Police_Shoot_4: 7590251077637273605
-      SpriteSheet_Police_Shoot_5: -7755930322177943587
-      SpriteSheet_Police_Shoot_6: 8681017725232074412
+      SpriteSheet_PoliceAutoShoot_0: -1503038455111943356
+      SpriteSheet_PoliceAutoShoot_1: 2251575577434412887
+      SpriteSheet_PoliceAutoShoot_2: 4459429817871146134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

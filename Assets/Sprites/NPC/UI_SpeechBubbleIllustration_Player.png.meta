@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e717f7cf2b7509745ba66a78fa97ce0f
+guid: 9105d4b04b6f0b841b8866eb245c17b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6711999828517966367
-    second: Tile_Car-red_0
+      213: -2869696522318944196
+    second: UI_SpeechBubbleIllustration_Player_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,30 +135,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_Car-red_0
+      name: UI_SpeechBubbleIllustration_Player_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 43
-        height: 15
+        x: 30
+        y: 22
+        width: 195
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ed24b8b7bf2ad2a0800000000000000
-      internalID: -6711999828517966367
+      spriteID: c38610e973acc28d0800000000000000
+      internalID: -2869696522318944196
       vertices: []
       indices: 
       edges: []
@@ -187,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tile_Car-red_0: -6711999828517966367
+      UI_SpeechBubbleIllustration_Player_0: -2869696522318944196
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

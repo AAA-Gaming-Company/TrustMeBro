@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 30ce0f714b385b547a2a5e66d04015ea, type: 2}
+  m_Motion: {fileID: 7400000, guid: acb763ff4e9be9241bd76a060a249dca, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -160,7 +160,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Policeman
+  m_Name: PolicemanAuto
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isWalking
@@ -215,7 +215,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a2a5ced35ca824241a3e459681f35f46, type: 2}
+  m_Motion: {fileID: 7400000, guid: a11204120e13ece43a8aeff75066ed1a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -264,7 +264,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3c4ad5c1819f77f43a6747a097ce6120, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9ee97518f1d3d744fac59db648a4b8d3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
