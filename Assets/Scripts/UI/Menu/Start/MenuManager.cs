@@ -27,8 +27,6 @@ public class MenuManager : Singleton<MenuManager> {
         this.creditsPanel.gameObject.SetActive(false);
         this.loadingPanel.gameObject.SetActive(false);
         this.difficultyPanel.gameObject.SetActive(false);
-
-        Debug.Log("TODO: ADD MUSIC");
     }
 
     public void PlayButton() {
