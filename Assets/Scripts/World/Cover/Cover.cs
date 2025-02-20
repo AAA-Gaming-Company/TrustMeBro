@@ -13,7 +13,7 @@ public class Cover : MonoBehaviour {
         }
     }
 
-    public CoverEntry EnterCover(GameObject entity, int index) {
+    public virtual CoverEntry EnterCover(GameObject entity, int index) {
         if (coverPointsOccupied[index]) {
             return null;
         }
