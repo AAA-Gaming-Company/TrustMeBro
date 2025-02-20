@@ -15,7 +15,10 @@ MonoBehaviour:
   useDelay:
   - 0.4
   useRange: 6
+  isSingleUse: 0
   isAutomatic: 0
+  displayName: Policeman
+  displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
   amount: 01000000

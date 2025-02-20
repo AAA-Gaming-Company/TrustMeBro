@@ -5,7 +5,12 @@ public class WeaponType : ScriptableObject {
     [SerializeField]
     private float[] useDelay = { 1 };
     public float useRange = 15;
+    public bool isSingleUse = false;
     public bool isAutomatic = false;
+
+    [Header("Display")]
+    public string displayName = "Untitled Weapon";
+    public Sprite displaySprite;
 
     [Header("Spawner")]
     public bool isSpawner = false;

@@ -4,28 +4,34 @@ using UnityEngine;
 
 public abstract class Shooter : Entity {
     [Header("Shooter")]
-    public WeaponType weapon;
     public Transform firePoint;
     public MMF_Player shootFeedback;
     public MMF_Player reloadFeedback;
 
-    public void Awake() {
-        WeaponType genericInstance = this.weapon;
-        this.weapon = Instantiate(genericInstance);
-        this.weapon.ready = true;
+    private WeaponType currentWeapon = null;
 
+    public void Awake() {
         this.shootFeedback.Events.OnComplete.AddListener(this.ShootFinished);
     }
 
+    public void SwitchWeapon(WeaponType newWeapon) {
+        if (newWeapon == null) {
+            this.currentWeapon = null;
+        } else {
+            this.currentWeapon = Instantiate(newWeapon);
+            this.currentWeapon.ready = true;
+        }
+    }
+
     public void Shoot(Vector2 targetPos) {
-        if (!this.IsReadyToShoot()) {
+        if (this.currentWeapon == null || !this.IsReadyToShoot()) {
             return;
         }
 
         // Make sure that the target position is at the limit of the weapon's range
         Vector2 direction = targetPos - (Vector2)this.firePoint.position;
         direction.Normalize();
-        targetPos = (Vector2) this.firePoint.position + (direction * this.weapon.useRange);
+        targetPos = (Vector2) this.firePoint.position + (direction * this.currentWeapon.useRange);
 
         //Flip the player to the required direction
         if (targetPos.x < this.transform.position.x) {
@@ -34,12 +40,12 @@ public abstract class Shooter : Entity {
             base.FlipEntity(false);
         }
 
-        if (this.weapon.isSpawner) {
-            int amount = this.weapon.GetAmount();
+        if (this.currentWeapon.isSpawner) {
+            int amount = this.currentWeapon.GetAmount();
 
             int damage = 0;
-            if (this.weapon.isProjectile) {
-                damage = this.weapon.GetDamage();
+            if (this.currentWeapon.isProjectile) {
+                damage = this.currentWeapon.GetDamage();
             }
 
             float deviation = 0.5f * Mathf.Log(amount);
@@ -51,11 +57,11 @@ public abstract class Shooter : Entity {
                     computedTargetPosition = new Vector2(targetPos.x + Random.Range(-deviation, deviation), targetPos.y + Random.Range(-deviation, deviation));
                 }
 
-                GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
+                GameObject newObject = Instantiate(this.currentWeapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
 
-                if (this.weapon.isProjectile) {
+                if (this.currentWeapon.isProjectile) {
                     Projectile projectile = newObject.GetComponent<Projectile>();
-                    projectile.Init(this.gameObject.layer, computedTargetPosition, this.weapon.useRange, this.weapon.projectileSpeed, damage);
+                    projectile.Init(this.gameObject.layer, computedTargetPosition, this.currentWeapon.useRange, this.currentWeapon.projectileSpeed, damage);
                 }
             }
         }
@@ -64,7 +70,7 @@ public abstract class Shooter : Entity {
             this.shootFeedback.PlayFeedbacks();
         }
 
-        StartCoroutine(this.Reload(this.weapon));
+        StartCoroutine(this.Reload(this.currentWeapon));
     }
 
     public void ShootFinished() {
@@ -83,11 +89,11 @@ public abstract class Shooter : Entity {
     }
 
     public bool IsReadyToShoot() {
-        return this.weapon.ready;
+        return this.currentWeapon.ready;
     }
 
     public float GetShootRange() {
-        return this.weapon.useRange;
+        return this.currentWeapon.useRange;
     }
 
     private IEnumerator Reload(WeaponType weapon) {

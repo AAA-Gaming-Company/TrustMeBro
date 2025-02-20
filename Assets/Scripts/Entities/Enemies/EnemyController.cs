@@ -8,6 +8,7 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class EnemyController : Shooter {
     [Header("Enemy")]
+    public WeaponType weapon;
     public float moveRange;
     public LayerMask playerLayer;
     public int healthBoostOnDeath;
@@ -39,6 +40,10 @@ public class EnemyController : Shooter {
         this.destinationSetter = GetComponent<AIDestinationSetter>();
         this.aiPath = GetComponent<AIPath>();
         this.animator = GetComponent<Animator>();
+
+        if (this.weapon.isSingleUse) {
+            throw new UnityException("Enemy weapons cannot be single use!");
+        }
     }
 
     public new void Start() {

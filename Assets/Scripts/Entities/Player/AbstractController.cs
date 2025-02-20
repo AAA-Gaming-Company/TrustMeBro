@@ -24,9 +24,7 @@ public abstract class AbstractController : MonoBehaviour {
     }
 
     protected void OnAttack(bool down) {
-        if (down) {
-            InputManager.Instance.Attack(true);
-        }
+        InputManager.Instance.Attack(down, true);
     }
 
     protected void OnInteract(bool down) {

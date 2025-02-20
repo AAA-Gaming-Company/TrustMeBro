@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -38,6 +37,9 @@ public class PlayerController : Shooter {
     [Min(0)]
     public float sprintStaminaCost = 10f;
 
+    [Header("Player General Config")]
+    public PlayerInventory inventory;
+
     public new void Awake() {
         base.Awake();
 
@@ -56,6 +58,15 @@ public class PlayerController : Shooter {
         }
 
         InputManager.Instance.Init();
+    }
+
+    public new void Start() {
+        this.inventory.CycleSelectedWeapon(true);
+        this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+
+        this.inventory.RegisterInventoryChangedEvent(() => {
+            this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+        });
     }
 
     private void Update() {
@@ -103,8 +114,20 @@ public class PlayerController : Shooter {
         }
 
         //Attack
-        if (InputManager.Instance.GetAttackDown(false)) {
-            this.Hit();
+        WeaponType selectedWeapon = this.inventory.GetSelectedWeapon();
+        if (InputManager.Instance.GetAttackDown(false) && selectedWeapon != null) {
+            this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
+            StatsManager.Instance.AddShotFired();
+
+            if (selectedWeapon.isSingleUse) {
+                this.inventory.RemoveItem(selectedWeapon, 1);
+            }
+        }
+
+        //Cycle weapons
+        if (InputManager.Instance.GetCycleItem() != 0) {
+            this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0);
+            this.SwitchWeapon(this.inventory.GetSelectedWeapon());
         }
 
         //Sprint
@@ -193,12 +216,6 @@ public class PlayerController : Shooter {
 
     public Collider2D GetCollider() {
         return this.collider2d;
-    }
-
-    private void Hit() {
-        this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
-        //TODO: Add feedback here
-        StatsManager.Instance.AddShotFired();
     }
 
     public void Heal(int amount) {

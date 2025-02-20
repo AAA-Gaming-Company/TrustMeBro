@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -18,6 +19,10 @@ public class InputManager : Singleton<InputManager> {
     private bool jumpDown = false;
     private bool jumpUp = false;
 
+    private bool attackWasButton = false;
+    private bool attackDown = false;
+    private bool attackUp = false;
+
     private bool interactDown = false;
     private bool interactUp = false;
 
@@ -26,8 +31,7 @@ public class InputManager : Singleton<InputManager> {
     private bool sprintDown = false;
     private bool sprintUp = false;
 
-    private bool attackWasButton = false;
-    private bool attackDown = false;
+    private float cycleItem = 0f;
 
     private bool pauseDown = false;
 
@@ -69,11 +73,13 @@ public class InputManager : Singleton<InputManager> {
         this.jumpDown = false;
         this.jumpUp = false;
         this.attackDown = false;
+        this.attackUp = false;
         this.crouchDown = false;
         this.sprintDown = false;
         this.sprintUp = false;
         this.interactDown = false;
         this.interactUp = false;
+        this.cycleItem = 0f;
         this.pauseDown = false;
     }
 
@@ -91,6 +97,7 @@ public class InputManager : Singleton<InputManager> {
 
         InputAction attack = this.moveActionMap.FindAction("Attack");
         attack.started += OnAttack;
+        attack.canceled += OnAttackStop;
 
         InputAction crouch = this.moveActionMap.FindAction("Crouch");
         crouch.started += OnCrouch;
@@ -102,6 +109,9 @@ public class InputManager : Singleton<InputManager> {
         InputAction interact = this.moveActionMap.FindAction("Interact");
         interact.started += OnInteract;
         interact.canceled += OnInteractStop;
+
+        InputAction cycleItem = this.moveActionMap.FindAction("CycleItem");
+        cycleItem.started += OnCycleItem;
 
         InputActionMap pauseActionMap = this.playerInput.actions.FindActionMap("Pause");
 
@@ -151,12 +161,16 @@ public class InputManager : Singleton<InputManager> {
     }
 
     public static void OnAttack(InputAction.CallbackContext context) {
-        InputManager.Instance.Attack(false);
+        InputManager.Instance.Attack(true, false);
     }
 
-    public void Attack(bool wasButton) {
+    public static void OnAttackStop(InputAction.CallbackContext context) {
+        InputManager.Instance.Attack(false, false);
+    }
+
+    public void Attack(bool down, bool wasButton) {
         this.attackWasButton = wasButton;
-        this.attackDown = true;
+        this.attackDown = down;
     }
 
     public static void OnCrouch(InputAction.CallbackContext context) {
@@ -199,6 +213,20 @@ public class InputManager : Singleton<InputManager> {
         }
     }
 
+    public static void OnCycleItem(InputAction.CallbackContext context) {
+        float value = context.ReadValue<float>();
+        if (value == 0) {
+            return;
+        }
+        value = value > 0 ? 1 : -1;
+
+        InputManager.Instance.CycleItem(value);
+    }
+
+    public void CycleItem(float value) {
+        this.cycleItem = value;
+    }
+
     public static void OnPause(InputAction.CallbackContext context) {
         InputManager.Instance.Pause();
     }
@@ -234,6 +262,10 @@ public class InputManager : Singleton<InputManager> {
         return this.attackDown;
     }
 
+    public bool GetAttackUp() {
+        return this.attackUp;
+    }
+
     public bool GetCrouchDown() {
         return this.crouchDown;
     }
@@ -252,6 +284,10 @@ public class InputManager : Singleton<InputManager> {
 
     public bool GetInteractUp() {
         return this.interactUp;
+    }
+
+    public float GetCycleItem() {
+        return this.cycleItem;
     }
 
     public bool GetPauseDown() {
