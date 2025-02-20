@@ -64,6 +64,8 @@ public class PlayerController : Shooter {
     }
 
     public new void Start() {
+        base.Start();
+
         this.inventory.CycleSelectedWeapon(true);
         this.SwitchWeapon(this.inventory.GetSelectedWeapon());
 

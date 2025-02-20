@@ -44,6 +44,7 @@ public class EnemyController : Shooter {
         if (this.weapon.isSingleUse) {
             throw new UnityException("Enemy weapons cannot be single use!");
         }
+        this.SwitchWeapon(this.weapon);
     }
 
     public new void Start() {
