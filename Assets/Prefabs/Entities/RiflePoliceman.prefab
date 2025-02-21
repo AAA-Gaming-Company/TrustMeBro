@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551cfd04ffc1f4be3993d9ee2746761c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 15
   healthBar: {fileID: 265345389003429162}
   noFlip: {fileID: 4748960088318506500}
   damageFeedback: {fileID: 151215655564021700}

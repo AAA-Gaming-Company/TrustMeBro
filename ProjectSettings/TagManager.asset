@@ -45,5 +45,8 @@ TagManager:
   - name: Enemies
     uniqueID: 2685750311
     locked: 0
+  - name: Front Obstacles
+    uniqueID: 1203354421
+    locked: 0
   m_RenderingLayers:
   - Default

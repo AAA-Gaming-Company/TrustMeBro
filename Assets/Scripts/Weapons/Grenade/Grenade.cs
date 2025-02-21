@@ -17,7 +17,7 @@ public abstract class Grenade : MonoBehaviour {
     private Rigidbody2D rb;
     private string ignoreTag;
 
-    public void Init(Vector2 targetPos, float explosionRadius, float thriowForce, int damage, string ignoreTag = "") {
+    public void Init(Vector2 targetPos, float explosionRadius, float thriowForce, int damage, string ignoreTag = " ") {
         this.explosionRadius = explosionRadius;
         this.damage = damage;
         this.rb = this.GetComponent<Rigidbody2D>();

@@ -1,6 +1,7 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using Unity.Cinemachine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -52,6 +53,7 @@ public class PlayerController : Shooter {
     public MMF_Player weaponSwitchFeedback;
     public Image weaponImage;
     public TextMeshProUGUI weaponAmount;
+    public CinemachineCamera cinemachineCam;
 
     public new void Awake() {
         base.Awake();
@@ -69,6 +71,10 @@ public class PlayerController : Shooter {
         if (GameManager.lastCheckpoint != null) {
             this.transform.position = GameManager.lastCheckpoint.position;
             this.inventory = GameManager.lastCheckpoint.inventory;
+            this.cinemachineCam.Lens.OrthographicSize = GameManager.lastCheckpoint.camSize;
+            this.cinemachineCam.GetComponent<CinemachinePositionComposer>().Composition.ScreenPosition = GameManager.lastCheckpoint.camOffset;
+            this.cinemachineCam.GetComponent<CinemachinePositionComposer>().Composition.DeadZone.Enabled = GameManager.lastCheckpoint.deadZone;
+            this.cinemachineCam.GetComponent<CinemachinePositionComposer>().Composition.DeadZone.Size = GameManager.lastCheckpoint.deadZoneSize;
         }
 
         InputManager.Instance.Init();

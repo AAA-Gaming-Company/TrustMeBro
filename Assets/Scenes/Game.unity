@@ -1090,6 +1090,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 2093589625}
+  cam: {fileID: 466755932}
 --- !u!61 &177199422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3286,6 +3287,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 1497422933}
+  cam: {fileID: 466755932}
 --- !u!61 &380227445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6090,7 +6092,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000274c15a0
+  m_ApplyToSortingLayers: 00000000274c15a035bbb947
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -13411,6 +13413,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6711999828517966367, guid: e717f7cf2b7509745ba66a78fa97ce0f, type: 3}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1203354421
+      objectReference: {fileID: 0}
     - target: {fileID: 7023928337000025720, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
       propertyPath: m_Name
       value: CarYellow (3)
@@ -13945,6 +13959,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91ff61f56012f1d4eb0fc4d65221d4a2, type: 3}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1203354421
+      objectReference: {fileID: 0}
     - target: {fileID: 7023928337000025720, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
       propertyPath: m_Name
       value: CarYellow (2)
@@ -14477,6 +14503,10 @@ PrefabInstance:
       propertyPath: weaponAmount
       value: 
       objectReference: {fileID: 371328100}
+    - target: {fileID: 3013172132536418890, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
+      propertyPath: cinemachineCam
+      value: 
+      objectReference: {fileID: 466755932}
     - target: {fileID: 3591559238878808699, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 0
@@ -14863,6 +14893,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1203354421
+      objectReference: {fileID: 0}
     - target: {fileID: 7023928337000025720, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
       propertyPath: m_Name
       value: CarYellow
@@ -15218,6 +15256,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 26175000}
+  cam: {fileID: 466755932}
 --- !u!61 &1257025166
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15745,6 +15784,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 1213336525}
+  cam: {fileID: 466755932}
 --- !u!61 &1328437443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15839,6 +15879,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1203354421
+      objectReference: {fileID: 0}
     - target: {fileID: 7023928337000025720, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
       propertyPath: m_Name
       value: CarYellow (4)
@@ -15904,6 +15952,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 1444381629}
+  cam: {fileID: 466755932}
 --- !u!61 &1378124443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17388,6 +17437,7 @@ MonoBehaviour:
   timeSpeed: 0.5
   timeSlowDuration: 0.5
   respawnLocation: {fileID: 802534757}
+  cam: {fileID: 466755932}
 --- !u!61 &1643674423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22080,6 +22130,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183616101072569081, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1203354421
+      objectReference: {fileID: 0}
     - target: {fileID: 7023928337000025720, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
       propertyPath: m_Name
       value: CarYellow (1)
@@ -22961,9 +23023,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4335199414857847631, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5781340025260176828, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
       propertyPath: m_Name
       value: Girl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781340025260176828, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636445171326670826, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22975,7 +23045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636445171326670826, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636445171326670826, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23003,6 +23073,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6636445171326670826, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582056302954473781, guid: 71a954bb2a7beb145a559c731164a639, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24278,6 +24352,10 @@ PrefabInstance:
     - target: {fileID: 2744623930382824455, guid: d49ba7e7239f0c842a41786e10f7ab8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423433865261571071, guid: d49ba7e7239f0c842a41786e10f7ab8d, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
