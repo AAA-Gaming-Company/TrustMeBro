@@ -6,6 +6,8 @@ public class CameraTriggerArea : TriggerArea {
     [Header("Camera")]
     public CinemachineCamera cinemachineCamera;
     public float targetOffsetY = 0f;
+    public float targetOffsetX = 0f;
+
     public float orthographicSize = 0f;
 
     protected override void TriggerAction(PlayerController player) {
@@ -17,7 +19,9 @@ public class CameraTriggerArea : TriggerArea {
         positionComposer.Composition.DeadZone.Size.y = 0;
 
         cinemachineCamera.Lens.OrthographicSize = orthographicSize;
-        positionComposer.TargetOffset.y = targetOffsetY;
+        positionComposer.Composition.ScreenPosition.y = targetOffsetY;
+        positionComposer.Composition.ScreenPosition.x = targetOffsetX;
+
         StartCoroutine(EnableDeadZone());
     }
 

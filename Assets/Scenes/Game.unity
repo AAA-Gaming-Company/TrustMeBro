@@ -150,6 +150,150 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1483207959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &17903638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17903639}
+  - component: {fileID: 17903642}
+  - component: {fileID: 17903641}
+  - component: {fileID: 17903640}
+  m_Layer: 10
+  m_Name: ExitRestaurant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &17903639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17903638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 93.09, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 516934130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17903640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17903638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ed49ad49675794280d5f176945e8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 0
+  slowTime: 0
+  timeSpeed: 0.5
+  timeSlowDuration: 0.5
+  cinemachineCamera: {fileID: 466755932}
+  targetOffsetY: -0.13
+  targetOffsetX: -0.1603564
+  orthographicSize: 4
+--- !u!114 &17903641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17903638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844ed6142a1f0465d89230484b2d3636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 1
+  slowTime: 0
+  timeSpeed: 0.5
+  timeSlowDuration: 0.5
+  entries:
+  - messages:
+    - We have to get out of here bro, this isn't safe
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  - messages:
+    - Okay bro, tell me where to go.
+    speakerName: Buff McManlyface
+    speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+  - messages:
+    - We need to get to my helicopter. It's been on top of the police station since
+      it got towed.
+    - It'll be hard, but it's our only hope bro.
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  - messages:
+    - Are you sure bro? Things haven't been going that well.
+    speakerName: Buff McManlyface
+    speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+  - messages:
+    - You won't escape this time! Prepare to feel the state's monopoly on legitimate
+      violence ya little twerps!
+    speakerName: Officer Stefan Jawline
+    speakerImage: {fileID: 8149817239022723639, guid: b1c6e792d0350bb4a86656d5ce847902, type: 3}
+  - messages:
+    - This conversation isn't over Mandrew.
+    speakerName: Buff McManlyface
+    speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+--- !u!61 &17903642
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17903638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.7495556}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 9.830889}
+  m_EdgeRadius: 0
 --- !u!1 &26174999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2675,7 @@ Transform:
   m_GameObject: {fileID: 466755929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.264454, y: -1.0663371, z: -9}
+  m_LocalPosition: {x: -23.264032, y: -1.0663371, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2552,7 +2696,7 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: -0.16035636, y: -0.22376242}
+    ScreenPosition: {x: -0.1603564, y: -0.2237624}
     DeadZone:
       Enabled: 1
       Size: {x: 0.1020044, y: 1.550494}
@@ -2780,6 +2924,7 @@ Transform:
   - {fileID: 1219743589}
   - {fileID: 1091103621}
   - {fileID: 1307104556}
+  - {fileID: 17903639}
   - {fileID: 1315737403}
   m_Father: {fileID: 1302211792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2926,7 +3071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.264454, y: -1.0663371}
+  m_AnchoredPosition: {x: -23.264032, y: -1.0663371}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519420033
@@ -6169,7 +6314,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -6792,7 +6937,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -0, y: 20.8845, z: 0}
-    m_Scale: {x: 65, y: 0, z: 1}
+    m_Scale: {x: 65, y: 0, z: 40.609344}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6990,7 +7135,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 70
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -10903,7 +11048,7 @@ Transform:
   m_GameObject: {fileID: 954983391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.69, y: 5.42, z: -0.10979649}
+  m_LocalPosition: {x: 7.69, y: 3.57, z: -0.10979649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12229,6 +12374,7 @@ GameObject:
   - component: {fileID: 1307104556}
   - component: {fileID: 1307104558}
   - component: {fileID: 1307104557}
+  - component: {fileID: 1307104559}
   m_Layer: 10
   m_Name: EnterRestaurant
   m_TagString: Untagged
@@ -12336,6 +12482,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 9.830889}
   m_EdgeRadius: 0
+--- !u!114 &1307104559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307104555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ed49ad49675794280d5f176945e8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 0
+  slowTime: 0
+  timeSpeed: 0.5
+  timeSlowDuration: 0.5
+  cinemachineCamera: {fileID: 466755932}
+  targetOffsetY: -0.13
+  targetOffsetX: 0
+  orthographicSize: 4
 --- !u!1 &1315737402
 GameObject:
   m_ObjectHideFlags: 0
@@ -13483,8 +13649,8 @@ MonoBehaviour:
     speakerName: Buff McManlyface
     speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
   - messages:
-    - '[Counting the money] You see that girl over there bro? Go like, propose to
-      her or whatever. I''ve heard chicks love guys who show commitee-ment.'
+    - '[Counting the money] You see that girl over there bro? Go take a selfie with
+      her. I''ve heard chicks love that.'
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!61 &1723968476

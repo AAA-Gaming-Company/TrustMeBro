@@ -27,6 +27,10 @@ public class EnemyController : Shooter {
 
     public bool disableMovementOnShoot = false;
     public float moveDisableTime = 0.2f;
+    [Header("Dialogue (shown on death)")]
+    public bool showDeathDialogue = false;
+    public DialogueEntry[] entries;
+
 
     private int shotsFiredOutOfCover;
     private bool attackBehaviorRunning = false;
@@ -212,6 +216,11 @@ public class EnemyController : Shooter {
     protected override void OnDie() {
         StatsManager.Instance.AddEnemyKilled();
         this.player.Heal(this.healthBoostOnDeath);
+        if (this.showDeathDialogue) {
+            DialogueBuilder.Builder()
+                .AddEntry(this.entries)
+                .BuildAndDisplay();
+        }
     }
 
     protected override void OnDamage(int amount) {

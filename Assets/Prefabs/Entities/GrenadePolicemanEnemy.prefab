@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 4328311430536078212}
   - component: {fileID: 1058100229721357242}
   m_Layer: 8
-  m_Name: UndercoverPolicemanEnemy
+  m_Name: GrenadePolicemanEnemy
   m_TagString: GrenadeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,6 +1218,16 @@ MonoBehaviour:
   maxShotsOutOfCover: 1
   disableMovementOnShoot: 1
   moveDisableTime: 0.5
+  showDeathDialogue: 1
+  entries:
+  - messages:
+    - Okay okay, I give up... ouch.
+    speakerName: NOT Stefan Jawline
+    speakerImage: {fileID: 2472001460683305498, guid: ecc803221d6bf3d4bad832de763fbb08, type: 3}
+  - messages:
+    - That buys us a few minutes
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!95 &1058100229721357242
 Animator:
   serializedVersion: 7
