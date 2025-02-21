@@ -19,7 +19,7 @@ public abstract class Entity : MonoBehaviour {
 
     private Animator anim;
     private CoverEntry currentCoverEntry;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     protected int currentHealth;
     protected EntityDieType dieType = EntityDieType.DESTROY;
 

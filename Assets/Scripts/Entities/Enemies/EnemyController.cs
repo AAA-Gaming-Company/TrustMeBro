@@ -41,7 +41,6 @@ public class EnemyController : Shooter {
     private bool playerInMoveRange = false;
     private Animator animator;
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
 
     public new void Awake() {
         base.Awake();
@@ -55,7 +54,6 @@ public class EnemyController : Shooter {
         }
         this.SwitchWeapon(this.weapon);
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public new void Start() {

@@ -332,7 +332,7 @@ MonoBehaviour:
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
-  constrainInsideGraph: 0
+  constrainInsideGraph: 1
 --- !u!114 &6227135054559096253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +377,17 @@ MonoBehaviour:
   disableMovementOnShoot: 0
   moveDisableTime: 0.2
   showDeathDialogue: 0
-  entries: []
+  entries:
+  - messages:
+    - Ouch! Okay, I'll stop for now.
+    speakerName: NOT Stefan Jawline
+    speakerImage: {fileID: 2472001460683305498, guid: ecc803221d6bf3d4bad832de763fbb08, type: 3}
+  - messages:
+    - Lucky you got down on one knee behind that table bro.
+    - You should probably take cover to protect yourself from enemy fire, bro.
+    - Carfeul, the cops can take cover too!
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!95 &9058965097209252517
 Animator:
   serializedVersion: 7
