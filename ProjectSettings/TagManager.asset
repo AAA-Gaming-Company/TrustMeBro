@@ -48,5 +48,8 @@ TagManager:
   - name: Front Obstacles
     uniqueID: 1203354421
     locked: 0
+  - name: UI
+    uniqueID: 3467564983
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDelay:
   - 1
-  useRange: 8
+  useRange: 2.8
   isSingleUse: 0
   isAutomatic: 0
   displayName: Shotgun
   displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
+  uiSprite: {fileID: 0}
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: aac8d88b47a4e4944b94dad3933a4a3c, type: 3}
   amount: 0a000000
@@ -26,5 +27,6 @@ MonoBehaviour:
   projectileSpeed: 0.8
   isGrenade: 0
   grenadeExplosionRadius: 1
+  grenadeThrowForce: 0
   damage: 04000000
   ready: 1
