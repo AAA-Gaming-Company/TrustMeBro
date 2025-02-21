@@ -337,7 +337,7 @@ MonoBehaviour:
   reloadFeedback: {fileID: 0}
   deviationValue: 0.4
   weapon: {fileID: 11400000, guid: c12dd6cb930a4e243a2894cc5fd57863, type: 2}
-  moveRange: 2
+  moveRange: 4
   playerLayer:
     serializedVersion: 2
     m_Bits: 128

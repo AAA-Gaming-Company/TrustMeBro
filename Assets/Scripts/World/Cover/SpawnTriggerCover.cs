@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using Pathfinding;
 
 [CreateAssetMenu(fileName = "SpawnTriggerCover", menuName = "Scriptable Objects/SpawnTriggerCover")]

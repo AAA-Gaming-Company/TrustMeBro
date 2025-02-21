@@ -4,6 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Grenade : MonoBehaviour {
     public MMF_Player explosionFeedback;
+    public bool showDialogueonExplode = false;
+    
+    [Header("Dialogue")]
+    public DialogueEntry[] entries;
 
     private bool ready = false;
 
@@ -53,9 +57,18 @@ public abstract class Grenade : MonoBehaviour {
 
             Destroy(this.gameObject);
             this.ExplodeFunction();
+            if (this.showDialogueonExplode) {
+                this.ShowDialogue();
+            }
         }
 
         this.lastMagnitude = this.rb.linearVelocity.magnitude;
+    }
+
+    private void ShowDialogue() {
+        DialogueBuilder.Builder()
+            .AddEntry(this.entries)
+            .BuildAndDisplay();
     }
 
     public abstract void ExplodeFunction();

@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 7505019669038296355}
   - component: {fileID: 1604181967309960417}
   - component: {fileID: 7512326974999661442}
-  - component: {fileID: 5333687262190410736}
+  - component: {fileID: 7539807106492471598}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -842,8 +842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionFeedback: {fileID: 4803467907861528600}
---- !u!60 &5333687262190410736
-PolygonCollider2D:
+--- !u!61 &7539807106492471598
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -852,7 +852,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 55e4282e3dbe7bb4bb446ddbedf2a3f7, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -880,22 +880,14 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9, y: 0.95}
+    oldSize: {x: 0.35, y: 0.5}
     newSize: {x: 1.15, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.13082406}
-      - {x: -0.46644327, y: -0.21359415}
-      - {x: -0.37248132, y: -0.35452837}
-      - {x: -0.28254727, y: -0.49379238}
-      - {x: -0.17382997, y: -0.4562076}
-      - {x: 0.10152197, y: -0.0884835}
-      - {x: 0.28866756, y: 0.27494773}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 0.35, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &7662423911857359479
 GameObject:
   m_ObjectHideFlags: 0

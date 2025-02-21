@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
+  m_Name: Flowers
+  m_EditorClassIdentifier: 
+  useDelay:
+  - 1
+  useRange: 2
+  isSingleUse: 1
+  isAutomatic: 0
+  displayName: Bouquet
+  displaySprite: {fileID: -3559593645407510323, guid: 150f7563f7836c84a8f5ce226491f5bf, type: 3}
+  uiSprite: {fileID: 0}
+  isSpawner: 1
+  prefab: {fileID: 8447682464832837413, guid: c45850abd6a73ef4aacee2ec04dd7718, type: 3}
+  amount: 01000000
+  isProjectile: 0
+  projectileSpeed: 0.5
+  isGrenade: 1
+  grenadeExplosionRadius: 2
+  grenadeThrowForce: 0
+  damage: 00000000
+  ready: 0

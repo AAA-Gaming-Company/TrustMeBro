@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 83cdf6ec77ad6db4583793d87efb9910
+guid: 3eed4a7a82fdf8641a5a85cd1ed78e2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7374725294872216382
-    second: Grenade_0
+      213: -7003695537268062503
+    second: Petals_0
+  - first:
+      213: 5739423286437482758
+    second: Petals_1
+  - first:
+      213: -640834488454377786
+    second: Petals_2
+  - first:
+      213: -4658393613759294605
+    second: Petals_3
+  - first:
+      213: 8210389766816008187
+    second: Petals_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grenade_0
+      name: Petals_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 34
-        width: 7
-        height: 10
+        x: 3
+        y: 54
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +166,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3342fc2599485660800000000000000
-      internalID: 7374725294872216382
+      spriteID: 9d6062a1400edce90800000000000000
+      internalID: -7003695537268062503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Petals_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 55
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60116bbf11786af40800000000000000
+      internalID: 5739423286437482758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Petals_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 57
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce8bd39d6c4b17f0800000000000000
+      internalID: -640834488454377786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Petals_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 57
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 373dde380bf0a5fb0800000000000000
+      internalID: -4658393613759294605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Petals_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 56
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7029e0ef921f170800000000000000
+      internalID: 8210389766816008187
       vertices: []
       indices: 
       edges: []
@@ -164,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e0e829ff9063b574f99a17b813a53ff2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grenade_0: 7374725294872216382
+      Petals_0: -7003695537268062503
+      Petals_1: 5739423286437482758
+      Petals_2: -640834488454377786
+      Petals_3: -4658393613759294605
+      Petals_4: 8210389766816008187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
