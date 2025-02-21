@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 8125713360969328055}
   - component: {fileID: 8332512910682069794}
   - component: {fileID: 7867889986766965005}
+  - component: {fileID: 9062492163203697997}
   m_Layer: 8
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -690,8 +691,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1609216985
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -866,21 +867,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 25
   healthBar: {fileID: 466939689402346315}
+  noFlip: {fileID: 0}
+  damageFeedback: {fileID: 0}
+  enterCoverFeedback: {fileID: 0}
+  enableMaterialInstancing: 1
   coverIndicator: {fileID: 7608082559511695557}
   coverLayers:
     serializedVersion: 2
     m_Bits: 512
   coverRadius: 1
-  weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   firePoint: {fileID: 1601989955904818123}
+  shootFeedback: {fileID: 0}
+  reloadFeedback: {fileID: 0}
+  deviationValue: 0
+  weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
   moveRange: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  shoot: {fileID: 2538608293852909523}
   healthBoostOnDeath: 0
   outOfCoverTime: 1
   shotNum: 5
   recoverTime: 2
   behaviorRandomFactor: 0.5
   maxShotsOutOfCover: 0
+  ignoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  disableMovementOnShoot: 0
+  moveDisableTime: 0.2
+  showDeathDialogue: 0
+  entries: []
+--- !u!95 &9062492163203697997
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865680431786983004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

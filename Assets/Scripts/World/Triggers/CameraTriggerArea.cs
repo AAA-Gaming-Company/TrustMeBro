@@ -16,17 +16,11 @@ public class CameraTriggerArea : TriggerArea {
             throw new System.Exception("CinemachinePositionComposer is null!");
         }
         
-        positionComposer.Composition.DeadZone.Size.y = 0;
 
         cinemachineCamera.Lens.OrthographicSize = orthographicSize;
         positionComposer.Composition.ScreenPosition.y = targetOffsetY;
         positionComposer.Composition.ScreenPosition.x = targetOffsetX;
 
-        StartCoroutine(EnableDeadZone());
     }
 
-    private IEnumerator EnableDeadZone() {
-        yield return new WaitForSeconds(.01f);
-        cinemachineCamera.GetComponent<CinemachinePositionComposer>().Composition.DeadZone.Size.y = 1;
-    }
 }

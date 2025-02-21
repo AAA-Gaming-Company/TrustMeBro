@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 977c9e587fcc3e74dafc95190c2efcda
+guid: 16d3de9955e118e4cabc7e691a79d287
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4142068508567569198
-    second: DateGirl3_Idle_0
+      213: 5703365184532663604
+    second: PoliceAutoCrouch_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,40 +135,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DateGirl3_Idle_0
+      name: PoliceAutoCrouch_0
       rect:
         serializedVersion: 2
-        x: 28
+        x: 104
         y: 127
-        width: 16
-        height: 27
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2dc7f7713aa6486c0800000000000000
-      internalID: -4142068508567569198
+      spriteID: 43d4668ea6c662f40800000000000000
+      internalID: 5703365184532663604
       vertices: []
       indices: 
       edges: []
@@ -177,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a3c449a6e6dc224887f8fbdffce241a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DateGirl3_Idle_0: -4142068508567569198
+      PoliceAutoCrouch_0: 5703365184532663604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

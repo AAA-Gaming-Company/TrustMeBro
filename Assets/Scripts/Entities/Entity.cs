@@ -102,7 +102,6 @@ public abstract class Entity : MonoBehaviour {
             enterCoverFeedback.PlayFeedbacks();
         }
         this.currentCoverEntry = cover.EnterCover(this.gameObject, cover.NearestCoverPointPos(this.transform.position));
-
         // If the cover indicator is set, activate it (as long as we got into cover)
         if (this.coverIndicator != null && this.currentCoverEntry != null) {
             coverIndicator.SetActive(true);
@@ -120,6 +119,7 @@ public abstract class Entity : MonoBehaviour {
             if (this.anim != null) {
                 this.anim.SetBool("isCrouching", false);
             }
+
         }
     }
 

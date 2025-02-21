@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 977c9e587fcc3e74dafc95190c2efcda
+guid: c142127b61d242c48a28033ac3623a9a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4142068508567569198
-    second: DateGirl3_Idle_0
+      213: -1503038455111943356
+    second: SpriteSheet_PoliceAutoShoot_0
+  - first:
+      213: 2251575577434412887
+    second: SpriteSheet_PoliceAutoShoot_1
+  - first:
+      213: 4459429817871146134
+    second: SpriteSheet_PoliceAutoShoot_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,40 +141,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DateGirl3_Idle_0
+      name: SpriteSheet_PoliceAutoShoot_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 127
-        width: 16
-        height: 27
+        x: 8
+        y: 213
+        width: 42
+        height: 25
       alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+      pivot: {x: 0.8149284, y: 0.3648707}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2dc7f7713aa6486c0800000000000000
-      internalID: -4142068508567569198
+      spriteID: 44bfc4f0d72242be0800000000000000
+      internalID: -1503038455111943356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_PoliceAutoShoot_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 213
+        width: 42
+        height: 25
+      alignment: 9
+      pivot: {x: 0.82344913, y: 0.40678087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7575cedee043f3f10800000000000000
+      internalID: 2251575577434412887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_PoliceAutoShoot_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 214
+        width: 42
+        height: 25
+      alignment: 9
+      pivot: {x: 0.84768105, y: 0.38990974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c9ef2dac313ed30800000000000000
+      internalID: 4459429817871146134
       vertices: []
       indices: 
       edges: []
@@ -177,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a3c449a6e6dc224887f8fbdffce241a
+    spriteID: 8d7892fb0f7d18549bf478127f72e3e0
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DateGirl3_Idle_0: -4142068508567569198
+      SpriteSheet_PoliceAutoShoot_0: -1503038455111943356
+      SpriteSheet_PoliceAutoShoot_1: 2251575577434412887
+      SpriteSheet_PoliceAutoShoot_2: 4459429817871146134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

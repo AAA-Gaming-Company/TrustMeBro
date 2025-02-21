@@ -24,6 +24,7 @@ public class EnemyController : Shooter {
     public float behaviorRandomFactor;
     [Tooltip("The maximum number of shots the enemy can fire before needing to find cover and reload")]
     public int maxShotsOutOfCover;
+    public LayerMask ignoreLayers;
 
     public bool disableMovementOnShoot = false;
     public float moveDisableTime = 0.2f;
@@ -39,6 +40,8 @@ public class EnemyController : Shooter {
     private bool reloadingOutOfCover = false;
     private bool playerInMoveRange = false;
     private Animator animator;
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     public new void Awake() {
         base.Awake();
@@ -51,6 +54,8 @@ public class EnemyController : Shooter {
             throw new UnityException("Enemy weapons cannot be single use!");
         }
         this.SwitchWeapon(this.weapon);
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public new void Start() {
@@ -111,8 +116,18 @@ public class EnemyController : Shooter {
 
         if (this.aiPath.canMove) {
             this.animator.SetBool("isWalking", true);
+            this.rb.excludeLayers = 0;
+            this.spriteRenderer.sortingOrder = 0;
         } else {
             this.animator.SetBool("isWalking", false);
+
+            if (this.IsInCover()) {
+                this.rb.excludeLayers = this.ignoreLayers;
+                this.spriteRenderer.sortingOrder = -1;
+            } else {
+                this.rb.excludeLayers = 0;
+                this.spriteRenderer.sortingOrder = 0;
+            }
         }
 
         base.FlipEntity(this.destinationSetter.target.position.x > base.transform.position.x);
