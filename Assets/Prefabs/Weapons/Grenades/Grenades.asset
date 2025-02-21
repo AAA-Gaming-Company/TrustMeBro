@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
-  m_Name: PlayerPistol
+  m_Name: Grenades
   m_EditorClassIdentifier: 
   useDelay:
-  - 0.2
-  useRange: 7.6
-  isSingleUse: 0
+  - 1
+  useRange: 5
+  isSingleUse: 1
   isAutomatic: 0
-  displayName: Camera
-  displaySprite: {fileID: -1922685614253846810, guid: b04eb167801d7d647a46056e1731a518, type: 3}
-  uiSprite: {fileID: 0}
+  displayName: Grenade
+  displaySprite: {fileID: 7374725294872216382, guid: 83cdf6ec77ad6db4583793d87efb9910, type: 3}
   isSpawner: 1
-  prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
+  prefab: {fileID: 7202467400717002098, guid: 58ed267cc10534ef6b4394a37206276c, type: 3}
   amount: 01000000
-  isProjectile: 1
-  projectileSpeed: 0.8
-  isGrenade: 0
-  grenadeExplosionRadius: 1
-  damage: 0a000000
+  isProjectile: 0
+  projectileSpeed: 0.5
+  isGrenade: 1
+  grenadeExplosionRadius: 2
+  damage: 1e000000
   ready: 0

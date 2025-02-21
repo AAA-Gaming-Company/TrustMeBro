@@ -2,6 +2,9 @@ using System.Collections;
 using MoreMountains.Feedbacks;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Data.Common;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
@@ -45,6 +48,8 @@ public class PlayerController : Shooter {
     public PlayerInventory inventory;
     public MMF_Player weaponPickupFeedback;
     public MMF_Player weaponSwitchFeedback;
+    public Image weaponImage;
+    public TextMeshProUGUI weaponAmount;
 
     public new void Awake() {
         base.Awake();
@@ -140,6 +145,8 @@ public class PlayerController : Shooter {
             if (selectedWeapon.isSingleUse) {
                 this.inventory.RemoveItem(selectedWeapon, 1);
             }
+
+            this.OnPlayerSwitchWeapon();
         }
         if (InputManager.Instance.GetAttackUp()) {
             this.isUsingAutomaticWeapon = false;
@@ -149,6 +156,7 @@ public class PlayerController : Shooter {
         if (InputManager.Instance.GetCycleItem() != 0) {
             if (this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0)) {
                 this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+                this.OnPlayerSwitchWeapon();
                 if (this.weaponSwitchFeedback != null) {
                     this.weaponSwitchFeedback.PlayFeedbacks();
                 }
@@ -269,6 +277,33 @@ public class PlayerController : Shooter {
         this.inventory.AddItem(weapon);
         if (this.weaponPickupFeedback != null) {
             this.weaponPickupFeedback.PlayFeedbacks();
+        }
+        this.OnPlayerSwitchWeapon();
+
+    }
+
+    public void OnPlayerSwitchWeapon() {
+
+        if (this.weaponImage != null) {
+            if (this.weaponImage.gameObject.activeSelf == false) {
+                this.weaponImage.gameObject.SetActive(true);
+            }
+            if(this.weaponAmount.gameObject.activeSelf == false) {
+                this.weaponAmount.gameObject.SetActive(true);
+            }
+            if (this.inventory.GetSelectedWeapon() != null) {
+                this.weaponImage.sprite = this.inventory.GetSelectedWeapon().displaySprite;
+                int amount = this.inventory.GetAmount(this.inventory.GetSelectedWeapon());
+                if (amount == 1) {
+                    this.weaponAmount.text = "";
+                } else {
+                    this.weaponAmount.text = amount.ToString();
+                }
+            } else {
+                this.weaponImage.sprite = null;
+                this.weaponImage.gameObject.SetActive(false);
+                this.weaponAmount.text = "";
+            }
         }
     }
 

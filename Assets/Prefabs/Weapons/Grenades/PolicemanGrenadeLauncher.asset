@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
-  m_Name: PlayerPistol
+  m_Name: PolicemanGrenadeLauncher
   m_EditorClassIdentifier: 
   useDelay:
-  - 0.2
-  useRange: 7.6
+  - 3
+  useRange: 5.6
   isSingleUse: 0
   isAutomatic: 0
-  displayName: Camera
-  displaySprite: {fileID: -1922685614253846810, guid: b04eb167801d7d647a46056e1731a518, type: 3}
+  displayName: Policeman
+  displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
   uiSprite: {fileID: 0}
   isSpawner: 1
-  prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
+  prefab: {fileID: 7202467400717002098, guid: 0a6be9d39159da74496f7f518ef75c15, type: 3}
   amount: 01000000
-  isProjectile: 1
+  isProjectile: 0
   projectileSpeed: 0.8
-  isGrenade: 0
-  grenadeExplosionRadius: 1
-  damage: 0a000000
+  isGrenade: 1
+  grenadeExplosionRadius: 2.5
+  grenadeThrowForce: 4
+  damage: 190000002600000028000000
   ready: 0

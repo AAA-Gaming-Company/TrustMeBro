@@ -11,6 +11,8 @@ public class WeaponType : ScriptableObject {
     [Header("Display")]
     public string displayName = "Untitled Weapon";
     public Sprite displaySprite;
+    public Sprite uiSprite;
+
 
     [Header("Spawner")]
     public bool isSpawner = false;
@@ -25,6 +27,7 @@ public class WeaponType : ScriptableObject {
     [Header("Grenade")]
     public bool isGrenade = false;
     public float grenadeExplosionRadius = 1;
+    public float grenadeThrowForce = 0f;
 
     [Header("Damage")]
     [SerializeField]

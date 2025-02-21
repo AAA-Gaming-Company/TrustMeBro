@@ -24,7 +24,7 @@ public abstract class Shooter : Entity {
         }
     }
 
-    public void Shoot(Vector2 targetPos) {
+    public void Shoot(Vector2 targetPos, string grenadeIgnoreTag = "") {
         if (this.currentWeapon == null || !this.IsReadyToShoot()) {
             return;
         }
@@ -59,7 +59,11 @@ public abstract class Shooter : Entity {
                     projectile.Init(this.gameObject.layer, computedTargetPosition, this.currentWeapon.useRange, this.currentWeapon.projectileSpeed, damage);
                 } else if (this.currentWeapon.isGrenade) {
                     Grenade grenade = newObject.GetComponent<Grenade>();
-                    grenade.Init(computedTargetPosition, this.currentWeapon.grenadeExplosionRadius, this.currentWeapon.useRange, damage);
+                    if (this.currentWeapon.grenadeThrowForce == 0) {
+                        grenade.Init(computedTargetPosition, this.currentWeapon.grenadeExplosionRadius, this.currentWeapon.useRange, damage, grenadeIgnoreTag);
+                    } else {
+                        grenade.Init(computedTargetPosition, this.currentWeapon.grenadeExplosionRadius, this.currentWeapon.grenadeThrowForce, damage, grenadeIgnoreTag);
+                    }
                 }
             }
         }

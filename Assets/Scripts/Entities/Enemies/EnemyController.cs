@@ -25,6 +25,9 @@ public class EnemyController : Shooter {
     [Tooltip("The maximum number of shots the enemy can fire before needing to find cover and reload")]
     public int maxShotsOutOfCover;
 
+    public bool disableMovementOnShoot = false;
+    public float moveDisableTime = 0.2f;
+
     private int shotsFiredOutOfCover;
     private bool attackBehaviorRunning = false;
     private AIDestinationSetter destinationSetter;
@@ -65,7 +68,7 @@ public class EnemyController : Shooter {
         }
 
         if (this.IsReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer() && this.IsInCover() == false && this.attackBehaviorRunning == false && this.shotsFiredOutOfCover < this.maxShotsOutOfCover) {
-            this.Shoot(this.destinationSetter.target.position);
+            this.ShootAtTarget(this.destinationSetter.target.position);
             this.shotsFiredOutOfCover++;
         } else if (this.shotsFiredOutOfCover == this.maxShotsOutOfCover && this.reloadingOutOfCover == false) {
             StartCoroutine(ReloadOutOfCover());
@@ -127,7 +130,6 @@ public class EnemyController : Shooter {
     }
 
     private IEnumerator AttackBehavior() {
-        Debug.Log("Attack behavior running");
         this.attackBehaviorRunning = true;
         float minRandom = 1 - this.behaviorRandomFactor;
         float maxRandom = 1 + this.behaviorRandomFactor;
@@ -139,7 +141,7 @@ public class EnemyController : Shooter {
         for (int i = 0; i < this.shotNum; i++) {
             if (this.IsReadyToShoot() && this.IsInCover() == false && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
                 //Fires the shot; then reloads
-                this.Shoot(this.destinationSetter.target.position);
+                this.ShootAtTarget(this.destinationSetter.target.position);
                 yield return new WaitForSeconds(this.weapon.GetUseDelay());
             }
         }
@@ -156,6 +158,26 @@ public class EnemyController : Shooter {
         //Recover and then we can start over :)
         yield return new WaitForSeconds(this.recoverTime * Random.Range(minRandom, maxRandom));
         this.attackBehaviorRunning = false;
+    }
+
+    private void ShootAtTarget(Vector3 target) {
+        if (this.aiPath.canMove && this.disableMovementOnShoot) {
+            this.aiPath.canMove = false;
+            StartCoroutine(EnableMovement(this.moveDisableTime));
+        }
+        if (this.weapon.isProjectile) {
+            this.Shoot(target);
+        }else if (this.weapon.isGrenade) {
+            bool playerIsLeft = target.x < base.transform.position.x;
+            if (playerIsLeft) {
+                Vector2 vertex = new Vector2(target.x + ((transform.position.x - target.x) / 2), target.y + 2);
+                this.Shoot(vertex, "GrenadeEnemy");
+
+            } else {
+                Vector2 vertex = new Vector2(target.x - ((target.x - transform.position.x) / 2), target.y + 2);
+                this.Shoot(vertex, "GrenadeEnemy");
+            }
+        }
     }
 
     private IEnumerator ReloadOutOfCover() {
@@ -180,6 +202,11 @@ public class EnemyController : Shooter {
             Vector3 direction = this.destinationSetter.target.position - base.transform.position;
             Gizmos.DrawRay(base.transform.position, direction);
         }
+    }
+
+    private IEnumerator EnableMovement(float time) {
+        yield return new WaitForSeconds(time);
+        this.aiPath.canMove = true;
     }
 
     protected override void OnDie() {
