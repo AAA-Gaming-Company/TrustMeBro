@@ -61,6 +61,7 @@ public class PlayerInventory {
 
         return item.amount >= amount;
     }
+
     public int GetAmount(WeaponType weaponType) {
         ItemStack item = this.items.Find(i => i.weaponType == weaponType);
         if (item == null) {
@@ -69,6 +70,7 @@ public class PlayerInventory {
 
         return item.amount;
     }
+
     public WeaponType GetSelectedWeapon() {
         if (this.items.Count == 0 || this.currentSelectedWeapon < 0 || this.currentSelectedWeapon >= this.items.Count) {
             return null;

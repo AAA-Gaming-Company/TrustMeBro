@@ -31,7 +31,6 @@ public class EnemyController : Shooter {
     public bool showDeathDialogue = false;
     public DialogueEntry[] entries;
 
-
     private int shotsFiredOutOfCover;
     private bool attackBehaviorRunning = false;
     private AIDestinationSetter destinationSetter;

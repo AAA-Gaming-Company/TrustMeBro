@@ -13,7 +13,6 @@ public class WeaponType : ScriptableObject {
     public Sprite displaySprite;
     public Sprite uiSprite;
 
-
     [Header("Spawner")]
     public bool isSpawner = false;
     public GameObject prefab;

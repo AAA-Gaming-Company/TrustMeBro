@@ -1,10 +1,8 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
-using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Data.Common;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
@@ -34,6 +32,7 @@ public class PlayerController : Shooter {
     public float jumpPower = 18f;
     public float preJumpGrace = 0.1f;
     public LayerMask groundLayers;
+    public MMF_Player regenerationFeedback;
 
     [Header("Stamina Config")]
     public ProgressBar staminaBar;
@@ -254,6 +253,9 @@ public class PlayerController : Shooter {
 
     public void Heal(int amount) {
         this.currentHealth = Mathf.Clamp(this.currentHealth + amount, 0, this.maxHealth);
+        if (this.regenerationFeedback != null) {
+            this.regenerationFeedback.PlayFeedbacks();
+        }
         this.UpdateHealthBar();
     }
 
@@ -283,14 +285,14 @@ public class PlayerController : Shooter {
     }
 
     public void OnPlayerSwitchWeapon() {
-
         if (this.weaponImage != null) {
             if (this.weaponImage.gameObject.activeSelf == false) {
                 this.weaponImage.gameObject.SetActive(true);
             }
-            if(this.weaponAmount.gameObject.activeSelf == false) {
+            if (this.weaponAmount.gameObject.activeSelf == false) {
                 this.weaponAmount.gameObject.SetActive(true);
             }
+
             if (this.inventory.GetSelectedWeapon() != null) {
                 this.weaponImage.sprite = this.inventory.GetSelectedWeapon().displaySprite;
                 int amount = this.inventory.GetAmount(this.inventory.GetSelectedWeapon());
@@ -314,9 +316,11 @@ public class PlayerController : Shooter {
 
     protected override void OnDamage(int amount) {
     }
+
     public void SlowTime(float timeSpeed, float timeSlowDuration) {
         StartCoroutine(this.TimeSlower(timeSpeed, timeSlowDuration));
     }
+
     private IEnumerator TimeSlower(float timeSpeed, float timeSlowDuration) {
         Time.timeScale = timeSpeed;
         yield return new WaitForSecondsRealtime(timeSlowDuration);
