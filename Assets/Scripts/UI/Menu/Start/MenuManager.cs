@@ -16,6 +16,7 @@ public class MenuManager : Singleton<MenuManager> {
 
     private void Awake() {
         Time.timeScale = 1f;
+        GameManager.lastCheckpoint = null;
 
         this.playButton.onClick.AddListener(PlayButton);
         this.quitButton.onClick.AddListener(QuitButton);

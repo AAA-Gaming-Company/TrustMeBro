@@ -1150,6 +1150,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  regenerationFeedback: {fileID: 0}
   staminaBar: {fileID: 2511611681614045545}
   maxStamina: 45
   staminaRegen: 10

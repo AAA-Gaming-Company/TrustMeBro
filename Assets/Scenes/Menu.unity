@@ -2713,7 +2713,6 @@ MonoBehaviour:
   settingsButton: {fileID: 0}
   quitButton: {fileID: 479337721}
   creditsButton: {fileID: 1662378086}
-  settingsPanel: {fileID: 0}
   creditsPanel: {fileID: 1242384924}
   loadingPanel: {fileID: 1026008597}
   difficultyPanel: {fileID: 122275905}
@@ -2957,11 +2956,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeButton: {fileID: 1987704660}
-  resolutionDropdown: {fileID: 0}
-  fullscreenToggle: {fileID: 0}
-  graphicsQualityDropdown: {fileID: 0}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
 --- !u!1 &1267335272
 GameObject:
   m_ObjectHideFlags: 0
