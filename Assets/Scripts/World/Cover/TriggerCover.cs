@@ -4,13 +4,22 @@ public abstract class TriggerCover : Cover {
     [Header("Trigger")]
     public bool triggerOnce;
     public bool forceOnlyPlayerTrigger = true;
+    public bool slowTime = false;
+    public float timeSpeed = 0.5f;
+    public float timeSlowDuration = 0.5f;
+
+
 
     private bool triggered = false;
 
     public override CoverEntry EnterCover(GameObject entity, int index) {
-        if ((!this.triggerOnce || (this.triggerOnce && !this.triggered)) && (!this.forceOnlyPlayerTrigger || entity.GetComponent<PlayerController>() != null)) {
+        PlayerController player = entity.GetComponent<PlayerController>();
+        if ((!this.triggerOnce || (this.triggerOnce && !this.triggered)) && (!this.forceOnlyPlayerTrigger || player != null)) {
             this.TriggerFunction(entity);
             this.triggered = true;
+        }
+        if(this.slowTime){
+           player.SlowTime(timeSpeed, timeSlowDuration);
         }
 
         return base.EnterCover(entity, index);
