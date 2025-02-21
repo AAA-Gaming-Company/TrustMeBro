@@ -100,6 +100,10 @@ public class PlayerInventory {
         return true;
     }
 
+    public void SetWeaponToLast() {
+        this.currentSelectedWeapon = this.items.Count - 1;
+    }
+
     public PlayerInventory Copy() {
         PlayerInventory copy = new PlayerInventory();
         foreach (ItemStack item in this.items) {

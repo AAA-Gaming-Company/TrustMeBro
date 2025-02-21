@@ -283,6 +283,14 @@ public class PlayerController : Shooter {
         if (this.weaponPickupFeedback != null) {
             this.weaponPickupFeedback.PlayFeedbacks();
         }
+         if (this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0)) {
+                this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+                this.OnPlayerSwitchWeapon();
+                if (this.weaponSwitchFeedback != null) {
+                    this.weaponSwitchFeedback.PlayFeedbacks();
+                }
+                this.isUsingAutomaticWeapon = false;
+            }
         this.OnPlayerSwitchWeapon();
 
     }
