@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -160,12 +173,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 14
         y: 213
-        width: 39
-        height: 34
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.1885017, y: 0.3660099}
+      pivot: {x: 0.30924162, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,12 +195,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 213
-        width: 39
-        height: 34
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.24190639, y: 0.4052649}
+      pivot: {x: 0.28889638, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,10 +219,10 @@ TextureImporter:
         serializedVersion: 2
         x: 132
         y: 214
-        width: 39
-        height: 34
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.21999496, y: 0.3583015}
+      pivot: {x: 0.31009445, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -226,12 +239,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_3
       rect:
         serializedVersion: 2
-        x: 172
+        x: 174
         y: 214
-        width: 39
-        height: 34
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.2681881, y: 0.3632503}
+      pivot: {x: 0.3143608, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -248,12 +261,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_4
       rect:
         serializedVersion: 2
-        x: 217
-        y: 214
-        width: 39
-        height: 34
+        x: 216
+        y: 216
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.2735674, y: 0.40676296}
+      pivot: {x: 0.35741347, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -270,12 +283,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_5
       rect:
         serializedVersion: 2
-        x: 13
-        y: 178
-        width: 39
-        height: 34
+        x: 12
+        y: 180
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.26441514, y: 0.40822378}
+      pivot: {x: 0.32819653, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -292,12 +305,12 @@ TextureImporter:
       name: SpriteSheet_Player_Shoot_6
       rect:
         serializedVersion: 2
-        x: 55
-        y: 178
-        width: 39
-        height: 34
+        x: 53
+        y: 179
+        width: 40
+        height: 33
       alignment: 9
-      pivot: {x: 0.25997004, y: 0.3470396}
+      pivot: {x: 0.3231083, y: 0.3206879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
