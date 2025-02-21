@@ -26,6 +26,9 @@ public class PlayerController : Shooter {
     private Rigidbody2D rb;
     private Camera cam;
 
+    [HideInInspector]
+    public bool isClimbing;
+
     [Header("Controller Config")]
     public float playerSpeed = 4f;
     public float playerSprintSpeed = 6f;
