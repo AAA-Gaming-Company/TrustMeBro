@@ -1193,9 +1193,11 @@ MonoBehaviour:
   maxHealth: 70
   healthBar: {fileID: 1085208125616811445}
   noFlip: {fileID: 8364982635980140138}
+  deathFeedback: {fileID: 0}
   damageFeedback: {fileID: 5738766407334948097}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 1
   coverIndicator: {fileID: 6559035981521325581}
   coverLayers:
     serializedVersion: 2

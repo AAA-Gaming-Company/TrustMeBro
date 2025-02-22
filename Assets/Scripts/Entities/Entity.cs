@@ -8,6 +8,7 @@ public abstract class Entity : MonoBehaviour {
     public int maxHealth;
     public ProgressBar healthBar;
     public GameObject noFlip;
+    public MMF_Player deathFeedback;
     public MMF_Player damageFeedback;
     public MMF_Player enterCoverFeedback;
     [Tooltip("If true, the entity will use material instancing for its sprite renderer. Used for damage flashes.")]
@@ -66,10 +67,16 @@ public abstract class Entity : MonoBehaviour {
         if (this.animateDeath && this.anim != null) {
             GameObject corpse = Instantiate(new GameObject(), this.transform.position, Quaternion.identity);
             corpse.name = "Corpse";
-            corpse.AddComponent<SpriteRenderer>().sprite = this.spriteRenderer.sprite;
+            SpriteRenderer corpseRenderer = corpse.AddComponent<SpriteRenderer>();
+            corpseRenderer.sprite = this.spriteRenderer.sprite;
+            corpseRenderer.sortingLayerID = this.spriteRenderer.sortingLayerID;
             Animator corpseAnim = corpse.AddComponent<Animator>();
             corpseAnim.runtimeAnimatorController = this.anim.runtimeAnimatorController;
             corpseAnim.SetTrigger("Die");
+            if (Random.value > 0.5f) {
+                corpse.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            
         } 
         if (this.dieType == EntityDieType.DESTROY) { 
             Destroy(this.gameObject);
