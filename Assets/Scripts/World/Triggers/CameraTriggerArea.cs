@@ -33,6 +33,8 @@ public class CameraTriggerArea : TriggerArea {
     }
 
     private IEnumerator ChangeCamera() {
+        this.positionComposer.Composition.DeadZone.Enabled = this.deadZone;
+
         float elapsedTime = 0f;
         float startOrthographicSize = this.cinemachineCamera.Lens.OrthographicSize;
         float startTargetOffsetY = this.positionComposer.Composition.ScreenPosition.y;
@@ -46,5 +48,9 @@ public class CameraTriggerArea : TriggerArea {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        this.cinemachineCamera.Lens.OrthographicSize = this.orthographicSize;
+        this.positionComposer.Composition.ScreenPosition.y = this.targetOffsetY;
+        this.positionComposer.Composition.ScreenPosition.x = this.targetOffsetX;
     }
 }
