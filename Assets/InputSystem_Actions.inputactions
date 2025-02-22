@@ -527,6 +527,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Positive",
+                    "id": "dfb20f25-839b-486b-97f9-f6be9e0a1811",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "CycleItem",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "positive",
                     "id": "6b0c1d19-4380-4a67-ae85-4289add54753",
                     "path": "<Mouse>/scroll/up",

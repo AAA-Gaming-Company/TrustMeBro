@@ -13,6 +13,7 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
     public TextMeshProUGUI speakerName;
     public Image speakerImage;
     public Button nextButton;
+    public Button skipButton;
 
     private int currentMessageIndex = -1;
     private int currentEntryIndex = 0;
@@ -21,6 +22,9 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
 
     private void Awake() {
         this.nextButton.onClick.AddListener(this.NextMessage);
+
+        this.skipButton.GetComponentInChildren<TextMeshProUGUI>().text = "Skip";
+        this.skipButton.onClick.AddListener(this.Close);
     }
 
     public void Init(DialogueEntry[] entries) {
@@ -49,8 +53,10 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
 
         // Choose if the button should say next or close
         if (this.currentEntryIndex == this.entries.Length - 1 && this.currentMessageIndex == this.entries[this.currentEntryIndex].messages.Length - 1) {
+            this.skipButton.gameObject.SetActive(false);
             this.nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Close";
         } else {
+            this.skipButton.gameObject.SetActive(true);
             this.nextButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next";
         }
     }
