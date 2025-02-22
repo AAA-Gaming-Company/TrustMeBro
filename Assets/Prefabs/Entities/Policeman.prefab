@@ -1722,6 +1722,7 @@ MonoBehaviour:
   damageFeedback: {fileID: 6783870912096344302}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 1
   coverIndicator: {fileID: 1559616760560129252}
   coverLayers:
     serializedVersion: 2

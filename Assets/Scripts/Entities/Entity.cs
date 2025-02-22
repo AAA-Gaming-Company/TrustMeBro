@@ -12,6 +12,7 @@ public abstract class Entity : MonoBehaviour {
     public MMF_Player enterCoverFeedback;
     [Tooltip("If true, the entity will use material instancing for its sprite renderer. Used for damage flashes.")]
     public bool enableMaterialInstancing = true;
+    public bool animateDeath = false;
 
     [Header("Cover System")]
     public GameObject coverIndicator;
@@ -62,7 +63,14 @@ public abstract class Entity : MonoBehaviour {
     public void Die() {
         this.ExitCover();
         this.deathEvent.Invoke();
-
+        if (this.animateDeath && this.anim != null) {
+            GameObject corpse = Instantiate(new GameObject(), this.transform.position, Quaternion.identity);
+            corpse.name = "Corpse";
+            corpse.AddComponent<SpriteRenderer>().sprite = this.spriteRenderer.sprite;
+            Animator corpseAnim = corpse.AddComponent<Animator>();
+            corpseAnim.runtimeAnimatorController = this.anim.runtimeAnimatorController;
+            corpseAnim.SetTrigger("Die");
+        } 
         if (this.dieType == EntityDieType.DESTROY) { 
             Destroy(this.gameObject);
         }

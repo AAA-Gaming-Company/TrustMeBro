@@ -399,6 +399,7 @@ MonoBehaviour:
   damageFeedback: {fileID: 151215655564021700}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 1
   coverIndicator: {fileID: 6193339855866392101}
   coverLayers:
     serializedVersion: 2
@@ -408,6 +409,7 @@ MonoBehaviour:
   projectileFeedback: {fileID: 5463989620295925304}
   grenadeFeedback: {fileID: 0}
   flamethrowerFeedback: {fileID: 0}
+  flamethrowerParticles: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.05
   weapon: {fileID: 11400000, guid: 8785a52ab08ecf94a931c76db3fa1261, type: 2}
