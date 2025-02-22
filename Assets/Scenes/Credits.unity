@@ -194,28 +194,24 @@ MonoBehaviour:
     tendency to say \"trust me, bro,\" and an inexplicable urge to escape via helicopter.\n\n\nCompletely
     Random Facts:\n- Over 100,000 lines of code were written, and 99,999 were rewritten.\n-
     The main character was originally a sentient toaster.\n- At least five people
-    still don\u2019t understand the ending.\n- The dog NPC was added because someone
-    lost a bet.\n- We once had a perfectly optimized version, but we lost it. Whoops.\n-
-    There's an easter egg that only triggers on February 30th.\n\n\nFrequently Asked
-    Questions\nQ: Why does the final boss do that?\nA: We have no idea. The AI took
-    over.\n\nQ: Will there be DLC?\nA: If our accountants allow it.\n\nQ: Why is
-    this game so difficult?\nA: Get good.\n\nQ: Is there a secret ending?\nA: Maybe.
-    Or maybe we're messing with you.\n\nQ: Can I refund this game?\nA: No takesies-backsies.\n\n\nRejected
-    Game Titles:\n- Broforce: Emotional Edition\n- Escape from Buff Jail\n- The Mandrew
-    Chronicles\n- Kiss Your Homies Goodnight\n- Getaway Car Simulator 3000\n- Dating
-    Advice with Explosions\n- Speedrun Your Feelings\n- Helicopter Mayhem: The Musical\n-
+    still don\u2019t understand the ending.\n- We once had a perfectly optimized
+    version, but we lost it. Whoops.\n- There's an easter egg that only triggers
+    on February 30th.\n\n\nFrequently Asked Questions\nQ: Why does the final boss
+    do that?\nA: We have no idea, we're out of time.\n\nQ: Why is this game so difficult?\nA:
+    Get good.\n\nQ: Is there a secret ending?\nA: Maybe. Or maybe we're messing with
+    you.\n\nQ: Can I refund this game?\nA: No takesies-backsies.\n\n\nRejected Game
+    Titles:\n- Broforce: Emotional Edition\n- The Mandrew Chronicles\n- Kiss Your
+    Homies Goodnight\n- Getaway Car Simulator 3000\n- Dating Advice with Explosions\n-
     Gun Physics and Romance\n\n\nCut Content We Deeply Regret Removing:\n- A fully
     playable musical number featuring the riot police.\n- A side mission where you
     work as a fast-food chef while on the run.\n- A sentient NPC who would slowly
     become self-aware over multiple playthroughs.\n- A battle royale mode where everyone
     is just Buff McManlyface.\n- A karaoke mini-game that used real-time voice recognition.\n-
-    An NPC that only appears if you haven\u2019t slept in 48 hours.\n- A dog that
-    could actually talk but only in Morse code.\n- A fishing system so realistic
-    it required a fishing license.\n\n\nA Final Word From the Devs:\nThank you for
-    playing. Seriously. We spent a while making this, and if you've reached the credits,
-    it means something we did resonated with you (or you left your controller unattended).
-    Either way, we appreciate you. Now go touch grass, stop reading this nonsense.\n\nAAA
-    Gaming Company, 2025"
+    An NPC that only appears if you haven\u2019t slept in 48 hours.\n\n\nA Final
+    Word From the Devs:\nThank you for playing. Seriously. We spent a while making
+    this, and if you've reached the credits, it means something we did resonated
+    with you (or you left your controller unattended). Either way, we appreciate
+    you. Now go touch grass, stop reading this nonsense.\n\nAAA Gaming Company, 2025"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5907d7b0e154b64294b86680920010f, type: 2}
   m_sharedMaterial: {fileID: -3300209375457610410, guid: b5907d7b0e154b64294b86680920010f, type: 2}
@@ -674,7 +670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8508129979686423422, guid: 13b4c7bb98ec77f4bb8a93e452e93ff5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a2b21ccaed3c4f118febbcbcab30476, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
