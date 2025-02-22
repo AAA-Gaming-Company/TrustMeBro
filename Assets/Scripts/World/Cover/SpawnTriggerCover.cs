@@ -6,6 +6,11 @@ public class SpawnTriggerCover : TriggerCover {
     public Transform spawnLocation;
     public Spawn[] spawns;
 
+    [Header("Entity kill area unlock")]
+    public bool unlockAreaBarrier;
+    [Tooltip("The collider that will be destroyed when one of the entities dies")]
+    public Collider2D areaBarrierCollider;
+
     [Header("AI Destination")]
     public bool hasAiDestination;
     public Transform aiDestination;
@@ -36,6 +41,14 @@ public class SpawnTriggerCover : TriggerCover {
                 Vector3 pos = newObject.transform.position;
                 pos.z = 0;
                 newObject.transform.position = pos;
+
+                //Unlock area barrier
+                if (this.unlockAreaBarrier) {
+                    Entity entity = newObject.GetComponent<Entity>();
+                    if (entity != null) {
+                        entity.AddDeathListener(() => Destroy(this.areaBarrierCollider));
+                    }
+                }
 
                 //AI Destination
                 if (this.hasAiDestination) {
