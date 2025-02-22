@@ -45,9 +45,11 @@ public class SpawnTriggerCover : TriggerCover {
                 //Unlock area barrier
                 if (this.unlockAreaBarrier) {
                     Entity entity = newObject.GetComponent<Entity>();
-                    if (entity != null) {
-                        entity.AddDeathListener(() => Destroy(this.areaBarrierCollider));
+                    if (entity == null) {
+                        throw new System.Exception("Entity component not found on " + newObject.name);
                     }
+
+                    entity.gameObject.AddComponent<EntityDeathAreaUnlocker>().areaBarrierCollider = this.areaBarrierCollider;
                 }
 
                 //AI Destination
