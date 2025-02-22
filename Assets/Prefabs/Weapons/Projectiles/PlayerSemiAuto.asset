@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDelay:
   - 0.05
-  useRange: 12
+  useRange: 8
   isSingleUse: 0
   isAutomatic: 1
   displayName: Player Semi Auto
