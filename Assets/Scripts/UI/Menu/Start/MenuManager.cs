@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [DisallowMultipleComponent]
@@ -10,7 +12,6 @@ public class MenuManager : Singleton<MenuManager> {
     public Button creditsButton;
 
     [Header("UI Panels")]
-    public MenuPanel creditsPanel;
     public LoadingPanel loadingPanel;
     public DifficultyPanel difficultyPanel;
 
@@ -22,7 +23,6 @@ public class MenuManager : Singleton<MenuManager> {
         this.quitButton.onClick.AddListener(QuitButton);
         this.creditsButton.onClick.AddListener(CreditsButton);
 
-        this.creditsPanel.gameObject.SetActive(false);
         this.loadingPanel.gameObject.SetActive(false);
         this.difficultyPanel.gameObject.SetActive(false);
     }
@@ -36,7 +36,7 @@ public class MenuManager : Singleton<MenuManager> {
     }
 
     public void CreditsButton() {
-        this.creditsPanel.gameObject.SetActive(true);
+        SceneManager.LoadScene("Credits");
     }
 
     public void LaunchGame(DifficultyLevel level) {
