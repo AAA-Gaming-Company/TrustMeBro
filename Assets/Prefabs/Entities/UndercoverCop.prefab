@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4732275198191480092}
   - component: {fileID: 6227135054559096253}
   - component: {fileID: 9058965097209252517}
+  - component: {fileID: -7081821832094384368}
   m_Layer: 8
   m_Name: UndercoverCop
   m_TagString: Untagged
@@ -401,6 +402,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7081821832094384368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468241822797603447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d14c31106a44bb0a3c16ef5ec6fd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entries:
+  - messages:
+    - Lucky you got behind that table, you should probably get behind other things
+      when enemies attack you.
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!1 &4257233965519886611
 GameObject:
   m_ObjectHideFlags: 0
