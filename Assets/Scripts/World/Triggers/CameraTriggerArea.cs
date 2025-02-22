@@ -10,13 +10,15 @@ public class CameraTriggerArea : TriggerArea {
 
     public float orthographicSize = 0f;
 
+    public bool deadZone = true;
+
     protected override void TriggerAction(PlayerController player) {
         CinemachinePositionComposer positionComposer = cinemachineCamera.GetComponent<CinemachinePositionComposer>();
         if (positionComposer == null) {
             throw new System.Exception("CinemachinePositionComposer is null!");
         }
         
-
+        positionComposer.Composition.DeadZone.Enabled = deadZone;
         cinemachineCamera.Lens.OrthographicSize = orthographicSize;
         positionComposer.Composition.ScreenPosition.y = targetOffsetY;
         positionComposer.Composition.ScreenPosition.x = targetOffsetX;
