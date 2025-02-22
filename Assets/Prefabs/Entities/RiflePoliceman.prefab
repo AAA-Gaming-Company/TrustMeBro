@@ -405,7 +405,9 @@ MonoBehaviour:
     m_Bits: 512
   coverRadius: 0.67
   firePoint: {fileID: 4362331448236879457}
-  shootFeedback: {fileID: 5463989620295925304}
+  projectileFeedback: {fileID: 5463989620295925304}
+  grenadeFeedback: {fileID: 0}
+  flamethrowerFeedback: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.05
   weapon: {fileID: 11400000, guid: 8785a52ab08ecf94a931c76db3fa1261, type: 2}
@@ -424,8 +426,6 @@ MonoBehaviour:
     m_Bits: 256
   disableMovementOnShoot: 1
   moveDisableTime: 0.35
-  showDeathDialogue: 0
-  entries: []
 --- !u!95 &1731002141874676452
 Animator:
   serializedVersion: 7

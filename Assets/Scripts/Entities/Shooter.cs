@@ -91,7 +91,7 @@ public abstract class Shooter : Entity {
                 shapeModule.angle = this.currentWeapon.flamethrowerOpeningAngle;
                 // Set the range of the flamethrower particles
                 MainModule mainModule = this.flamethrowerParticles.main;
-                mainModule.startSpeed = this.currentWeapon.useRange;
+                mainModule.startSpeed = this.currentWeapon.useRange * 3;
 
                 // Create a layer mask to ignore the shooter's layer
                 int layerMask = 1 << this.gameObject.layer;

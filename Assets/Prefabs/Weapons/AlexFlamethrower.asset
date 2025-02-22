@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AlexFlamethrower
   m_EditorClassIdentifier: 
   useDelay:
-  - 0.5
-  useRange: 15
+  - 0.05
+  useRange: 5
   isSingleUse: 0
   isAutomatic: 1
   displayName: Alex Flametrower
@@ -29,6 +29,6 @@ MonoBehaviour:
   grenadeExplosionRadius: 1
   grenadeThrowForce: 0
   isFlamethrower: 1
-  flamethrowerOpeningAngle: 10
+  flamethrowerOpeningAngle: 50
   damage: 0a000000
   ready: 0

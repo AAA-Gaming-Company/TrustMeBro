@@ -357,7 +357,9 @@ MonoBehaviour:
     m_Bits: 512
   coverRadius: 0.67
   firePoint: {fileID: 8972206865977100108}
-  shootFeedback: {fileID: 2739360540787510958}
+  projectileFeedback: {fileID: 2739360540787510958}
+  grenadeFeedback: {fileID: 0}
+  flamethrowerFeedback: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.4
   weapon: {fileID: 11400000, guid: c12dd6cb930a4e243a2894cc5fd57863, type: 2}
@@ -376,18 +378,6 @@ MonoBehaviour:
     m_Bits: 256
   disableMovementOnShoot: 0
   moveDisableTime: 0.2
-  showDeathDialogue: 0
-  entries:
-  - messages:
-    - Ouch! Okay, I'll stop for now.
-    speakerName: NOT Stefan Jawline
-    speakerImage: {fileID: 2472001460683305498, guid: ecc803221d6bf3d4bad832de763fbb08, type: 3}
-  - messages:
-    - Lucky you got down on one knee behind that table bro.
-    - You should probably take cover to protect yourself from enemy fire, bro.
-    - Carfeul, the cops can take cover too!
-    speakerName: Mandrew Cake
-    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!95 &9058965097209252517
 Animator:
   serializedVersion: 7
