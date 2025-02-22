@@ -100,8 +100,9 @@ public class PlayerInventory {
         return true;
     }
 
-    public void SetWeaponToLast() {
-        this.currentSelectedWeapon = this.items.Count - 1;
+    public void CycleToWeapon(WeaponType weaponType) {
+        this.currentSelectedWeapon = this.items.FindIndex(i => i.weaponType.name == weaponType.name);
+        this.inventoryChangedEvent.Invoke();
     }
 
     public PlayerInventory Copy() {

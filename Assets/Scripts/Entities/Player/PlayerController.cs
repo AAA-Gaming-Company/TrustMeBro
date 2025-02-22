@@ -4,7 +4,6 @@ using UnityEngine;
 using Unity.Cinemachine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
@@ -91,6 +90,7 @@ public class PlayerController : Shooter {
 
         this.inventory.RegisterInventoryChangedEvent(() => {
             this.SwitchWeapon(this.inventory.GetSelectedWeapon());
+            this.OnPlayerSwitchWeapon();
         });
 
         base.AddDeathListener(this.OnDie);
@@ -158,8 +158,6 @@ public class PlayerController : Shooter {
             if (selectedWeapon.isSingleUse) {
                 this.inventory.RemoveItem(selectedWeapon, 1);
             }
-
-            this.OnPlayerSwitchWeapon();
         }
         if (InputManager.Instance.GetAttackUp()) {
             this.isUsingAutomaticWeapon = false;
@@ -170,6 +168,7 @@ public class PlayerController : Shooter {
             if (this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0)) {
                 this.SwitchWeapon(this.inventory.GetSelectedWeapon());
                 this.OnPlayerSwitchWeapon();
+
                 if (this.weaponSwitchFeedback != null) {
                     this.weaponSwitchFeedback.PlayFeedbacks();
                 }
@@ -294,16 +293,8 @@ public class PlayerController : Shooter {
         if (this.weaponPickupFeedback != null) {
             this.weaponPickupFeedback.PlayFeedbacks();
         }
-         if (this.inventory.CycleSelectedWeapon(InputManager.Instance.GetCycleItem() > 0)) {
-                this.SwitchWeapon(this.inventory.GetSelectedWeapon());
-                this.OnPlayerSwitchWeapon();
-                if (this.weaponSwitchFeedback != null) {
-                    this.weaponSwitchFeedback.PlayFeedbacks();
-                }
-                this.isUsingAutomaticWeapon = false;
-            }
-        this.OnPlayerSwitchWeapon();
 
+        this.inventory.CycleToWeapon(weapon);
     }
 
     public void OnPlayerSwitchWeapon() {
