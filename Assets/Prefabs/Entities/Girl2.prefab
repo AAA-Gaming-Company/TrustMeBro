@@ -693,7 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1532451060796917547}
   - component: {fileID: 3163772184659446546}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DamageFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,7 +1438,7 @@ GameObject:
   - component: {fileID: 1047419378131668114}
   - component: {fileID: 340880976873624987}
   - component: {fileID: 468849581297184491}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Girl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1628,10 +1628,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   coverRadius: 0
-  entries:
-  - messages: []
-    speakerName: bro amazing dedication but wth
-    speakerImage: {fileID: 21300000, guid: 54525725d6fc3403a8a34a14bef03803, type: 3}
 --- !u!1 &7582056302954473781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5770793479430029045}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NoFlip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

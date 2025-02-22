@@ -1,6 +1,5 @@
 using UnityEngine;
 using Pathfinding;
-using MoreMountains.Feedbacks;
 using System.Collections;
 
 [RequireComponent(typeof(AIDestinationSetter))]
@@ -25,12 +24,8 @@ public class EnemyController : Shooter {
     [Tooltip("The maximum number of shots the enemy can fire before needing to find cover and reload")]
     public int maxShotsOutOfCover;
     public LayerMask ignoreLayers;
-
     public bool disableMovementOnShoot = false;
     public float moveDisableTime = 0.2f;
-    [Header("Dialogue (shown on death)")]
-    public bool showDeathDialogue = false;
-    public DialogueEntry[] entries;
 
     private int shotsFiredOutOfCover;
     private bool attackBehaviorRunning = false;
@@ -63,6 +58,8 @@ public class EnemyController : Shooter {
         if (this.player == null) {
             throw new UnityException("PlayerController not found in target!");
         }
+
+        base.AddDeathListener(this.OnDie);
     }
 
     private void Update() {
@@ -225,16 +222,8 @@ public class EnemyController : Shooter {
         this.aiPath.canMove = true;
     }
 
-    protected override void OnDie() {
+    private void OnDie() {
         StatsManager.Instance.AddEnemyKilled();
         this.player.Heal(this.healthBoostOnDeath);
-        if (this.showDeathDialogue) {
-            DialogueBuilder.Builder()
-                .AddEntry(this.entries)
-                .BuildAndDisplay();
-        }
-    }
-
-    protected override void OnDamage(int amount) {
     }
 }

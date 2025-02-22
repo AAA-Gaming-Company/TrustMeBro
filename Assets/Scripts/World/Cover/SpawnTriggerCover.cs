@@ -1,9 +1,8 @@
- using UnityEngine;
+using UnityEngine;
 using Pathfinding;
 
 [CreateAssetMenu(fileName = "SpawnTriggerCover", menuName = "Scriptable Objects/SpawnTriggerCover")]
-public class SpawnTriggerCover : TriggerCover
-{
+public class SpawnTriggerCover : TriggerCover {
     [Header("Spawn")]
     public Transform spawnLocation;
     public Spawn[] spawns;
@@ -48,11 +47,12 @@ public class SpawnTriggerCover : TriggerCover
         }
     }
 
-    public void OnDrawGizmos() {
+    public new void OnDrawGizmos() {
+        base.OnDrawGizmos();
+
         if (this.spawnLocation != null) {
             Gizmos.color = Color.black;
             Gizmos.DrawCube(this.spawnLocation.position, new Vector3(.5f, .5f, .5f));
         }
     }
 }
-

@@ -948,6 +948,7 @@ GameObject:
   - component: {fileID: 6033511407627971100}
   - component: {fileID: 8067610468842626652}
   - component: {fileID: 4328311430536078212}
+  - component: {fileID: 7320934630117978468}
   - component: {fileID: 1058100229721357242}
   m_Layer: 8
   m_Name: GrenadePolicemanEnemy
@@ -1222,6 +1223,27 @@ MonoBehaviour:
   disableMovementOnShoot: 1
   moveDisableTime: 0.5
   showDeathDialogue: 1
+  entries:
+  - messages:
+    - Okay okay, I give up... ouch.
+    speakerName: NOT Stefan Jawline
+    speakerImage: {fileID: 2472001460683305498, guid: ecc803221d6bf3d4bad832de763fbb08, type: 3}
+  - messages:
+    - That buys us a few minutes
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+--- !u!114 &7320934630117978468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186719691004928916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d14c31106a44bb0a3c16ef5ec6fd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   entries:
   - messages:
     - Okay okay, I give up... ouch.

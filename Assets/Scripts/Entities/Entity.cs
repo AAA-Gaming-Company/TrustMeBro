@@ -1,5 +1,6 @@
 using UnityEngine;
 using MoreMountains.Feedbacks;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Entity : MonoBehaviour {
@@ -23,6 +24,9 @@ public abstract class Entity : MonoBehaviour {
     protected int currentHealth;
     protected EntityDieType dieType = EntityDieType.DESTROY;
 
+    private UnityEvent deathEvent = new UnityEvent();
+    private UnityEvent<int> damageEvent = new UnityEvent<int>();
+
     public void Start() {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.currentHealth = this.maxHealth;
@@ -34,11 +38,16 @@ public abstract class Entity : MonoBehaviour {
         }
     }
 
-    protected abstract void OnDie();
-    protected abstract void OnDamage(int amount);
+    public void AddDeathListener(UnityAction action) {
+        this.deathEvent.AddListener(action);
+    }
+
+    public void AddDamageListener(UnityAction<int> action) {
+        this.damageEvent.AddListener(action);
+    }
 
     public void TakeDamage(int damage) {
-        this.OnDamage(damage);
+        this.damageEvent.Invoke(damage);
 
         this.currentHealth -= damage;
         if (this.currentHealth <= 0) {
@@ -52,8 +61,8 @@ public abstract class Entity : MonoBehaviour {
 
     public void Die() {
         this.ExitCover();
+        this.deathEvent.Invoke();
 
-        this.OnDie();
         if (this.dieType == EntityDieType.DESTROY) { 
             Destroy(this.gameObject);
         }

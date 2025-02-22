@@ -89,6 +89,8 @@ public class PlayerController : Shooter {
         this.inventory.RegisterInventoryChangedEvent(() => {
             this.SwitchWeapon(this.inventory.GetSelectedWeapon());
         });
+
+        base.AddDeathListener(this.OnDie);
     }
 
     private void Update() {
@@ -326,12 +328,9 @@ public class PlayerController : Shooter {
         }
     }
 
-    protected override void OnDie() {
+    private void OnDie() {
         StateManager.Instance.TriggerDeathMenu();
         this.UpdateHealthBar();
-    }
-
-    protected override void OnDamage(int amount) {
     }
 
     public void SlowTime(float timeSpeed, float timeSlowDuration) {
