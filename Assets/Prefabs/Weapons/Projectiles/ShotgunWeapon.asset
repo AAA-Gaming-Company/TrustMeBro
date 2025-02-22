@@ -18,8 +18,8 @@ MonoBehaviour:
   isSingleUse: 0
   isAutomatic: 0
   displayName: Shotgun
-  displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
-  uiSprite: {fileID: 0}
+  displaySprite: {fileID: 6043855864513616819, guid: 9a05e275309b95445bc577a1fb9e366d, type: 3}
+  uiSprite: {fileID: 6043855864513616819, guid: 9a05e275309b95445bc577a1fb9e366d, type: 3}
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: aac8d88b47a4e4944b94dad3933a4a3c, type: 3}
   amount: 0a000000

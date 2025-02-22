@@ -14,15 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDelay:
   - 0.05
-  useRange: 7.6
+  useRange: 12
   isSingleUse: 0
   isAutomatic: 1
   displayName: Player Semi Auto
-  displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
+  displaySprite: {fileID: 7591463974754732465, guid: c9e7bc3747134b643bd40191eb08a499, type: 3}
+  uiSprite: {fileID: 0}
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: c3b966d5b3002429db4ed3b4de933d93, type: 3}
   amount: 01000000
   isProjectile: 1
   projectileSpeed: 0.8
+  isGrenade: 0
+  grenadeExplosionRadius: 1
+  grenadeThrowForce: 0
+  isFlamethrower: 0
+  flamethrowerOpeningAngle: 10
   damage: 03000000
   ready: 0
