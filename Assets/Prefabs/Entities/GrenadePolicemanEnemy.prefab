@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551cfd04ffc1f4be3993d9ee2746761c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 70
   healthBar: {fileID: 1085208125616811445}
   noFlip: {fileID: 8364982635980140138}
   damageFeedback: {fileID: 5738766407334948097}
@@ -1206,6 +1206,7 @@ MonoBehaviour:
   projectileFeedback: {fileID: 0}
   grenadeFeedback: {fileID: 3001893832081277226}
   flamethrowerFeedback: {fileID: 0}
+  flamethrowerParticles: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.05
   weapon: {fileID: 11400000, guid: 9277dbd8d29f8bc4f9bf17c6346c045f, type: 2}

@@ -5416,7 +5416,8 @@ MonoBehaviour:
     speakerName: Sarah
     speakerImage: {fileID: -1821161133326151615, guid: 3e33269c8dcefe44abd17d967d9531db, type: 3}
   - messages:
-    - Guess I forgot about the strength of my massive, meaty muscles.
+    - Guess I forgot about the strength of my massive, meaty, muscly muscles. Maybe
+      this throwing sutff will come in handy later...
     speakerName: Buff McManlyface
     speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
 --- !u!58 &8086265898469410205

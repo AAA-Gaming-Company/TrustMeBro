@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
-  m_Name: ShotgunWeapon
+  m_Name: RiotCopShotgun
   m_EditorClassIdentifier: 
   useDelay:
   - 1
-  useRange: 7
+  useRange: 4
   isSingleUse: 0
   isAutomatic: 0
   displayName: Shotgun

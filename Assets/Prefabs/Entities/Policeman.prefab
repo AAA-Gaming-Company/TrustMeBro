@@ -1731,6 +1731,7 @@ MonoBehaviour:
   projectileFeedback: {fileID: 3714266050873528596}
   grenadeFeedback: {fileID: 0}
   flamethrowerFeedback: {fileID: 0}
+  flamethrowerParticles: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.05
   weapon: {fileID: 11400000, guid: a89663023c7cb4b9c825b23722f409b6, type: 2}
@@ -1738,7 +1739,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  healthBoostOnDeath: 10
+  healthBoostOnDeath: 6
   outOfCoverTime: 1.5
   shotNum: 4
   recoverTime: 1.3

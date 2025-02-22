@@ -423,9 +423,10 @@ MonoBehaviour:
   projectileFeedback: {fileID: 1245885043377742064}
   grenadeFeedback: {fileID: 0}
   flamethrowerFeedback: {fileID: 0}
+  flamethrowerParticles: {fileID: 0}
   reloadFeedback: {fileID: 0}
   deviationValue: 0.05
-  weapon: {fileID: 11400000, guid: f24e345ae520641bdb998f819b5b5060, type: 2}
+  weapon: {fileID: 11400000, guid: 4f4fd7fbb5beb1146918cf89157a4d97, type: 2}
   moveRange: 1.5
   playerLayer:
     serializedVersion: 2
