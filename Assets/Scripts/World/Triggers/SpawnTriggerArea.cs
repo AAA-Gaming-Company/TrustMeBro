@@ -15,6 +15,10 @@ public class SpawnTriggerArea : TriggerArea {
     public bool hasAiDestination;
     public Transform aiDestination;
 
+    [Header("Destroy on trigger")]
+    public bool destroyObjectsOnTrigger;
+    public GameObject[] objectsToDestroy;
+
     [System.Serializable]
     public class Spawn {
         public GameObject prefab;
@@ -57,6 +61,13 @@ public class SpawnTriggerArea : TriggerArea {
                     AIDestinationSetter aiDestinationSetter = newObject.GetComponent<AIDestinationSetter>();
                     aiDestinationSetter.target = this.aiDestination;
                 }
+            }
+        }
+
+        //Destroy objects
+        if (this.destroyObjectsOnTrigger) {
+            for (int i = 0; i < this.objectsToDestroy.Length; i++) {
+                Destroy(this.objectsToDestroy[i]);
             }
         }
     }
