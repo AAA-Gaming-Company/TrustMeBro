@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6cf03b5831b2a5c43a2a5b30dd4003c9
+guid: def4a1631e7b4401e972834f208237de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6350658991948303766
-    second: Rooftop4VerticalTiled_0
+      213: 1831784571108976401
+    second: Tile_Rooftop4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,27 +135,44 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rooftop4VerticalTiled_0
+      name: Tile_Rooftop4_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 87
-        height: 103
+        width: 80
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 33, y: 19}
+        - {x: -40, y: 19}
+        - {x: -40, y: -30}
+        - {x: 33, y: -30}
+      tessellationDetail: 0
       bones: []
-      spriteID: a62f7474b4dedd7a0800000000000000
-      internalID: -6350658991948303766
+      spriteID: 117edf9bc5ecb6910800000000000000
+      internalID: 1831784571108976401
       vertices: []
       indices: 
       edges: []
@@ -164,7 +181,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 02c1ce02be1a4904f80993154e875393
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +191,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rooftop4VerticalTiled_0: -6350658991948303766
+      Tile_Rooftop4_0: 1831784571108976401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

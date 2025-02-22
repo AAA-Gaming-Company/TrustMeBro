@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb96219082888e24eaf52ba1a76ff615
+guid: db48b4aae816e4040ade613c826a69c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1831784571108976401
-    second: Tile_Rooftop4_0
+      213: 628186081965518479
+    second: Tile_Rooftop3TiledEND_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -135,44 +135,31 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_Rooftop4_0
+      name: Tile_Rooftop3TiledEND_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 93
-        height: 60
+        width: 80
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 39.5, y: 19}
-        - {x: -41.5, y: 19}
-        - {x: -41.5, y: -30}
-        - {x: 39.5, y: -30}
+      - - {x: 33, y: 11}
+        - {x: -40, y: 11}
+        - {x: -40, y: -20}
+        - {x: 33, y: -20}
       tessellationDetail: 0
       bones: []
-      spriteID: 117edf9bc5ecb6910800000000000000
-      internalID: 1831784571108976401
+      spriteID: f8e266cc9e3c7b800800000000000000
+      internalID: 628186081965518479
       vertices: []
       indices: 
       edges: []
@@ -181,7 +168,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 02c1ce02be1a4904f80993154e875393
+    spriteID: e0140ce4c69a44dff98878859289bc34
     internalID: 0
     vertices: []
     indices: 
@@ -191,7 +178,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tile_Rooftop4_0: 1831784571108976401
+      Tile_Rooftop3TiledEND_0: 628186081965518479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
