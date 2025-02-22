@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// This class has to be attached to a GameObject in the scene, as it is used to find the
@@ -90,9 +91,11 @@ public class NotificationBuilder {
 
 public class DialogueBuilder {
     private List<DialogueEntry> entries;
+    private UnityEvent onClose;
 
     private DialogueBuilder() {
         this.entries = new List<DialogueEntry>();
+        this.onClose = new UnityEvent();
     }
 
     public DialogueBuilder AddEntry(string speakerName, Sprite speakerImage, params string[] messages) {
@@ -110,13 +113,18 @@ public class DialogueBuilder {
         return this;
     }
 
+    public DialogueBuilder OnClose(UnityEvent onClose) {
+        this.onClose = onClose;
+        return this;
+    }
+
     public void BuildAndDisplay() {
         if (this.entries.Count == 0) {
             throw new System.Exception("DialogueBuilder: No entries added.");
         }
 
         DialogueWindow window = Object.Instantiate(MessageManager.Instance.dialoguePrefab, MessageManager.Instance.canvas.transform);
-        window.Init(this.entries.ToArray());
+        window.Init(this.entries.ToArray(), this.onClose);
     }
 
     public static DialogueBuilder Builder() {

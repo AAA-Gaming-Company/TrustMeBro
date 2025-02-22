@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 /// <summary>
 /// This class is attached to a single Unity prefab that will display a dialogue window. None
@@ -18,6 +19,7 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
     private int currentMessageIndex = -1;
     private int currentEntryIndex = 0;
 
+    private UnityEvent onClose;
     private DialogueEntry[] entries;
 
     private void Awake() {
@@ -27,8 +29,9 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
         this.skipButton.onClick.AddListener(this.Close);
     }
 
-    public void Init(DialogueEntry[] entries) {
+    public void Init(DialogueEntry[] entries, UnityEvent onClose) {
         this.entries = entries;
+        this.onClose = onClose;
 
         MessageManager.Instance.RegisterElement(this);
 
@@ -64,6 +67,7 @@ public class DialogueWindow : MonoBehaviour, IMessageElement {
     public void Close() {
         Time.timeScale = 1f;
         MessageManager.Instance.UnregisterElement(this);
+        this.onClose.Invoke();
         Destroy(this.gameObject);
     }
 }

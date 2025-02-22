@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 01980fd2397dc49f7abfa02962b9fd19
+guid: dcd2a643becbe4a0db1d62d0192a6adc
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -7524356196915858357
-    second: spriteShet_DatGirl3_Die_0
+    second: SpriteSheet_Police_Die_0
   - first:
       213: -4975605933611174093
-    second: spriteShet_DatGirl3_Die_1
+    second: SpriteSheet_Police_Die_1
   - first:
       213: 3768767526812707434
-    second: spriteShet_DatGirl3_Die_2
+    second: SpriteSheet_Police_Die_2
   - first:
       213: 4709755616334914770
-    second: spriteShet_DatGirl3_Die_3
+    second: SpriteSheet_Police_Die_3
   - first:
       213: -6009128586604609746
-    second: spriteShet_DatGirl3_Die_4
+    second: SpriteSheet_Police_Die_4
   - first:
       213: -7288883700600593477
-    second: spriteShet_DatGirl3_Die_5
+    second: SpriteSheet_Police_Die_5
   - first:
       213: 1567933862959870550
-    second: spriteShet_DatGirl3_Die_6
+    second: SpriteSheet_Police_Die_6
   - first:
       213: 1996114574805677338
-    second: spriteShet_DatGirl3_Die_7
+    second: SpriteSheet_Police_Die_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -160,15 +160,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_0
+      name: SpriteSheet_Police_Die_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 224
+        y: 223
         width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.56082356, y: 0.4216283}
+      pivot: {x: 0.5, y: 0.42162833}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,7 +182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_1
+      name: SpriteSheet_Police_Die_1
       rect:
         serializedVersion: 2
         x: 42
@@ -190,7 +190,7 @@ TextureImporter:
         width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.4216283}
+      pivot: {x: 0.4724972, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -204,7 +204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_2
+      name: SpriteSheet_Police_Die_2
       rect:
         serializedVersion: 2
         x: 75
@@ -212,7 +212,7 @@ TextureImporter:
         width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.4216283}
+      pivot: {x: 0.48163697, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -226,7 +226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_3
+      name: SpriteSheet_Police_Die_3
       rect:
         serializedVersion: 2
         x: 108
@@ -234,7 +234,7 @@ TextureImporter:
         width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.46798754, y: 0.4216283}
+      pivot: {x: 0.45708928, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_4
+      name: SpriteSheet_Police_Die_4
       rect:
         serializedVersion: 2
         x: 151
@@ -256,7 +256,7 @@ TextureImporter:
         width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.35209656, y: 0.4216283}
+      pivot: {x: 0.35161984, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -270,15 +270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_5
+      name: SpriteSheet_Police_Die_5
       rect:
         serializedVersion: 2
         x: 194
-        y: 222
-        width: 35
-        height: 31
+        y: 223
+        width: 33
+        height: 30
       alignment: 9
-      pivot: {x: 0.2602055, y: 0.4216283}
+      pivot: {x: 0.25406578, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -292,15 +292,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteShet_DatGirl3_Die_6
+      name: SpriteSheet_Police_Die_6
       rect:
         serializedVersion: 2
         x: 15
         y: 192
-        width: 39
+        width: 33
         height: 30
       alignment: 9
-      pivot: {x: 0.079143085, y: 0.4216283}
+      pivot: {x: 0.100465946, y: 0.4216283}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,13 +327,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spriteShet_DatGirl3_Die_0: -7524356196915858357
-      spriteShet_DatGirl3_Die_1: -4975605933611174093
-      spriteShet_DatGirl3_Die_2: 3768767526812707434
-      spriteShet_DatGirl3_Die_3: 4709755616334914770
-      spriteShet_DatGirl3_Die_4: -7288883700600593477
-      spriteShet_DatGirl3_Die_5: 1567933862959870550
-      spriteShet_DatGirl3_Die_6: 1996114574805677338
+      SpriteSheet_Police_Die_0: -7524356196915858357
+      SpriteSheet_Police_Die_1: -4975605933611174093
+      SpriteSheet_Police_Die_2: 3768767526812707434
+      SpriteSheet_Police_Die_3: 4709755616334914770
+      SpriteSheet_Police_Die_4: -7288883700600593477
+      SpriteSheet_Police_Die_5: 1567933862959870550
+      SpriteSheet_Police_Die_6: 1996114574805677338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

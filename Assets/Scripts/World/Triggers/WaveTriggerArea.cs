@@ -1,11 +1,13 @@
+
 using UnityEngine;
 
-[RequireComponent(typeof(WaveSpawner))]
 public class WaveTriggerArea : TriggerArea {
-    private WaveSpawner waveSpawner;
+    public WaveSpawner waveSpawner;
 
     private void Awake() {
-        this.waveSpawner = this.GetComponent<WaveSpawner>();
+        if (this.GetComponent<WaveSpawner>() != null) {
+            Debug.LogError("No! Do not attach a WaveSpawner to WaveTriggerArea.");
+        }
     }
 
     protected override void TriggerAction(PlayerController player) {

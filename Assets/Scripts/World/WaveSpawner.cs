@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveSpawner : MonoBehaviour {
     public WaveSpawns[] waves;
-    public Transform spawnLocation;
 
     [Header("AI Destination")]
     public bool hasAiDestination;
     public Transform aiDestination;
+
+    [Header("Finish dialogue")]
+    public bool finishWithDialogue;
+    public DialogueEntry[] entries;
+    public UnityEvent afterDialogue;
 
     private int currentWave = -1;
     private List<int> currentWaveChildren = new List<int>();
@@ -25,6 +30,11 @@ public class WaveSpawner : MonoBehaviour {
     private void NextWave() {
         this.currentWave++;
         if (this.currentWave >= this.waves.Length) {
+            if (this.finishWithDialogue) {
+                this.QueueDialogue();
+            }
+
+            Destroy(this);
             return;
         }
 
@@ -42,7 +52,7 @@ public class WaveSpawner : MonoBehaviour {
         foreach (WaveSpawnObject waveSpawnObject in wave.waveSpawnObjects) {
             for (int i = 0; i < waveSpawnObject.amount; i++) {
                 // Spawn the child
-                GameObject child = Instantiate(waveSpawnObject.prefab, this.spawnLocation.position, Quaternion.identity);
+                GameObject child = Instantiate(waveSpawnObject.prefab, this.transform.position, Quaternion.identity);
 
                 // AI Destination
                 if (this.hasAiDestination) {
@@ -81,12 +91,17 @@ public class WaveSpawner : MonoBehaviour {
             this.NextWave();
         }
     }
+    
+    private void QueueDialogue() {
+        DialogueBuilder.Builder()
+            .AddEntry(this.entries)
+            .OnClose(this.afterDialogue)
+            .BuildAndDisplay();
+    }
 
     private void OnDrawGizmos() {
-        if (this.spawnLocation != null) {
-            Gizmos.color = Color.black;
-            Gizmos.DrawCube(this.spawnLocation.position, new Vector3(.5f, .5f, .5f));
-        }
+        Gizmos.color = Color.black;
+        Gizmos.DrawCube(this.transform.position, new Vector3(.5f, .5f, .5f));
     }
 }
 

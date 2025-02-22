@@ -84,14 +84,16 @@ public abstract class Shooter : Entity {
             }
         } else {
             if (this.currentWeapon.isFlamethrower) {
-                // Set the direction of the flamethrower particles
-                this.flamethrowerParticles.transform.right = direction;
-                // Set the opening angle of the flamethrower particles
-                ShapeModule shapeModule = this.flamethrowerParticles.shape;
-                shapeModule.angle = this.currentWeapon.flamethrowerOpeningAngle;
-                // Set the range of the flamethrower particles
-                MainModule mainModule = this.flamethrowerParticles.main;
-                mainModule.startSpeed = this.currentWeapon.useRange * 3;
+                if (this.flamethrowerParticles != null) {
+                    // Set the direction of the flamethrower particles
+                    this.flamethrowerParticles.transform.right = direction;
+                    // Set the opening angle of the flamethrower particles
+                    ShapeModule shapeModule = this.flamethrowerParticles.shape;
+                    shapeModule.angle = this.currentWeapon.flamethrowerOpeningAngle;
+                    // Set the range of the flamethrower particles
+                    MainModule mainModule = this.flamethrowerParticles.main;
+                    mainModule.startSpeed = this.currentWeapon.useRange * 3;
+                }
 
                 // Create a layer mask to ignore the shooter's layer
                 int layerMask = 1 << this.gameObject.layer;
