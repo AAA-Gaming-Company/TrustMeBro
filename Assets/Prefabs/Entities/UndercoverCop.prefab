@@ -371,9 +371,9 @@ MonoBehaviour:
   healthBoostOnDeath: 20
   outOfCoverTime: 1.2
   shotNum: 20
-  recoverTime: 0.5
+  recoverTime: 0.2
   behaviorRandomFactor: 0.1
-  maxShotsOutOfCover: 10
+  maxShotsOutOfCover: 3
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 256

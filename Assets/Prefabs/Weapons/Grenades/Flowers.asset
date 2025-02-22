@@ -26,7 +26,9 @@ MonoBehaviour:
   isProjectile: 0
   projectileSpeed: 0.5
   isGrenade: 1
-  grenadeExplosionRadius: 2
+  grenadeExplosionRadius: 0
   grenadeThrowForce: 0
+  isFlamethrower: 0
+  flamethrowerOpeningAngle: 10
   damage: 00000000
   ready: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Cinemachine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
@@ -51,7 +52,9 @@ public class PlayerController : Shooter {
     public PlayerInventory inventory;
     public MMF_Player weaponPickupFeedback;
     public MMF_Player weaponSwitchFeedback;
+    public Image background;
     public Image weaponImage;
+    public TextMeshProUGUI weaponName;
     public TextMeshProUGUI weaponAmount;
     public CinemachineCamera cinemachineCam;
 
@@ -149,7 +152,7 @@ public class PlayerController : Shooter {
             } else {
                 base.FlipEntity(false);
             }
-            this.Shoot(targetPos);
+            this.Shoot(targetPos, "Player");
             StatsManager.Instance.AddShotFired();
 
             if (selectedWeapon.isSingleUse) {
@@ -308,8 +311,14 @@ public class PlayerController : Shooter {
             if (this.weaponImage.gameObject.activeSelf == false) {
                 this.weaponImage.gameObject.SetActive(true);
             }
+            if (this.background.gameObject.activeSelf == false) {
+                this.background.gameObject.SetActive(true);
+            }
             if (this.weaponAmount.gameObject.activeSelf == false) {
                 this.weaponAmount.gameObject.SetActive(true);
+            }
+            if (this.weaponName.gameObject.activeSelf == false) {
+                this.weaponName.gameObject.SetActive(true);
             }
 
             if (this.inventory.GetSelectedWeapon() != null) {
@@ -320,10 +329,12 @@ public class PlayerController : Shooter {
                 } else {
                     this.weaponAmount.text = amount.ToString();
                 }
+                this.weaponName.text = this.inventory.GetSelectedWeapon().displayName;
             } else {
                 this.weaponImage.sprite = null;
                 this.weaponImage.gameObject.SetActive(false);
                 this.weaponAmount.text = "";
+                this.weaponName.text = "";
             }
         }
     }

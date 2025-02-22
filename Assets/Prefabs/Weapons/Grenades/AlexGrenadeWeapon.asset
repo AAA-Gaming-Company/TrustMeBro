@@ -19,12 +19,16 @@ MonoBehaviour:
   isAutomatic: 0
   displayName: Alex Grenade
   displaySprite: {fileID: 5459226271658456430, guid: 56248b2eff247ac499e312c9f7936e52, type: 3}
+  uiSprite: {fileID: 0}
   isSpawner: 1
   prefab: {fileID: 7202467400717002098, guid: 58ed267cc10534ef6b4394a37206276c, type: 3}
   amount: 01000000
   isProjectile: 0
   projectileSpeed: 0.5
-  damage: 0a000000
   isGrenade: 1
-  grenadeExplosionRadius: 2
+  grenadeExplosionRadius: 1.7
+  grenadeThrowForce: 0
+  isFlamethrower: 0
+  flamethrowerOpeningAngle: 10
+  damage: 0a000000
   ready: 0
