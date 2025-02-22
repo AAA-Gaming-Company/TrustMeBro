@@ -1,6 +1,8 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
+using static UnityEngine.ParticleSystem;
 
 public abstract class Shooter : Entity {
     [Header("Shooter")]
@@ -8,6 +10,7 @@ public abstract class Shooter : Entity {
     public MMF_Player projectileFeedback;
     public MMF_Player grenadeFeedback;
     public MMF_Player flamethrowerFeedback;
+    public ParticleSystem flamethrowerParticles;
     public MMF_Player reloadFeedback;
     public float deviationValue = 0;
 
@@ -22,6 +25,9 @@ public abstract class Shooter : Entity {
         }
         if (this.flamethrowerFeedback != null) {
             this.flamethrowerFeedback.Events.OnComplete.AddListener(this.ShootFinished);
+            if (this.flamethrowerParticles == null) {
+                Debug.LogError("Flamethrower Particles are not set!");
+            }
         }
     }
 
@@ -78,6 +84,15 @@ public abstract class Shooter : Entity {
             }
         } else {
             if (this.currentWeapon.isFlamethrower) {
+                // Set the direction of the flamethrower particles
+                this.flamethrowerParticles.transform.right = direction;
+                // Set the opening angle of the flamethrower particles
+                ShapeModule shapeModule = this.flamethrowerParticles.shape;
+                shapeModule.angle = this.currentWeapon.flamethrowerOpeningAngle;
+                // Set the range of the flamethrower particles
+                MainModule mainModule = this.flamethrowerParticles.main;
+                mainModule.startSpeed = this.currentWeapon.useRange;
+
                 // Create a layer mask to ignore the shooter's layer
                 int layerMask = 1 << this.gameObject.layer;
                 layerMask = ~layerMask;

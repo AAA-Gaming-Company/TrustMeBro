@@ -72,9 +72,10 @@ public static class BetterPhysics2D {
         float halfAngle = angle / 2;
 
         foreach (Collider2D hit in hits) {
-            Vector2 pointToCollider = ((Vector2) hit.transform.position - point).normalized;
-            float dot = Vector2.Dot(pointToCollider, direction);
-            if (dot >= Mathf.Cos(halfAngle)) {
+            Vector2 toHit = ((Vector2) hit.transform.position - point).normalized;
+            float angleToHit = Vector2.Angle(direction, toHit);
+
+            if (angleToHit < halfAngle) {
                 inCone.Add(hit);
             }
         }
