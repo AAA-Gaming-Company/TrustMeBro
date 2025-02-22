@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 //I didn't like the default Unity stuff, so I made my own
@@ -61,6 +62,24 @@ public static class BetterPhysics2D {
         }
 
         return new Vector2[] { start, end };
+    }
+
+    public static Collider2D[] OverlapConeAll(Vector2 point, Vector2 direction, float radius, float angle, int layerMask) {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(point, radius, layerMask);
+        List<Collider2D> inCone = new List<Collider2D>();
+
+        direction.Normalize();
+        float halfAngle = angle / 2;
+
+        foreach (Collider2D hit in hits) {
+            Vector2 pointToCollider = ((Vector2) hit.transform.position - point).normalized;
+            float dot = Vector2.Dot(pointToCollider, direction);
+            if (dot >= Mathf.Cos(halfAngle)) {
+                inCone.Add(hit);
+            }
+        }
+
+        return inCone.ToArray();
     }
 }
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using Pathfinding;
 
-[CreateAssetMenu(fileName = "SpawnTriggerCover", menuName = "Scriptable Objects/SpawnTriggerCover")]
 public class SpawnTriggerCover : TriggerCover {
     [Header("Spawn")]
     public Transform spawnLocation;

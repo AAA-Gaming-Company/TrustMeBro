@@ -5,14 +5,24 @@ using UnityEngine;
 public abstract class Shooter : Entity {
     [Header("Shooter")]
     public Transform firePoint;
-    public MMF_Player shootFeedback;
+    public MMF_Player projectileFeedback;
+    public MMF_Player grenadeFeedback;
+    public MMF_Player flamethrowerFeedback;
     public MMF_Player reloadFeedback;
     public float deviationValue = 0;
 
     private WeaponType currentWeapon = null;
 
     public void Awake() {
-        this.shootFeedback.Events.OnComplete.AddListener(this.ShootFinished);
+        if (this.projectileFeedback != null) {
+            this.projectileFeedback.Events.OnComplete.AddListener(this.ShootFinished);
+        }
+        if (this.grenadeFeedback != null) {
+            this.grenadeFeedback.Events.OnComplete.AddListener(this.ShootFinished);
+        }
+        if (this.flamethrowerFeedback != null) {
+            this.flamethrowerFeedback.Events.OnComplete.AddListener(this.ShootFinished);
+        }
     }
 
     public void SwitchWeapon(WeaponType newWeapon) {
@@ -66,10 +76,31 @@ public abstract class Shooter : Entity {
                     }
                 }
             }
+        } else {
+            if (this.currentWeapon.isFlamethrower) {
+                // Create a layer mask to ignore the shooter's layer
+                int layerMask = 1 << this.gameObject.layer;
+                layerMask = ~layerMask;
+
+                int damage = this.currentWeapon.GetDamage();
+
+                Collider2D[] hits = BetterPhysics2D.OverlapConeAll(this.firePoint.position, direction, this.currentWeapon.useRange, this.currentWeapon.flamethrowerOpeningAngle, layerMask);
+
+                foreach (Collider2D c in hits) {
+                    Entity entity = c.GetComponent<Entity>();
+                    if (entity != null) {
+                        entity.TakeDamage(damage);
+                    }
+                }
+            }
         }
 
-        if (this.shootFeedback != null) {
-            this.shootFeedback.PlayFeedbacks();
+        if (this.currentWeapon.isProjectile && this.projectileFeedback != null) {
+            this.projectileFeedback.PlayFeedbacks();
+        } else if (this.currentWeapon.isGrenade && this.grenadeFeedback != null) {
+            this.grenadeFeedback.PlayFeedbacks();
+        } else if (this.currentWeapon.isFlamethrower && this.flamethrowerFeedback != null) {
+            this.flamethrowerFeedback.PlayFeedbacks();
         }
 
         StartCoroutine(this.Reload(this.currentWeapon));

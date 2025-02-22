@@ -28,6 +28,10 @@ public class WeaponType : ScriptableObject {
     public float grenadeExplosionRadius = 1;
     public float grenadeThrowForce = 0f;
 
+    [Header("Flamethrower")]
+    public bool isFlamethrower = false;
+    public float flamethrowerOpeningAngle = 10;
+
     [Header("Damage")]
     [SerializeField]
     private int[] damage = { 10 };

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331c9b5ab91df42c08878b310ad51bf4, type: 3}
+  m_Name: AlexFlamethrower
+  m_EditorClassIdentifier: 
+  useDelay:
+  - 0.5
+  useRange: 15
+  isSingleUse: 0
+  isAutomatic: 1
+  displayName: Alex Flametrower
+  displaySprite: {fileID: 21300000, guid: 69bdc1f611c0f8d4dbc71613a9b04b9b, type: 3}
+  uiSprite: {fileID: 21300000, guid: 69bdc1f611c0f8d4dbc71613a9b04b9b, type: 3}
+  isSpawner: 0
+  prefab: {fileID: 0}
+  amount: 01000000
+  isProjectile: 0
+  projectileSpeed: 0.5
+  isGrenade: 0
+  grenadeExplosionRadius: 1
+  grenadeThrowForce: 0
+  isFlamethrower: 1
+  flamethrowerOpeningAngle: 10
+  damage: 0a000000
+  ready: 0
