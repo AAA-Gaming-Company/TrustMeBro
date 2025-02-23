@@ -11,6 +11,7 @@ public class DialogueTriggerArea : TriggerArea {
         if (this.teleportMandrew) {
             this.mandrewTransform.position = this.mandrewTeleportTarget.position;
         }
+
         DialogueBuilder.Builder()
             .AddEntry(this.entries)
             .BuildAndDisplay();

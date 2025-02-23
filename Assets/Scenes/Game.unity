@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 4419417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: -0.8, z: 5}
+  m_LocalPosition: {x: 1.62, y: -0.19, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1769,7 +1769,7 @@ Transform:
   m_GameObject: {fileID: 144292277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.84, z: 5}
+  m_LocalPosition: {x: 0, y: -0.32, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11305,7 +11305,8 @@ Transform:
   m_LocalPosition: {x: 148.91, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1724487206}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &458790070
@@ -11330,7 +11331,7 @@ MonoBehaviour:
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
   teleportMandrew: 1
-  mandrewTeleportTarget: {fileID: 0}
+  mandrewTeleportTarget: {fileID: 1724487206}
   mandrewTransform: {fileID: 630219869}
 --- !u!61 &458790071
 BoxCollider2D:
@@ -11408,7 +11409,7 @@ Transform:
   m_GameObject: {fileID: 466755929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.179892, y: -0.4093125, z: -9}
+  m_LocalPosition: {x: -20.760935, y: -0.7483125, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12345,7 +12346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.179892, y: -0.4093125}
+  m_AnchoredPosition: {x: -20.760935, y: -0.7483125}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &519420033
@@ -18400,7 +18401,7 @@ Transform:
   m_GameObject: {fileID: 874902887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.962, y: -0.558, z: 5}
+  m_LocalPosition: {x: 1.962, y: -0.26, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25552,7 +25553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2268859199493272207, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.84
+      value: -3.179
       objectReference: {fileID: 0}
     - target: {fileID: 2268859199493272207, guid: 27cedd92a324348b2b50295239cae6cb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28437,7 +28438,7 @@ Transform:
   m_GameObject: {fileID: 1366689919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.85, y: -0.99, z: 5}
+  m_LocalPosition: {x: -3.85, y: -0.31, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31508,6 +31509,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 6.8588943}
   m_EdgeRadius: 0
+--- !u!1 &1724487205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724487206}
+  m_Layer: 11
+  m_Name: MandrewPos4 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1724487206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724487205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.96, y: -0.32, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 458790068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1745445802
 GameObject:
   m_ObjectHideFlags: 0

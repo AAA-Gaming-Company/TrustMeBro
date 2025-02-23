@@ -38,7 +38,7 @@ public class ParallaxChild : MonoBehaviour {
         if (this.isBackground) { //The background just follows the camera
             float cameraHeight = this.parallaxedCamera.orthographicSize * 2f;
             float cameraWidth = cameraHeight * this.parallaxedCamera.aspect;
-            this.transform.localScale = new Vector3((cameraWidth / this.initialWidth) + 0.2f, this.initialHeight + 0.2f, this.transform.localScale.z);
+            this.transform.localScale = new Vector3((cameraWidth / this.initialWidth) + 0.2f, cameraHeight + 0.2f, this.transform.localScale.z);
             return;
         }
 
