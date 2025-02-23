@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4419417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4419418}
+  m_Layer: 10
+  m_Name: MandrewPos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4419418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.62, y: -0.8, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 17903639}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6076651
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +225,8 @@ Transform:
   m_LocalPosition: {x: 93.09, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4419418}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &17903641
@@ -237,6 +269,9 @@ MonoBehaviour:
       violence ya little twerps!
     speakerName: Officer Stefan Jawline
     speakerImage: {fileID: 8149817239022723639, guid: b1c6e792d0350bb4a86656d5ce847902, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 4419418}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &17903642
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1709,6 +1744,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3139553840110929272, guid: 19fa6ec881444a64298866459856b493, type: 3}
   m_PrefabInstance: {fileID: 143238620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &144292277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144292278}
+  m_Layer: 10
+  m_Name: MandrewPos4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144292278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144292277}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.84, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1053293845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &145022054
 GameObject:
   m_ObjectHideFlags: 0
@@ -10266,6 +10332,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4884295359941969746, guid: 5facfc39edffae64e8a2a87a2d21a366, type: 3}
   m_PrefabInstance: {fileID: 321122399}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &328812009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328812010}
+  m_Layer: 10
+  m_Name: MandrewPos8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328812010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328812009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.34, y: -3.13, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2114683705}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &360173171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10724,7 +10821,8 @@ Transform:
   m_LocalPosition: {x: 281.32, y: 24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1123636603}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &381040486
@@ -10752,6 +10850,9 @@ MonoBehaviour:
     - 'We''re almost there! '
     speakerName: Buff McManlyface
     speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 1123636603}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &381040487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11143,6 +11244,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1916256830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &458636539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458636540}
+  m_Layer: 10
+  m_Name: MandrewPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &458636540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458636539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36, y: -0.58, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1307104556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &458790067
 GameObject:
   m_ObjectHideFlags: 0
@@ -11197,6 +11329,9 @@ MonoBehaviour:
     - Careful, grenades bypass cover! :O
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 0}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &458790071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11510,7 +11645,8 @@ Transform:
   m_LocalPosition: {x: 160.85, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1366689920}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &484569021
@@ -11534,6 +11670,9 @@ MonoBehaviour:
     - Oh my Bro, the riot police! Use those grenades!
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 1366689920}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &484569022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11931,7 +12070,8 @@ Transform:
   m_LocalPosition: {x: 207.06, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 874902888}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &504987871
@@ -11956,6 +12096,9 @@ MonoBehaviour:
     - After that, well... who knows?
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 874902888}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &504987872
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18232,6 +18375,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 987602428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &874902887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874902888}
+  m_Layer: 10
+  m_Name: MandrewPos6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874902888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874902887}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.962, y: -0.558, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 504987869}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876801520
 GameObject:
   m_ObjectHideFlags: 0
@@ -23963,7 +24137,8 @@ Transform:
   m_LocalPosition: {x: 150.42, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 144292278}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1053293847
@@ -24003,6 +24178,9 @@ MonoBehaviour:
       does.
     speakerName: Sarah
     speakerImage: {fileID: -1821161133326151615, guid: 3e33269c8dcefe44abd17d967d9531db, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 144292278}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &1053293848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24400,7 +24578,8 @@ Transform:
   m_LocalPosition: {x: 38.04, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2055404063}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1091103622
@@ -24437,6 +24616,9 @@ MonoBehaviour:
     - OH MY GOD IT'S THE COPS SAVE ME BROOOO
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 2055404063}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &1091103623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24549,6 +24731,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1617691216563562997, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
   m_PrefabInstance: {fileID: 1114256011}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1123636602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123636603}
+  m_Layer: 10
+  m_Name: MandrewPos7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1123636603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123636602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.11, y: -3.21, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 381040485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125581178
 GameObject:
   m_ObjectHideFlags: 0
@@ -27280,7 +27493,8 @@ Transform:
   m_LocalPosition: {x: 66.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 458636540}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1307104557
@@ -27310,6 +27524,9 @@ MonoBehaviour:
     - 'Hum hum, kawaii uwu. '
     speakerName: NOT Officer Stefan
     speakerImage: {fileID: 2472001460683305498, guid: ecc803221d6bf3d4bad832de763fbb08, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 458636540}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &1307104558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27978,6 +28195,9 @@ MonoBehaviour:
     - 'New plan: workout routine! Run from the cops!'
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 0}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &1315737405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28192,6 +28412,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1617691216563562997, guid: 67369bcb3293abb43a7e036f80132cf2, type: 3}
   m_PrefabInstance: {fileID: 1352677434}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1366689919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366689920}
+  m_Layer: 10
+  m_Name: MandrewPos5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1366689920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366689919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.85, y: -0.99, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484569019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378124440
 GameObject:
   m_ObjectHideFlags: 0
@@ -31208,6 +31459,9 @@ MonoBehaviour:
       her. I''ve heard chicks love that.'
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
+  teleportMandrew: 0
+  mandrewTeleportTarget: {fileID: 0}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &1723968476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50429,6 +50683,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2138722812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2055404062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055404063}
+  m_Layer: 0
+  m_Name: MandrewPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055404063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055404062}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.47, y: -0.62, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1091103621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072969098
 GameObject:
   m_ObjectHideFlags: 0
@@ -51065,7 +51350,8 @@ Transform:
   m_LocalPosition: {x: 285.8, y: 24.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 328812010}
   m_Father: {fileID: 516934130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114683707
@@ -51099,6 +51385,9 @@ MonoBehaviour:
     - Get behind me, Mandrew!
     speakerName: Buff McManlyface
     speakerImage: {fileID: -2869696522318944196, guid: 9105d4b04b6f0b841b8866eb245c17b6, type: 3}
+  teleportMandrew: 1
+  mandrewTeleportTarget: {fileID: 328812010}
+  mandrewTransform: {fileID: 630219869}
 --- !u!61 &2114683708
 BoxCollider2D:
   m_ObjectHideFlags: 0
