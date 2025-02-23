@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: f3bd2822592e57e4e95a57f54e83a860
+guid: ce94ae8150d5a5547aa049ac98814046
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7524356196915858357
-    second: SpriteSheet_Police_Die_0
+      213: 1791089098258976813
+    second: SpriteSheet_Player_Throw_0
   - first:
-      213: -4975605933611174093
-    second: SpriteSheet_Police_Die_1
+      213: 4184959896423316360
+    second: SpriteSheet_Player_Throw_1
   - first:
-      213: 3768767526812707434
-    second: SpriteSheet_Police_Die_2
+      213: 3361596542451540619
+    second: SpriteSheet_Player_Throw_2
   - first:
-      213: 4709755616334914770
-    second: SpriteSheet_Police_Die_3
+      213: -1877786764800475782
+    second: SpriteSheet_Player_Throw_3
   - first:
-      213: -6009128586604609746
-    second: SpriteSheet_Police_Die_4
-  - first:
-      213: -7288883700600593477
-    second: SpriteSheet_Police_Die_5
-  - first:
-      213: 1567933862959870550
-    second: SpriteSheet_Police_Die_6
-  - first:
-      213: 1996114574805677338
-    second: SpriteSheet_Police_Die_7
+      213: 1581013557711473676
+    second: SpriteSheet_Player_Throw_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -144,7 +135,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -156,172 +147,115 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_Police_Die_0
+      name: SpriteSheet_Player_Throw_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.5, y: 0.42162833}
+        x: 18
+        y: 212
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b44325797ed149790800000000000000
-      internalID: -7524356196915858357
+      spriteID: d201dc69b0a3bd810800000000000000
+      internalID: 1791089098258976813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Die_1
+      name: SpriteSheet_Player_Throw_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.4724972, y: 0.4216283}
+        x: 64
+        y: 212
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 337b7c8e3c813fab0800000000000000
-      internalID: -4975605933611174093
+      spriteID: 88b31995ad6f31a30800000000000000
+      internalID: 4184959896423316360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Die_2
+      name: SpriteSheet_Player_Throw_2
       rect:
         serializedVersion: 2
-        x: 75
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.48163697, y: 0.4216283}
+        x: 132
+        y: 212
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6ae2bc091a5d4430800000000000000
-      internalID: 3768767526812707434
+      spriteID: b82610fae3ac6ae20800000000000000
+      internalID: 3361596542451540619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Die_3
+      name: SpriteSheet_Player_Throw_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.45708928, y: 0.4216283}
+        x: 177
+        y: 212
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d42b8a97c96c5140800000000000000
-      internalID: 4709755616334914770
+      spriteID: a7d3328e2e2c0f5e0800000000000000
+      internalID: -1877786764800475782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Police_Die_4
+      name: SpriteSheet_Player_Throw_4
       rect:
         serializedVersion: 2
-        x: 151
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.35161984, y: 0.4216283}
+        x: 221
+        y: 216
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb3219874eea8da90800000000000000
-      internalID: -7288883700600593477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Die_5
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 223
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.25406578, y: 0.4216283}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65277058a8b62c510800000000000000
-      internalID: 1567933862959870550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Police_Die_6
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 192
-        width: 33
-        height: 30
-      alignment: 9
-      pivot: {x: 0.100465946, y: 0.4216283}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a15b54241af93bb10800000000000000
-      internalID: 1996114574805677338
+      spriteID: c0c08744473e0f510800000000000000
+      internalID: 1581013557711473676
       vertices: []
       indices: 
       edges: []
@@ -330,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c0bb48f0bd01a4c1caa1ec842f15d5c9
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -340,13 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SpriteSheet_Police_Die_0: -7524356196915858357
-      SpriteSheet_Police_Die_1: -4975605933611174093
-      SpriteSheet_Police_Die_2: 3768767526812707434
-      SpriteSheet_Police_Die_3: 4709755616334914770
-      SpriteSheet_Police_Die_4: -7288883700600593477
-      SpriteSheet_Police_Die_5: 1567933862959870550
-      SpriteSheet_Police_Die_6: 1996114574805677338
+      SpriteSheet_Player_Throw_0: 1791089098258976813
+      SpriteSheet_Player_Throw_1: 4184959896423316360
+      SpriteSheet_Player_Throw_2: 3361596542451540619
+      SpriteSheet_Player_Throw_3: -1877786764800475782
+      SpriteSheet_Player_Throw_4: 1581013557711473676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

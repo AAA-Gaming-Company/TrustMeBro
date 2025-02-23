@@ -418,8 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - messages:
-    - Lucky you got behind that table, you should probably get behind other things
-      when enemies attack you.
+    - Lucky you got behind that table, you should probably get behind other things,
+      like cars, benches, dumpsters or lampposts when enemies attack you.
     speakerName: Mandrew Cake
     speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
 --- !u!1 &4257233965519886611

@@ -324,14 +324,17 @@ MonoBehaviour:
   maxHealth: 20
   healthBar: {fileID: 2903009273808427796}
   noFlip: {fileID: 4176977981066083344}
+  deathFeedback: {fileID: 0}
   damageFeedback: {fileID: 5505524630631900109}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 1
   coverIndicator: {fileID: 4103600473168143121}
   coverLayers:
     serializedVersion: 2
     m_Bits: 512
   coverRadius: 0.67
+  anim: {fileID: 0}
   firePoint: {fileID: 435722333876567016}
   projectileFeedback: {fileID: 4127678519011404904}
   grenadeFeedback: {fileID: 0}

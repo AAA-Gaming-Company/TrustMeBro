@@ -80,6 +80,9 @@ public abstract class Shooter : Entity {
                     } else {
                         grenade.Init(computedTargetPosition, this.currentWeapon.grenadeExplosionRadius, this.currentWeapon.grenadeThrowForce, damage, grenadeIgnoreTag);
                     }
+                    if (base.anim != null && GetComponent<PlayerController>() != null) {
+                        base.anim.SetTrigger("Throw");
+                    }
                 }
             }
         } else {

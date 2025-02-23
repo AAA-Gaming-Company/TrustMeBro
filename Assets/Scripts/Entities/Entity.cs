@@ -20,7 +20,7 @@ public abstract class Entity : MonoBehaviour {
     public LayerMask coverLayers;
     public float coverRadius = 3f;
 
-    private Animator anim;
+    public Animator anim;
     private CoverEntry currentCoverEntry;
     protected SpriteRenderer spriteRenderer;
     protected int currentHealth;
