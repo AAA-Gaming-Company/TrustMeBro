@@ -107,6 +107,7 @@ public abstract class Shooter : Entity {
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
                         entity.TakeDamage(damage);
+                        entity.GetComponent<SpriteRenderer>().color = new Color(0.15f, 0.15f, 0.15f);
                     }
                 }
             }

@@ -415,8 +415,11 @@ MonoBehaviour:
           ButtonText: Automatic Shaker Setup
         Owner: {fileID: 3568219494836863917}
         DebugActive: 0
-        Sfx: {fileID: 8300000, guid: a991f28261f0af84fb6f8247453c47e4, type: 3}
-        RandomSfx: []
+        Sfx: {fileID: 0}
+        RandomSfx:
+        - {fileID: 8300000, guid: f12bb7dfc99234011a6db15db220001d, type: 3}
+        - {fileID: 8300000, guid: 20af277105ee948fdadc8e7cac4d8dd8, type: 3}
+        - {fileID: 8300000, guid: 1087fa1e621014906be5a37b1e9c2fdc, type: 3}
         TestPlayButton:
           ButtonText: Debug Play Sound
         TestStopButton:

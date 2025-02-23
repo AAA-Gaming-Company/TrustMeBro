@@ -72,6 +72,7 @@ public abstract class Entity : MonoBehaviour {
             corpseRenderer.sortingLayerID = this.spriteRenderer.sortingLayerID;
             Animator corpseAnim = corpse.AddComponent<Animator>();
             corpseAnim.runtimeAnimatorController = this.anim.runtimeAnimatorController;
+            corpseRenderer.color = this.spriteRenderer.color;
             corpseAnim.SetTrigger("Die");
             if (Random.value > 0.5f) {
                 corpse.transform.localScale = new Vector3(-1, 1, 1);
