@@ -1312,14 +1312,17 @@ MonoBehaviour:
   maxHealth: 1
   healthBar: {fileID: 2594767373113074496}
   noFlip: {fileID: 779943326927113207}
+  deathFeedback: {fileID: 0}
   damageFeedback: {fileID: 8118356069676370900}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 0
   coverIndicator: {fileID: 28590941114679879}
   coverLayers:
     serializedVersion: 2
     m_Bits: 512
   coverRadius: 0
+  anim: {fileID: 0}
 --- !u!114 &7713289691781151603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,11 +1337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entries:
   - messages:
-    - Unfortunately, Buff McManlyface was not particularly dextrous and had grabbed
-      his gun instead of his camera.
-    - Don't ask, I don't know either.
-    speakerName: Omniscient Narrator
-    speakerImage: {fileID: 21300000, guid: 9971cac5c8f3ddd4490710dc9a0bdfa7, type: 3}
+    - BRO HOW DID YOU GRAB YOUR GUN INSTEAD OF YOUR CAMERA????!!!
+    speakerName: Mandrew Cake
+    speakerImage: {fileID: -6456260486794345172, guid: 80cdf334b22dd724c9381c10417ac7a5, type: 3}
   - messages:
     - Oops.
     speakerName: Buff McManlyface

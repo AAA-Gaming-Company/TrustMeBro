@@ -1620,14 +1620,17 @@ MonoBehaviour:
   maxHealth: 50000
   healthBar: {fileID: 4042908148081512919}
   noFlip: {fileID: 7582056302954473781}
+  deathFeedback: {fileID: 0}
   damageFeedback: {fileID: 3163772184659446546}
   enterCoverFeedback: {fileID: 0}
   enableMaterialInstancing: 1
+  animateDeath: 0
   coverIndicator: {fileID: 1947711070731317234}
   coverLayers:
     serializedVersion: 2
     m_Bits: 512
   coverRadius: 0
+  anim: {fileID: 0}
 --- !u!1 &7582056302954473781
 GameObject:
   m_ObjectHideFlags: 0

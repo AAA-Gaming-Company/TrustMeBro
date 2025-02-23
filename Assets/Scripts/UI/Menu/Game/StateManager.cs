@@ -49,6 +49,7 @@ public class StateManager : Singleton<StateManager> {
     }
 
     public void ReturnMenu() {
+        MusicManager.StopMusic();
         SceneManager.LoadScene("Menu");
     }
 }

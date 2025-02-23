@@ -1,4 +1,3 @@
-using System.Numerics;
 using UnityEngine;
 
 public class GameManager {
@@ -8,15 +7,13 @@ public class GameManager {
 }
 
 public class Checkpoint {
-    public UnityEngine.Vector2 position;
+    public Vector2 position;
     public PlayerInventory inventory;
 
-    public UnityEngine.Vector2 camOffset;
+    public Vector2 camOffset;
     public float camSize;
     public bool deadZone;
-    public UnityEngine.Vector2 deadZoneSize;
-
-
+    public Vector2 deadZoneSize;
 }
 
 public enum DifficultyLevel {

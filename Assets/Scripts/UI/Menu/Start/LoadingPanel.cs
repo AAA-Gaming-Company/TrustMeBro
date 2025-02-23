@@ -6,6 +6,7 @@ public class LoadingPanel : MonoBehaviour {
     public ProgressBar loadingBar;
 
     private void Awake() {
+        this.gameObject.transform.parent = null;
         DontDestroyOnLoad(this.gameObject);
     }
 
